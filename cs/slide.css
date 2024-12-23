@@ -1,0 +1,125 @@
+.se-slider-container {
+   width: 30%;
+   position: absolute;
+   left: 10.5rem;
+   bottom: 25vmin;
+   overflow: hidden;
+   z-index: 10;
+   mix-blend-mode: difference;
+}
+
+.se-slider {
+   width: 100%;
+   position: relative;
+}
+
+.se-slides {
+   display: flex;
+   width: 200%;
+   animation: slide var(--duration, 20s) linear infinite;
+}
+
+.se-slides.alternate {
+   animation: slide_alternate var(--duration, 20s) linear infinite;
+}
+
+.se-slides.allow-pause:hover {
+   animation-play-state: paused;
+}
+
+.se-slide {
+   color: var(--base-color);
+   flex-basis: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+}
+
+.se-slide i {
+   display: block;
+   flex-basis: var(--logo-width, 20%);
+   font-size: clamp(4rem, 4vw, 5rem);
+   padding: clamp(8px, 2vw, 10px) 0px;
+   transition: transform .3s;
+   cursor: pointer;
+   display: flex;
+   justify-content: center;
+}
+
+.se-slide i:hover {
+   transform: scale(1.14);
+}
+
+@keyframes slide {
+   0% {
+      transform: translateX(0);
+   }
+
+   100% {
+      transform: translateX(-50%);
+   }
+}
+
+@keyframes slide_alternate {
+   0% {
+      transform: translateX(-50%);
+   }
+
+   100% {
+      transform: translateX(0%);
+   }
+}
+
+@media screen and (max-width: 599px) {
+   .se-slider-container {
+      width: 80%;
+      position: absolute;
+      bottom: 25%;
+      left: 10%;
+      overflow: hidden;
+      z-index: 1;
+      mix-blend-mode: color-burn;
+   }
+
+   .se-slider {
+      width: 100%;
+      position: relative;
+   }
+
+   .se-slides {
+      display: flex;
+      width: 200%;
+      animation: slide var(--duration, 20s) linear infinite;
+   }
+
+   .se-slides.alternate {
+      animation: slide_alternate var(--duration, 20s) linear infinite;
+   }
+
+   .se-slides.allow-pause:hover {
+      animation-play-state: paused;
+   }
+
+   .se-slide {
+      color: var(--base-color);
+      flex-basis: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+   }
+
+   .se-slide i {
+      display: block;
+      flex-basis: var(--logo-width, 15%);
+      font-size: clamp(3rem, 7vw, 6rem);
+      padding: clamp(15px, 2vw, 20px) 0;
+      transition: transform .3s;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+   }
+
+   .se-slide i:active {
+      transform: scale(1.14);
+   }
+}

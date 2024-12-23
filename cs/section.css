@@ -1,0 +1,558 @@
+.section {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%) scale(1);
+   max-width: 1400px;
+   width: 140vmin;
+   height: 78.75%;
+   max-height: 800px;
+   background: url(/img/pd-bg-img02-2.png);
+   background-size: contain;
+   background-position: bottom;
+   background-repeat: no-repeat;
+   opacity: 0;
+   transition: transform 0.4s ease, opacity 1s ease;
+   box-shadow: 0 0px 15px 5px rgba(0, 0, 0, 0.5);
+   z-index: 10;
+}
+
+.displayed-section {
+   opacity: 1;
+   transform: translate(-50%, -50%) scale(1);
+   z-index: 10;
+}
+
+.next-section {
+   opacity: 1;
+   transform: translate(50%, -50%) scale(0.7);
+   z-index: -1;
+   box-shadow: 0 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* アニメーションステップ */
+.shrink {
+   transform: translate(-50%, -50%) scale(0.7);
+   opacity: 1;
+   z-index: -1;
+}
+
+.slide-left {
+   transform: translate(35%, -50%) scale(0.7);
+   opacity: 1;
+   z-index: -1;
+}
+
+.slide-center {
+   transform: translate(-50%, -50%) scale(0.7);
+   opacity: 1;
+   z-index: -1;
+}
+
+.expand {
+   transform: translate(-50%, -50%) scale(1);
+   opacity: 1;
+   z-index: -1;
+}
+
+
+
+/*=============*/
+
+.section h1,
+.section h2 {
+   position: relative;
+   top: 10rem;
+   left: 10rem;
+}
+
+.section p {
+   position: relative;
+   width: 350px;
+   top: 12vmin;
+   left: 10.5rem;
+}
+
+.section p::after {
+   content: "";
+   position: absolute;
+   top: -5px;
+   left: -5px;
+   width: 5vmin;
+   height: 1px;
+   border-top: 1px solid;
+}
+
+#section1 .text-a,
+#section2 img,
+#section3 img,
+#section4 img,
+#section5 img,
+#section6 img,
+#section7 img,
+#section8 img {
+   position: absolute;
+   left: 50vmin;
+   bottom: 0;
+   width: 30%;
+   mix-blend-mode: color-dodge;
+}
+
+.section .button {
+   top: 20rem;
+   left: 10rem;
+   padding-bottom: 1rem;
+}
+
+/*sec-text*/
+.sec-a {
+   width: fit-content;
+   height: fit-content;
+   display: grid;
+   justify-content: flex-end;
+   align-items: center;
+   position: absolute;
+   bottom: 10vmin;
+   right: 0;
+   gap: 1rem;
+   padding: 3rem 0;
+}
+
+.sec-a a {
+   font-size: clamp(1.6rem, 1.6rem + 0.5vw, 1.8rem);
+   width: 15vmin;
+   padding: 1rem;
+   margin-left: auto;
+   top: 0;
+   right: 0;
+   background-color: var(--bt);
+   box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.5);
+   mix-blend-mode: difference;
+}
+
+/*
+.top .sec-a a:nth-of-type(2),
+.top .sec-a a:nth-of-type(4) {
+   width: 20vmin;
+}
+.top .sec-a a:nth-of-type(3),
+.top .sec-a a:nth-of-type(5) {
+   width: 15vmin;
+   width: 15vmin;
+}
+*/
+.sec-a a:hover {
+   color: var(--bg);
+}
+
+p a {
+   font-size: clamp(1.4rem, calc(1.4rem + 0.5vw), 1.8rem);
+   width: fit-content;
+   border: 0;
+}
+
+.bottom-btn {
+   position: absolute;
+   left: 1.9vmin;
+   bottom: 0.35rem;
+   mix-blend-mode: screen;
+}
+
+button:nth-last-of-type(1) {
+   margin-left: 0.5rem;
+}
+
+.back a,
+.next a {
+   width: 15vmin;
+   height: 5vmin;
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.5);
+   border-image: url(/img/text-bggold.jpg) 100;
+}
+
+.bottom-btn a:hover {
+   opacity: 0.5;
+}
+
+.back .arrow span,
+.next .arrow span {
+   content: "";
+   width: 5px;
+   height: 1px;
+   position: absolute;
+   top: 48.5%;
+   background: url(/img/text-bggold.jpg);
+   mix-blend-mode: screen;
+}
+
+.back .arrow span {
+   right: 1.65rem;
+}
+
+.next .arrow span {
+   left: 1.65rem;
+}
+
+.arrow {
+   position: relative;
+   display: inline-block;
+   width: 33px;
+   height: 5vmin;
+}
+
+.arrow::before,
+.arrow::after {
+   content: "";
+   position: absolute;
+   top: calc(50% - 2px);
+   right: 0;
+   width: 20px;
+   height: 2px;
+   background: url(/img/text-bggold.jpg);
+   transform-origin: calc(100% - 1px) 50%;
+}
+
+.back .arrow::before,
+.back .arrow::after {
+   left: 0;
+   transform-origin: 1px 50%;
+}
+
+.arrow::before {
+   transform: rotate(45deg);
+}
+
+.arrow::after {
+   transform: rotate(-45deg);
+}
+
+
+/*#section2 .sec-a,
+#section3 .sec-a,
+#section4 .sec-a,
+#section5 .sec-a,
+#section6 .sec-a {
+   bottom: 0;
+   padding: 0;
+}*/
+
+#section1 img {
+   position: absolute;
+   left: 10rem;
+   bottom: 15vmin;
+}
+
+.left-text,
+.right-text {
+   font-size: clamp(1.4rem, calc(1.4rem + 0.5vw), 1.6rem);
+   font-family: serif;
+   font-weight: 600;
+   letter-spacing: 0.5rem;
+   position: absolute;
+}
+
+.left-text {
+   text-align: center;
+   width: 25vmin;
+   top: 50%;
+   left: -10.5vmin;
+   transform: rotate(90deg);
+}
+
+.left-text::before {
+   content: "";
+   width: 28vmin;
+   height: 1px;
+   position: absolute;
+   top: 50%;
+   right: 100%;
+   border-top: 1px solid var(--bg);
+   border-image: url(/img/text-bggold.jpg) 100;
+}
+
+.left-text::after {
+   content: "";
+   width: 20vmin;
+   height: 1px;
+   position: absolute;
+   top: 50%;
+   left: 100%;
+   border-top: 1px solid var(--bg);
+   border-image: url(/img/text-bggold.jpg) 100;
+}
+
+.right-text {
+   font-size: clamp(1.8rem, calc(1.8rem + 0.5vw), 2rem);
+   width: fit-content;
+   right: 1rem;
+   bottom: 1rem;
+   transform: rotate(90deg);
+}
+
+/*.right-text::before {
+   content: "";
+   position: absolute;
+   right: -1.25vmin;
+   bottom: -1.25vmin;
+   border-style: solid;
+   border-width: 0px 0px 7.5vmin 9vmin;
+   border-color: transparent transparent var(--bg) transparent;
+   z-index: -1;
+   mix-blend-mode: color-burn;
+}*/
+
+.right-text::before {
+   content: "";
+   width: 5vmin;
+   height: 1px;
+   position: absolute;
+   top: 50%;
+   right: 40px;
+   border-top: 1px solid var(--bg);
+   border-image: url(/img/text-bggold.jpg) 100;
+}
+
+
+/*==About */
+.about h3 {
+   font-size: 2.4rem;
+   color: var(--bg);
+   mix-blend-mode: hard-light;
+}
+
+.about .section ol,
+.service .section ol {
+   position: relative;
+   width: 350px;
+   top: 13vmin;
+   left: 12rem;
+}
+
+.about li span {
+   font-size: 1rem;
+}
+
+/* Grid Layout */
+.icon-grid {
+   display: grid;
+   width: 35%;
+   position: absolute;
+   left: 10vmin;
+   bottom: 20vmin;
+   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+   gap: 1rem;
+   padding: 1.5rem;
+   background: var(--border);
+   border-radius: 8px;
+}
+
+/* Individual Icon Item */
+.icon-item {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: var(--border);
+   border-radius: 50%;
+   width: 65px;
+   height: 65px;
+   margin: 0 auto;
+   transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Icon Styling */
+.icon-item i {
+   font-size: 5rem;
+   color: var(--text);
+}
+
+.icon-item span {
+   font-size: 1.2rem;
+   color: var(--text);
+   height: 20px;
+   position: absolute;
+   margin-top: 5.5vmin;
+}
+
+/* Hover Effect */
+.icon-item:hover {
+   transform: scale(1.1);
+}
+
+
+/*==Service */
+.service .section ol {
+   font-size: 4rem;
+   left: 10.5rem;
+}
+
+.service .pl li span {
+   font-size: 1rem;
+   color: var(--accent);
+   mix-blend-mode: difference;
+}
+
+.about #section2 ol:nth-last-of-type(1) {
+   margin-top: 3vmin;
+}
+
+.about #section2 ol:nth-last-of-type(1) li {
+   padding-left: 1vmin;
+}
+
+.about #section2 ol:nth-last-of-type(1) li:nth-last-of-type(2) {
+   margin-bottom: 2vmin;
+}
+
+.about .section li,
+.service .section li {
+   font-size: clamp(1.4rem, calc(1.4rem + 0.5vw), 1.6rem);
+}
+
+.about #section4 p {
+   width: 680px;
+}
+
+
+/*==Service*/
+
+.service .section ol {
+   font-size: clamp(1.6rem, calc(1.6rem + 0.5vw), 2rem);
+   width: fit-content;
+   margin-top: 5rem;
+}
+
+.service .section li {
+   padding-left: 2rem;
+   margin-bottom: 4rem;
+}
+
+.service .section li span {
+   margin: 0 2rem;
+}
+
+.service .left-text {
+   width: 30vmin;
+   left: -13vmin;
+}
+
+.service .left-text::before {
+   width: 25.4vmin;
+}
+
+.service .left-text::after {
+   width: 17.4vmin;
+}
+
+.service .modal #wrap #container h3 span::before {
+   content: "税込";
+   font-size: 1rem;
+   position: relative;
+   margin-right: 0.25vmin;
+}
+
+/*
+.about .sec-a a:nth-of-type(2),
+.service .sec-a a:nth-of-type(2) {
+   width: 20vmin;
+}
+.about .sec-a a:nth-of-type(3),
+.service .sec-a a:nth-of-type(3) {
+   width: 25vmin;
+}
+.about .sec-a a:nth-of-type(4) {
+   width: 30vmin;
+}
+.about .sec-a a:nth-of-type(5) {
+   width: 35vmin;
+}*/
+
+
+/*==Contact*/
+.contact .modal h3,
+.policy .modal h3 {
+   margin-top: 3vmin;
+   mix-blend-mode: normal;
+}
+
+.contact .modal p,
+.policy .modal p {
+   color: var(--text);
+   text-shadow: none;
+}
+
+.contact .modal ol,
+.policy .modal ol {
+   padding: 10vmin 15vmin;
+   background: var(--bg);
+   border-radius: 10px;
+}
+
+.contact .modal .accordion-wrap,
+.policy .modal .accordion-wrap {
+   width: 100%;
+   top: 0;
+   left: 0;
+}
+
+.contact .modal .accordion-header h3 {
+   margin-top: 0;
+}
+
+.contact .modal .accordion-wrap ol,
+.policy .modal .accordion-wrap ol {
+   font-size: 2rem;
+   color: var(--text);
+   padding: 1vmin;
+   background: none;
+}
+
+.contact .modal ol h3,
+.policy .modal ol h3 {
+   font-size: 2.4rem;
+   color: var(--text);
+   margin: 6vmin auto 1vmin;
+   mix-blend-mode: normal;
+}
+
+/* 親要素でカウンターをリセット */
+.contact .modal {
+   counter-reset: num;
+   /* カウンターを初期化 */
+}
+
+/* リストアイテムでカウンターをインクリメント */
+.contact .modal li,
+.policy .modal li {
+   color: var(--text);
+   padding: 1vmin 4vmin;
+   margin-bottom: 5vmin;
+   border-bottom: 1px solid var(--text);
+   counter-increment: num;
+   /* カウンターを増加 */
+}
+
+/* 各リストアイテムのカウンター値を表示 */
+.contact .modal li::before,
+.policy .modal li::before {
+   content: counter(num, decimal-leading-zero) ". ";
+   /* 例: 01. */
+   font-weight: bold;
+   color: var(--text);
+   /* 必要に応じてカスタマイズ */
+   position: absolute;
+   left: 25.5vmin;
+}
+
+.contact #modal1 li::before {
+   display: none;
+}
+
+.contact #section2 p,
+.contact #section3 p {
+   width: 25vmin;
+}
+
+/*==Policy*/

@@ -1,0 +1,36 @@
+/* グローバルメニュー */
+.menu {
+    width: 3vmin;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    /*grid-template-columns: repeat(6, 1fr);*/
+    gap: 10rem;
+    position: absolute;
+    top: 0;
+    left: 3vmin;
+    z-index: 1000;
+    mix-blend-mode: difference;
+}
+.menu a {
+    width: 105px;
+    cursor: pointer;
+    color: var(--text);
+    text-decoration: none;
+    transform: rotate(90deg);
+    mix-blend-mode: color-burn;
+}
+
+.menu a:hover {
+    color: var(--bg);
+}
+
+.menu a.active {
+    background: url(/img/FreeLiquidSplashShapesDeeezy-05.png) no-repeat center center/cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    mix-blend-mode: screen;
+}
+

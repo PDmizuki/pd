@@ -1,0 +1,59 @@
+/* カーソルを非表示にする */
+* {
+    cursor: none !important;
+}
+
+#cursor, #stalker {
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+}
+
+/* カーソルのスタイル #894646*/
+#cursor {
+    width: 1px;
+    height: 26px;
+    transform: translate(300%, -15%) rotate(-40deg);
+    border: 1px solid #fff;
+    box-shadow: 0 0 3px rgba(25, 25, 25);
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+    z-index: 10000;
+}
+
+#stalker {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    transition: opacity 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
+    box-shadow: 0 0 4px rgba(25, 25, 25);
+    z-index: 9999;
+}
+
+/* ホバー時のスタイル */
+.cursor--hover {
+    width: 1px !important;
+    height: 40px !important;
+    border: 1px solid var(--border);
+    opacity: 0.5;
+}
+
+.stalker--hover {
+    width: 60px !important;
+    height: 60px !important;
+    border: 1px solid #894646;
+    background: var(--hover);
+    box-shadow: 0 0 10px rgba(217, 217, 217, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+.stalker--hover::after {
+    content: "Click";
+    font-family: "Jost", sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--bg);
+}

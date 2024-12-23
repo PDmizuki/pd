@@ -1,0 +1,421 @@
+/*リセット*/
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   border: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+blockquote,
+dl,
+dd {
+   margin: 0;
+   padding: 0;
+}
+
+ul,
+ol {
+   list-style: none;
+}
+
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+   display: block;
+   max-width: 100%;
+   height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+   font-family: inherit;
+   font-size: inherit;
+   color: inherit;
+   background: none;
+   border: none;
+   padding: 0;
+   margin: 0;
+   outline: none;
+   box-sizing: border-box;
+}
+
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+
+button {
+   border: 0;
+   background: none;
+   padding: 0;
+}
+
+blockquote,
+q {
+   quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+   content: '';
+}
+
+address {
+   font-style: normal;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Kite+One&family=Zen+Maru+Gothic&display=swap');
+
+
+:root {
+   font-size: 62.5%;
+   /*text border text*/
+   --text: #2e2e2e;
+   /*sub  rgba(75, 75, 75)*/
+   --hover: #4b4b4b;
+   /*bg base (199, 199, 199)*/
+   --bg: #c7c7c7;
+   /*link accent (160, 113, 113)*/
+   --accent: #A07171;
+   /*bt (117, 117, 117)*/
+   --bt: #757575;
+   /*border */
+   --border: rgba(199, 199, 199, 0.5);
+}
+
+::selection {
+   background-color: rgba(160, 113, 113, 0.5);
+}
+
+/*===================== Scrollbar =====================*/
+::-webkit-scrollbar {
+   width: 0.5rem;
+   background: rgba(40, 0, 0, 0.4);
+}
+
+::-webkit-scrollbar-track {
+   box-shadow: 0 0 0px rgba(255, 255, 255, 0) inset;
+   background: rgba(245, 252, 246, 0);
+   mix-blend-mode: color-burn;
+}
+
+::-webkit-scrollbar-thumb {
+   box-shadow: 0 0 2px 1px rgba(31, 30, 30, 0.76) inset;
+   background: rgba(20, 20, 20, 0.3);
+   mix-blend-mode: color-burn;
+}
+
+/*===================== Scrollbar =====================*/
+
+/*===================== body =====================*/
+.pc {
+   display: block;
+}
+
+.mobile {
+   display: none;
+}
+
+body {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Jost", sans-serif;
+   font-weight: 400;
+   font-style: normal;
+   text-align: justify;
+   width: 100vw;
+   height: 100vh;
+   color: var(--bg);
+   background: var(--text);
+/*   background: url(/img/pd-bg-img05.png);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: contain;*/
+   z-index: 1;
+   overflow: hidden;
+}
+
+/*===================== h1~p =====================*/
+
+h1 {
+   /*font-size: 62.5%;=16px 12rem=120px*/
+   font-size: clamp(2.8rem, 1.323rem + 1.23vw, 3.2rem);
+   font-family: "Jost", sans-serif;
+   font-style: normal;
+   font-optical-sizing: auto;
+   font-weight: 500;
+   width: fit-content;
+   line-height: 5rem;
+   letter-spacing: 1rem;
+}
+
+h2,
+h3,
+h4 {
+   font-family: "Jost", sans-serif;
+   font-optical-sizing: auto;
+   font-weight: 400;
+   font-style: normal;
+   color: var(--bg);
+   mix-blend-mode: color-burn;
+}
+
+h2 {
+   /*font-size: 62.5%;=16px 6rem=62px*/
+   font-family: sans-serif;
+   font-weight: 500;
+   font-size: clamp(2rem, 0.923rem + 1.23vw, 2.8rem);
+   width: fit-content;
+   line-height: 3rem;
+   letter-spacing: 0.5rem;
+}
+
+h1,
+h2,
+.left-text,
+.right-text,
+.bt-text {
+   background: url(/img/text-bggold.jpg) no-repeat center center/cover;
+   background-clip: text;
+   -webkit-background-clip: text;
+   color: transparent;
+   mix-blend-mode: screen;
+}
+
+h3 {
+   /*font-size: 62.5%;=16px 4rem=42px*/
+   font-size: clamp(2rem, calc(2rem + 0.5vw), 4rem);
+}
+
+h4 {
+   font-size: clamp(1.8rem, calc(1.8rem + 0.5vw), 2rem);
+   color: var(--text);
+}
+
+p {
+   /*font-size: 62.5%;=16px 1.2rem=12px*/
+   font-size: clamp(1.4rem, calc(1.4rem + 0.5vw), 1.6rem);
+   font-family: "Jost", sans-serif;
+   width: fit-content;
+   letter-spacing: 0.01rem;
+   line-height: 2.4rem;
+}
+
+/*===================== fade =====================*/
+.fade_bottom {
+   opacity: 0;
+   transition: opacity 1.2s ease, transform 1.2s ease, filter 1.2s ease;
+   filter: blur(4px);
+   transform: translateY(15px);
+}
+
+.fade_bottom.visible {
+   opacity: 1;
+   filter: blur(0);
+   transform: translateY(0);
+}
+
+/*===================== ol /  ul / li =====================*/
+
+ol,
+ul {
+   font-size: clamp(1.4rem, calc(1.4rem + 0.5vw), 1.8rem);
+   font-family: sans-serif;
+   font-weight: 600;
+}
+
+li {
+   font-size: clamp(1.4rem, calc(1.4rem + 0.5vw), 1.6rem);
+   font-weight: 400;
+   list-style: none;
+}
+
+/*===================== img =====================*/
+img {
+   max-width: 65%;
+   width: 50%;
+   height: auto;
+   object-fit: cover;
+   vertical-align: middle;
+   font-style: italic;
+   background-repeat: no-repeat;
+   background-size: cover;
+   shape-margin: 0.75rem;
+   mix-blend-mode: luminosity;
+   z-index: -1;
+}
+
+/*===================== main =====================*/
+
+main {
+   position: relative;
+   width: 100%;
+   height: 100%;
+   background: url(/img/pd-bg-img05.png);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: contain;
+}
+
+/*===================== a =====================*/
+
+main a {
+   border: 1px solid;
+   padding-bottom: 0.5rem;
+   letter-spacing: 0.15rem;
+}
+
+a {
+   font-family: "futura-pt", sans-serif;
+   font-size: clamp(1.8rem, calc(1.8rem + 0.5vw), 2.4rem);
+   font-weight: 500;
+   color: var(--text);
+   width: 20vmin;
+   height: fit-content;
+   text-align: center;
+   padding: 0.25rem 0.5rem;
+   left: 0;
+   bottom: 0;
+   position: relative;
+   display: inline-block;
+   text-decoration: none;
+   z-index: 100;
+   mix-blend-mode: color-burn;
+}
+
+a:hover {
+   color: rgba(217, 217, 217, 0.5);
+}
+
+header a::after,
+footer a::after {
+   content: "";
+   width: 100%;
+   height: 1px;
+   bottom: 5px;
+   position: absolute;
+   left: 0;
+   background-color: var(--bt);
+   transform: scale(0, 1);
+   transform-origin: right top;
+   transition: transform 0.3s ease;
+}
+
+header a:hover::after,
+footer a:hover::after {
+   transform-origin: left top;
+   transform: scale(1, 1);
+}
+
+main .button {
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   line-height: 1;
+   text-decoration: none;
+   height: 40px;
+   margin-left: 0.5vmin;
+   transition: 0.3s;
+}
+
+main .button::before,
+main .button::after {
+   content: "";
+   display: block;
+   position: absolute;
+   border: 1px solid var(--bg);
+   width: 100%;
+   height: 100%;
+   transition: .3s;
+}
+
+main .button::before {
+   top: -5px;
+   left: -5px;
+}
+
+main .button::after {
+   top: 3px;
+   left: 3px;
+}
+
+main .button:hover::before,
+main .button:hover::after {
+   top: 0;
+   left: 0;
+}
+
+main .button::after {
+   display: none;
+}
+
+form a {
+   font-size: clamp(1.8rem, calc(1.8rem + 0.1vw), 2rem);
+   width: fit-content;
+   color: var(--accent);
+   letter-spacing: 0.065rem;
+   padding: 0.5rem;
+   border: 0;
+}
+
+/*===================== a =====================*/
+
+/*===================== section bottom text =====================*/
+.bt-text {
+   font-size: 3rem;
+   text-align: center;
+   width: 100%;
+   position: absolute;
+   bottom: 1.5rem;
+   border-right: 1px solid;
+   line-height: 2.5rem;
+   letter-spacing: 0.5rem;
+   display: grid;
+   justify-content: center;
+   align-items: center;
+   z-index: 0;
+}
+
+.bt-text span {
+   font-size: 1.85rem;
+}
+
+.bt-text::after {
+   content: "";
+   width: 107.25vmin;
+   position: absolute;
+   left: 32.7vmin;
+   bottom: -0.75rem;
+   border-bottom: 1px solid;
+   border-image: url(/img/text-bggold.jpg) 100;
+   mix-blend-mode: screen;
+}

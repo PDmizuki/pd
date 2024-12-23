@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>PD_Blog / Categories</title>
+   <link rel="stylesheet" href="/cs/all.css">
+   <link rel="stylesheet" href="/cs/blog.css">
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+      }
+
+      h1 {
+         padding-top: 15vmin;
+      }
+
+      .article {
+         margin: 20px 0;
+         padding: 15px;
+         border: 1px solid var(--border);
+         border-radius: 5px;
+      }
+
+      .categories ul {
+         list-style: none;
+         padding: 0;
+      }
+
+      .categories li {
+         margin: 5px 0;
+      }
+
+      .article a {
+         text-align: left;
+         display: inline-block;
+         margin-top: 10px;
+         color: #7b9cbf;
+         text-decoration: none;
+         mix-blend-mode: difference;
+      }
+
+      .article a:hover {
+         text-decoration: underline;
+      }
+
+      #articles-container {
+         width: 80vmin;
+      }
+
+      .categories {
+         top: 20vmin;
+         left: 5vmin;
+      }
+      .categories h2 {
+         font-size: 2rem;
+         position: absolute;
+         top: -10%;
+         left: -10%;
+      }
+      .categories a {
+         text-align: left;
+         font-size: 1.4rem;
+      }
+   </style>
+</head>
+
+<body>
+   <header>
+      <div class="logo"><a href="index.html">PD</a></div>
+      <nav class="navbar">
+         <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="service.html">SERVICE</a></li>
+            <li><a href="blog_list.html">BLOG</a></li>
+            <li><a href="contact.html">CONTCT</a></li>
+         </ul>
+      </nav>
+   </header>
+
+   <!-- カテゴリー一覧 -->
+   <section class="categories">
+      <h2>カテゴリー</h2>
+      <ul>
+         <li><a href="categories.html?category=works">Works</a></li>
+         <li><a href="categories.html?category=results">実績</a></li>
+         <li><a href="categories.html?category=design">デザイン</a></li>
+         <li><a href="categories.html?category=web">Web制作</a></li>
+         <li><a href="categories.html?category=seo">SEO</a></li>
+         <li><a href="categories.html?category=marketing">マーケティング</a></li>
+         <li><a href="categories.html?category=business-support">個人事業サポート</a></li>
+      </ul>
+   </section>
+
+   <!-- カテゴリーに応じたブログ記事 -->
+   <h1>Category: <span id="category-name"></span></h1>
+   <div id="articles-container"></div>
+
+   <script>
+      document.addEventListener('DOMContentLoaded', function () {
+         // JSONデータ（例: サーバーやAPIから取得可能）
+         const blogPosts = [
+            //{
+            //   title: "Works Blog 1",
+            //   content: "Works content 1",
+            //   category: "works",
+            //   url: "blog-details.html?id=1"
+            //},
+            //{
+            //   title: "実績 Blog 1",
+            //   content: "実績 content 1",
+            //   category: "results",
+            //   url: "blog-details.html?id=2"
+            //},
+            {
+               title: "デザイン Blog",
+               content: "デザイン基礎 UI/UX",
+               category: "design",
+               url: "blog_design.html"
+            },
+            //{
+            //   title: "Web制作",
+            //   content: "Web制作 デザイン",
+            //   category: "web",
+            //   url: "blog-details.html?id=4"
+            //},
+            {
+               title: "SEO対策の基本",
+               content: "SEO",
+               category: "seo",
+               url: "blog_seo.html"
+            },
+            {
+               title: "キーワードリサーチ",
+               content: "SEO Keyword",
+               category: "seo",
+               url: "blog_seo-keyword.html"
+            },
+            {
+               title: "高品質なコンテンツ作成",
+               content: "SEO Contents",
+               category: "seo",
+               url: "blog_seo-contents.html"
+            },
+            //{
+            //   title: "マーケティング Blog 1",
+            //   content: "マーケティング content 1",
+            //   category: "marketing",
+            //   url: "blog-details.html?id=6"
+            //}
+            //{
+            //   title: "個人事業サポート Blog 1",
+            //   content: "個人事業サポート content 1",
+            //   category: "business-support",
+            //   url: "blog-details.html?id=7"
+            //}
+         ];
+
+         // URLパラメータからカテゴリを取得
+         const urlParams = new URLSearchParams(window.location.search);
+         const category = urlParams.get('category');
+         const categoryNameElement = document.getElementById('category-name');
+         const articlesContainer = document.getElementById('articles-container');
+
+         // カテゴリ名を表示
+         if (category) {
+            categoryNameElement.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+         } else {
+            categoryNameElement.textContent = 'All';
+         }
+
+         // 指定されたカテゴリに応じた記事を表示
+         const filteredPosts = blogPosts.filter(post => !category || post.category === category);
+
+         if (filteredPosts.length > 0) {
+            filteredPosts.forEach(post => {
+               const articleDiv = document.createElement('div');
+               articleDiv.className = 'article';
+               articleDiv.innerHTML = `
+                  <h2>${post.title}</h2>
+                  <p>${post.content}</p>
+                  <a href="${post.url}" target="_blank">続きを読む</a>
+               `;
+               articlesContainer.appendChild(articleDiv);
+            });
+         } else {
+            articlesContainer.innerHTML = '<p>該当する記事がありません。</p>';
+         }
+      });
+   </script>
+</body>
+
+</html>

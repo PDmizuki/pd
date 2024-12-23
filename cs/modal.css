@@ -1,0 +1,70 @@
+/* モーダルの背景 */
+.modal-overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(25, 25, 25, 0.5);
+   z-index: 999;
+   opacity: 0;
+   visibility: hidden;
+   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* モーダルのスタイル */
+.modal {
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   padding: 10vmin;
+   height: 95vmin;
+   width: 100%;
+   max-width: 1200px;
+   z-index: 1000;
+   border-radius: 10px 0 0 10px;
+   opacity: 0;
+   visibility: hidden;
+   overflow-y: auto;
+   backdrop-filter: blur(8px);
+   background-color: rgba(200, 200,200, 0.15);
+   background:
+   linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(46, 46, 46, 0.5) 100%),
+   url(/img/new-noize.png);
+   background-size: cover;
+   transform: translate(-50%, -50%) scale(0.8);
+   box-shadow: 0 3px 13px 0px rgba(0, 0, 0, 0.95);
+   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s;
+}
+
+.modal p {
+   font-size: 1.8rem;
+   line-height: 2.7rem;
+   color: var(--bg);
+   margin-bottom: 2vmin;
+   text-shadow: 1px 1px 2px var(--text);
+}
+
+
+/* モーダルが表示されるとき */
+.modal.show {
+   opacity: 1;
+   visibility: visible;
+   transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-overlay.show {
+   opacity: 1;
+   visibility: visible;
+}
+
+/* 閉じるボタン */
+.modal .close {
+   position: absolute;
+   top: 1rem;
+   right: 2rem;
+   background: none;
+   border: none;
+   font-size: 4rem;
+   cursor: pointer;
+}

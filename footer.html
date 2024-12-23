@@ -1,0 +1,23 @@
+<footer>
+    <div class="noise">
+        <a href="https://mizukioyama.github.io/pd/" class="fo1">Top</a>
+        <a href="https://mizukioyama.github.io/pd/about.html">About Us</a>
+        <br>
+        <a href="https://mizukioyama.github.io/pd/works.html">Works</a>
+        <a href="https://mizukioyama.github.io/pd/service.html">Service</a>
+        <div class="fo2">
+            <a href="https://mizukioyama.github.io/pd/blog_top.html">Blog</a>
+            <br>
+            <a href="https://mizukioyama.github.io/pd/contact.html">Contact</a>
+            <br>
+            <a href="https://mizukioyama.github.io/pd/policy.html">Site Policy</a>
+        </div>
+    </div>
+    <div class="foot">&copy; <span id="year"></span>M.oyama / Precision Design.</div>
+    <script>
+        const startYear = 2024;
+        const currentYear = new Date().getFullYear();
+        const yearText = currentYear > startYear ? `${startYear}-${currentYear}` : startYear;
+        document.getElementById('year').textContent = yearText;
+    </script>
+</footer>

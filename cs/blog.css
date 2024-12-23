@@ -1,0 +1,253 @@
+      /* リセット */
+      body,
+      h1,
+      h2,
+      h3,
+      p,
+      ul,
+      li,
+      a {
+         margin: 0;
+         padding: 0;
+         list-style: none;
+         text-decoration: none;
+         color: inherit;
+      }
+
+      body {
+         font-family: Arial, sans-serif;
+         line-height: 1.6;
+         height: 100vh;
+         background: url(/img/pd-bg-img02.png);
+         overflow-y: scroll;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+      }
+
+      /* ヘッダー */
+      header {
+         width: 100%;
+         color: #fff;
+         padding: 1vmin 2vmin;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         position: fixed;
+         mix-blend-mode: difference;
+         z-index: 100;
+      }
+
+      .navbar ul {
+         display: flex;
+         gap: 15px;
+      }
+
+      .navbar a {
+         color: var(--bg);
+         font-weight: bold;
+      }
+
+      /* メインレイアウト */
+      main {
+         display: flex;
+         max-width: 1200px;
+         height: auto;
+         margin: 10vmin auto 5vmin;
+         gap: 5vmin;
+      }
+
+      main h1 {
+         margin-top: 4vmin;
+      }
+
+      main a {
+         width: fit-content;
+         font-size: 1.8rem;
+         text-align: left;
+         border: 0;
+      }
+
+      .category {
+         content: "Category";
+         font-size: 2rem;
+         color: var(--bg);
+         position: relative;
+      }
+
+      .sidebar {
+         flex: 1;
+         position: relative;
+         background: var(--border);
+         background: rgba(200, 200, 200, 0.25);
+         backdrop-filter: blur(2px);
+         padding: 3vmin;
+         border: 1px solid var(--bg);
+         border-radius: 5px;
+      }
+
+      .sidebar h2 {
+         font-size: 2rem;
+      }
+
+      .sidebar a {
+         color: var(--border);
+      }
+
+      .sidebar a:hover {
+         color: var(--text);
+      }
+
+      /*said*/
+      .categories {
+         margin-top: 0vmin;
+         position: fixed;
+         top: 5vmin;
+      }
+
+      .toc h2 {
+         margin-top: 5vmin;
+      }
+
+      .toc {
+         position: fixed;
+         margin-top: 25vmin;
+      }
+
+      .categories li,
+      .toc li {
+         font-weight: bold;
+         list-style: circle;
+         margin-left: 3vmin;
+      }
+
+
+
+      .content {
+         flex: 3;
+         background: var(--border);
+         background: rgba(200, 200, 200, 0.25);
+         backdrop-filter: blur(2px);
+         padding: 10rem;
+         border: 1px solid var(--bg);
+         border-radius: 5px;
+      }
+
+      .content h2,
+      .content h3 {
+         width: 100%;
+         color: var(--text);
+         border-bottom: 1px solid var(--text);
+         text-align: left;
+         padding: 15vmin 1rem 0;
+         margin: 0 auto;
+         border-bottom: 1px solid;
+         mix-blend-mode: normal;
+      }
+
+      .content p {
+         width: 100%;
+         text-align: left;
+         padding: 1rem 1rem 0;
+         margin: 0 auto;
+      }
+
+      /* 記事カード */
+      .article-card {
+         display: flex;
+         gap: 3vmin;
+         padding: 1rem 2rem 0;
+         border: 1px solid var(--border);
+         border-radius: 5px;
+      }
+
+      .article-card:nth-child(2) {
+         margin: 1vmin auto;
+      }
+
+      .articles {
+         margin: 15vmin auto 0;
+      }
+
+      .articles h2,
+      .articles h3 {
+         font-weight: 800;
+         color: var(--text);
+         padding: 0;
+         border: 0;
+         mix-blend-mode: normal;
+      }
+
+      .articles h2 {
+         border-bottom: 1px solid;
+      }
+
+      .article-card img {
+         width: 45%;
+         height: 100px;
+         object-fit: cover;
+      }
+
+      .article-card h3 {
+         font-size: 1.4rem;
+         margin: 0;
+      }
+
+      .article-card p {
+         font-size: 1rem;
+         margin: 0;
+         padding: 0;
+      }
+
+      /* フッター */
+      footer {
+         width: 100%;
+         text-align: center;
+         padding: 10px;
+         background: var(--border);
+         color: var(--bg);
+         margin-top: 20px;
+      }
+
+      .pagination {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         margin-top: 20px;
+         gap: 10px;
+      }
+
+      .pagination button {
+         font-weight: 700;
+         padding: 0.5vmin 1vmin;
+         background-color: var(--accent);
+         color: var(--text);
+         border: none;
+         border-radius: 3px;
+         cursor: pointer;
+      }
+
+      .pagination button a {
+         font-size: 2rem;
+         width: fit-content;
+         padding: 0;
+      }
+
+      .pagination button:disabled {
+         color: var(--bg);
+         background-color: var(--text);
+         cursor: not-allowed;
+      }
+
+      #page-info {
+         font-weight: bold;
+         color: #333;
+      }
+
+      .blog-key article ol {
+         padding-left: 1rem;
+      }
+      .blog-key article li {
+         list-style: disc;
+         margin: 0 0 2rem 2rem;
+      }

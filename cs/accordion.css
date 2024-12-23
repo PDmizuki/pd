@@ -1,0 +1,108 @@
+/*==アコーディオン==*/
+.accordion-wrap {
+    width: calc(60% - 50px);
+    position: relative;
+    top: -5vmin;
+    left: 9.5vmin;
+    padding: 1rem;
+    margin: 0 auto;
+    border: 1px solid var(--border);
+    background-color: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(2px);
+    margin-bottom: 1rem;
+    mix-blend-mode: difference;
+    box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/*title*/
+.accordion-item {
+    width: 100%;
+    margin: 0 auto;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.accordion-header {
+    width: 100%;
+    padding-left: 6%;
+    border-bottom: 1px solid var(--text);
+    transition: color 100ms;
+}
+
+.accordion-header h3 {
+    font-size: clamp(1.6rem, calc(1.6rem + 0.5vw), 2rem);
+    color: var(--text);
+    border-left: 1px solid var(--text);
+    padding: 0 1rem;
+    mix-blend-mode: normal;
+}
+
+.accordion-header h3 .active {
+    color: var(--accent);
+}
+
+/*in-text*/
+.accordion-text {
+    margin: 2rem auto;
+    display: none;
+    overflow-y: auto;
+}
+
+.accordion-text p {
+    font-size: clamp(1.4rem, calc(1.4rem + 0.5vw), 1.6rem);
+    width: 80%;
+    font-weight: 500;
+    color: var(--text);
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    letter-spacing: 0.1rem;
+    mix-blend-mode: hard-light;
+    text-shadow: none;
+}
+
+.contact #section3 .accordion-text p {
+    width: 80%;
+}
+
+/*i*/
+.fa {
+    transition: transform 300ms, color 100ms;
+}
+
+.fa span {
+    content: "";
+    width: 3%;
+    height: 1px;
+    position: absolute;
+    top: 2.5rem;
+    left: 2rem;
+    background-color: var(--text);
+}
+
+.fa span:nth-child(2) {
+    transform: rotate(90deg);
+    transition: all 0.5s ease;
+}
+
+.rotate-fa span:nth-child(2) {
+    transform: rotate(0deg);
+}
+
+.accordion-header .fa {
+    float: left;
+    padding-top: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.accordion-gold .accordion-header {
+    color: var(--accent);
+}
+
+.accordion-no-bar {
+    border-bottom: 0;
+}
+
+/*== アコーディオンEND ==*/
