@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PD_Service</title>
+    <link rel="icon" href="/img/pd-logo-gold.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSSファイルの読み込み -->
+    <link rel="stylesheet" href="cs/all.css">
+    <link rel="stylesheet" href="cs/section.css">
+    <link rel="stylesheet" href="cs/menu.css">
+    <link rel="stylesheet" href="cs/cursor.css">
+    <link rel="stylesheet" href="cs/modal.css">
+    <link rel="stylesheet" href="cs/card.css">
+    <link rel="stylesheet" href="cs/se-list.css">
+
+    <!--    <link rel="stylesheet" href="cs/mobile.css">
+    <link rel="stylesheet" href="cs/cursor.css">
+    <link rel="stylesheet" href="cs/footer.css">
+    <link rel="stylesheet" href="cs/glitch.css">
+    <link rel="stylesheet" href="cs/form.css">
+    <link rel="stylesheet" href="cs/tab.css">
+    <link rel="stylesheet" href="cs/slide.css">
+    <link rel="stylesheet" href="cs/loading.css">-->
+    <!-- a -->
+    <link rel="stylesheet" href="https://use.typekit.net/wez8dvq.css">
+
+    <!-- jQueryの読み込み -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- JavaScriptファイルの読み込み -->
+    <script src="js/cursor.js"></script>
+    <script src="js/card.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/section.js"></script>
+    <script src="js/se-list.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/tab.js"></script>
+    <script src="js/loading.js"></script>
+    <script src="js/menu.js"></script>
+
+    <!--Search-->
+    <meta name="description" content="想いを形に、こだわりをデザインする。">
+    <meta name="keywords" content="Precision Design, こだわり, デザイン, 想い, 伝える">
+    <!--cash-->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <!--Referrer-Policy-->
+    <meta name="referrer" content="strict-origin">
+    <!--HSTS-->
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000">
+    <!--CSP-->
+</head>
+
+<!--作品保護-->
+
+<body oncontextmenu="return false;" class="service">
+
+    <header>
+        <div class="menu">
+            <a href="index.html">Top</a>
+            <a href="about.html">About Us</a>
+            <a href="#">Service Us</a>
+            <a href="#">Works</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="policy.html">Site Policey</a>
+        </div>
+    </header>
+
+    <main class="service">
+
+        <div class="section displayed-section" id="section1">
+            <h1>PD_Service</h1>
+            <h2>Contents / Flow</h2>
+            <img src="/img/text-s.png" alt="Precision Design,about,M.Oyama" class="text-a">
+            <p>
+                このページでは、「サービス内容、オプション、プラン、作業Flow」を紹介しています。
+            </p>
+            <div class="sec-a">
+                <a href="#" onclick="showSection('section2')" id="link-section2">Contents.</a>
+                <a href="#" onclick="showSection('section3')" id="link-section3">Option.</a>
+                <a href="#" onclick="showSection('section4')" id="link-section4">Plan.</a>
+                <a href="#" onclick="showSection('section5')" id="link-section5">Flow.</a>
+                <a href="index.html">Top.</a>
+            </div>
+            <div class="bt-text">PD_Service Us
+                <br>
+                <span>Service and plan contents, work flow.</span>
+            </div>
+
+            <div class="bottom-btn">
+                <button class="back"><a href="#" onclick="showSection('section5')"><span
+                            class="arrow"><span></span></span></a></button>
+                <button class="next"><a href="#" onclick="showSection('section2')"><span
+                            class="arrow"><span></span></span></a></button>
+            </div>
+            <div class="left-text">PD_Service Us</div>
+            <div class="right-text">01</div>
+        </div>
+
+        <div class="section next-section" id="section2">
+            <h2>Contents</h2>
+            <img src="/img/text-s.png" alt="Precision Design,about,M.Oyama" class="text-a">
+            <p>
+                Contents List
+                <br>
+                Mainサービス、Subサービスを記載しています。
+            </p>
+            <a href="#" class="button" data-modal="modal1">Service View</a>
+            <div class="sec-a">
+                <a href="#" onclick="showSection('section3')">Option.</a>
+                <a href="#" onclick="showSection('section4')">Plan.</a>
+                <a href="#" onclick="showSection('section5')">Flow.</a>
+                <a href="#" onclick="showSection('section1')">Service Top.</a>
+            </div>
+
+            <div class="bt-text"></div>
+
+            <div class="bottom-btn">
+                <button class="back"><a href="#" onclick="showSection('section1')"><span
+                            class="arrow"><span></span></span></a></button>
+                <button class="next"><a href="#" onclick="showSection('section3')"><span
+                            class="arrow"><span></span></span></a></button>
+            </div>
+            <div class="left-text">PD_Service - Contents</div>
+            <div class="right-text">02</div>
+        </div>
+
+        <!-- モーダルと背景 -->
+        <div class="modal-overlay"></div>
+
+        <div class="modal main" id="modal1">
+            <button class="close">&times;</button>
+            <h3>Maine</h3>
+            <p>※各Serviceの料金はPlanに記載しています。</p>
+            <a href="#" class="button" data-modal="modal3">Paln View</a>
+
+            <!--Card 01 -->
+            <div class="cd-layout">
+                <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-background">
+                        <h4>Contents</h4>
+                        <h5>Webサイト制作</h5>
+                        <p>
+                            オウンドメディア、コーポレートサイト、LP、ブログサイトなどのWebサイトを制作いたします。
+                            HPリニューアルなども行いますので、お気軽にお申し付けください。
+                        </p>
+                        <p>
+                            基本的なHTML/CSS/JavaScriptを使用いたします。
+                            ビジュアルはもちろん、文章に乗せる言葉などの細部もこだわり制作いたします。
+                            アニメーション、表示速度の調整も可能です。
+                            ※ノーコード制作も承っております。
+                            ※制作を検討中の方でも、お気軽にお問い合わせください。
+                            ※Web制作同様ページ数、コンテンツ量で価格や制作期間が変動するのでご了承ください。
+                        </p>
+                        <div class="right-text">01</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span>Main - 01</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Web Design</h3>
+                            <p>
+                                We produce websites such as owned media, corporate sites, LPs, and blog sites.
+                                We also offer website renewal services, so please feel free to contact us.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            50.000 ~
+                        </div>
+                    </div>
+                </div>
+
+                <!--Card 02 -->
+                <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-background">
+                        <h4>Contents</h4>
+                        <h5>Art作品 オーダー制作</h5>
+                        <p>
+                            Abstract Art、Digital Art、などの新築、新居にも合うArt作品を提供いたします。
+                            サイズや画材で作れる作品と価格が異なるので、詳しくはお問合せください。
+                            作品イメージ「色、質感、素材」などの擦り合せを行い、制作に取り掛かります。
+                        </p>
+                        <p>
+                            ※サイズや使用する画材で価格が変動するので、Orderをご検討の方は問合せにて
+                            Orderの詳細をお伝えいたしますので、お気軽にお申し付けください。
+                        </p>
+                        <div class="right-text">02</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span>Main - 02</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Art Order</h3>
+                            <p>
+                                We offer Abstract Art, Digital Art, and other Art work that will fit in new construction
+                                and new homes.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            50.000 ~
+                        </div>
+                    </div>
+                </div>
+
+                <!--Card 03 -->
+                <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-background">
+                        <h4>Contents</h4>
+                        <h5>事業サポート</h5>
+                        <p>
+                            個人事業のサポート業務。
+                            主なサポート内容、事業の土台固め、制作、ブランディングの補助。
+                            土台固めは約10ステップに分けた戦略を行い、必要なものを制作し、約2～3年時間をかけてでブランディングのサポートを行います。
+                            新規事業、既存事業どちらも土台は重要です。ビジョンを明確にし顧客にも長く愛される事業を作り上げます。
+                        </p>
+                        <p>
+                            ※サポート内容は必要なものを取捨選択して行います。
+                            ※各ステップを行う期間は状況に応じて対応するので、期間は変動する可能性があります。
+                        </p>
+                        <div class="right-text">03</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span>Main - 03</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Business Support</h3>
+                            <p>
+                                Support services for private businesses.
+                                Main support, assistance with business groundwork, production, and branding.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            50.000 ~
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="sr">Sub</h3>
+            <div class="cd-layout">
+                <!--Card 01 -->
+                <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-background">
+                        <h4>Contents</h4>
+                        <h5>サイトデザイン</h5>
+                        <p>
+                            Webサイトのデザインのみを行います。
+                            シンプルで美しいビジュアルだけでなく、直感で操作しやすいUI / UXを意識したデザインを制作いたします。
+                        </p>
+                        <p>
+                            ※Web制作同様ページ数、コンテンツ量で価格や制作期間が変動するのでご了承ください。
+                        </p>
+                        <div class="right-text">01</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span>Sub - 01</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Site Design</h3>
+                            <p>
+                                We only design websites.
+                                We produce not only simple and beautiful visuals, but also intuitive and easy-to-operate
+                                UI/UX designs.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            50.000 ~
+                        </div>
+                    </div>
+                </div>
+
+                <!--Card 02 -->
+                <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-background">
+                        <h4>Contents</h4>
+                        <h5>コーディング / 実装</h5>
+                        <p>
+                            デザインされたWebサイトのコーディングや実装を行います。
+                            ツールはWordPress、STUDIOでの実装を対応しています。
+                            レンタルサーバーやドメインの取得方法などのサポートも行っていますので、お気軽にお問合せください。
+                        </p>
+                        <p>
+                            ※使用するレンタルサーバーで毎月の費用が変わります。
+                            ※ドメイン名は変更できないので、慎重に行うようにお願いいたします。
+                        </p>
+                        <div class="right-text">02</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span>Sub - 02</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Coding / Mounting</h3>
+                            <p>
+                                Coding and implementation of the designed website.
+                                Tools are supported for implementation in WordPress and STUDIO.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            100.000 ~
+                        </div>
+                    </div>
+                </div>
+
+                <!--Card 03 -->
+                <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-background">
+                        <h4>Contents</h4>
+                        <h5>Webサイトリニューアル</h5>
+                        <p>
+                            自社で制作したWebサイトのリニューアルを行います。
+                            ドメイン、サーバーは問題が無ければ同じものを使用します。
+                        </p>
+                        <p>
+                            ※他者で制作したWebサイトは、Web制作で作り直しの形で新たに制作いたします。
+                        </p>
+                        <div class="right-text">03</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span>Sub - 03</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Renewal</h3>
+                            <p>
+                                We will renew the website produced by our company.
+                                The same domain and server will be used if there are no problems.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            80.000 ~
+                        </div>
+                    </div>
+                </div>
+
+                <!--Card 04 -->
+                <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-background">
+                        <h4>Contents</h4>
+                        <h5>バナー 制作</h5>
+                        <p>
+                            SNSや広告用のシンプルなバナーの制作。
+                            キャンペーンやイベント告知に使用するバナーを制作いたします。
+                        </p>
+                        <div class="right-text">04</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span>Sub - 04</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Banner</h3>
+                            <p>
+                                Creation of simple banners for social networking and advertising.
+                                We produce banners for campaign and event announcements.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            5.000 ~
+                        </div>
+                    </div>
+                </div>
+
+                <!--Card 05 -->
+                <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-background">
+                        <h4>Contents</h4>
+                        <h5>ロゴ 制作</h5>
+                        <p>
+                            シンプルな企業ロゴやブランドロゴの制作。
+                            お客様の要望を基にオリジナリティあるロゴを制作いたします。
+                            <br>
+                            ※要望を基にデザイン案を複数提供し、修正もしくは本制作をいたします。
+                        </p>
+                        <div class="right-text">05</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span>Sub - 05</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Logo</h3>
+                            <p>
+                                Creation of simple corporate logos and brand logos.
+                                We can create an original logo based on your requirements.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            20.000 ~
+                        </div>
+                    </div>
+                </div>
+
+                <!--Card 06 -->
+                <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-background">
+                        <h4>Contents</h4>
+                        <h5>チラシ/メニュー表</h5>
+                        <p>
+                            チラシやメニュー表のデザイン。
+                            シンプルなレイアウトで、イベントや商品をPRするデザインを提供いたします。
+                            <br>
+                            ※印刷までを行う場合は、別途印刷代金を請求いたします。
+                        </p>
+                        <div class="right-text">06</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span>Sub - 06</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Flyers / Menu</h3>
+                            <p>
+                                Flyer and menu list design.
+                                We provide designs with simple layouts to promote your events and products.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            5.000 ~
+                        </div>
+                    </div>
+                </div>
+
+                <!--Card 07 -->
+                <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-background">
+                        <h4>Contents</h4>
+                        <h5>名刺 制作</h5>
+                        <p>
+                            個人用やビジネス用の名刺デザイン。
+                            シンプルなデザインの名刺を作成いたします。
+                            <br>
+                            ※印刷までを行う場合は、別途印刷代金を請求いたします。
+                        </p>
+                        <div class="right-text">07</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span>Sub - 07</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Business Card</h3>
+                            <p>
+                                Business card design for personal or business use.
+                                We create business cards with simple designs.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            5.000 ~
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section next-section" id="section3">
+            <h2>Option</h2>
+            <img src="/img/text-s.png" alt="Precision Design,about,M.Oyama" class="text-a">
+            <p>
+                Option List
+                <br>
+                Optionサービスを記載しています。
+                単体・セットでお申込みできますので、お気軽にお申し付けください。
+            </p>
+            <a href="#" class="button" data-modal="modal2">Option View</a>
+            <div class="sec-a">
+                <a href="#" onclick="showSection('section4')">Plan.</a>
+                <a href="#" onclick="showSection('section5')">Flow.</a>
+                <a href="#" onclick="showSection('section1')">Service Top.</a>
+                <a href="#" onclick="showSection('section2')">Contents.</a>
+            </div>
+
+            <div class="bt-text"></div>
+
+            <div class="bottom-btn">
+                <button class="back"><a href="#" onclick="showSection('section2')"><span
+                            class="arrow"><span></span></span></a></button>
+                <button class="next"><a href="#" onclick="showSection('section4')"><span
+                            class="arrow"><span></span></span></a></button>
+            </div>
+            <div class="left-text">PD_Service - Option</div>
+            <div class="right-text">03</div>
+        </div>
+
+        <div class="modal op" id="modal2">
+            <button class="close">&times;</button>
+            <h3>Option</h3>
+            <p>※単体・セットプランの料金はPlanに掲載しています。</p>
+            <a href="#" class="button" data-modal="modal3">Paln View</a>
+
+            <!--Card 01 -->
+            <div class="cd-layout">
+                <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-background">
+                        <h4>Contents</h4>
+                        <h5>Webライティング</h5>
+                        <p>
+                            SEOを意識したライティング。
+                            キーワード調査やメタデータの最適化を含め、検索エンジンに最適化されたコンテンツを提供します。
+                            <br>
+                            ※SEO対策、ライティングは「制作するボリューム」によって価格が変動します。
+                        </p>
+                        <div class="right-text">01</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span>Option - 01</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Writing</h3>
+                            <p>
+                                SEO-conscious writing.
+                                Search engine optimized content, including keyword research and metadata optimization.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            10.000 ~
+                        </div>
+                    </div>
+                </div>
+
+                <!--Card 02 -->
+                <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-background">
+                        <h4>Contents</h4>
+                        <h5>イラスト作成</h5>
+                        <p>
+                            WebサイトやSNSの他に印刷に使用する簡単なイラストの作成。
+                            デザインや雰囲気に合ったタッチや色合いでイラストを提供いたします。
+                            チラシや名刺、メニューなど、印刷時の高解像度に対応した仕上がりで提供いたします。
+                        </p>
+                        <div class="right-text">02</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span>Option - 02</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Illustration</h3>
+                            <p>
+                                Creation of simple illustrations for print as well as websites and social networking
+                                sites.
+                                We can provide illustrations with the right touch and coloring to match your design and
+                                atmosphere.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            10.000 ~
+                        </div>
+                    </div>
+                </div>
+
+                <!--Card 03 -->
+                <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-background">
+                        <h4>Contents</h4>
+                        <h5>写真撮影</h5>
+                        <p>
+                            小規模商品・プロフィールなどの写真撮影。
+                            シンプルなセットで、手軽な撮影を行います。
+                        </p>
+                        <div class="right-text">03</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span>Option - 03</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Photographing</h3>
+                            <p>
+                                Photography for small products, profiles, etc.
+                                Simple set up and easy photography.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            8.000 ~
+                        </div>
+                    </div>
+                </div>
+
+                <!--Card 04 -->
+                <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-background">
+                        <h4>Contents</h4>
+                        <h5>写真加工</h5>
+                        <p>
+                            写真の明るさ調整やシンプルなレタッチ。
+                            色調整や傷の除去など、軽度の修正を行います。
+                        </p>
+                        <div class="right-text">04</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span>Option - 04</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Photo Processing</h3>
+                            <p>
+                                Brightness adjustment and simple retouching of photos.
+                                Minor corrections such as color adjustments and scratch removal.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            500 ~
+                        </div>
+                    </div>
+                </div>
+
+                <!--Card 05 -->
+                <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-background">
+                        <h4>Contents</h4>
+                        <h5>サイト管理</h5>
+                        <p>
+                            サーバーの稼働状況チェックやコンテンツ、アニメーションの表示、表示速度の確認を含む、
+                            サイトの基本的な維持管理。
+                        </p>
+                        <div class="right-text">05</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span>Option - 05</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Site Management</h3>
+                            <p>
+                                Includes checking server uptime, content, animations, and display speed,
+                                Basic maintenance of the site.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            10.000 ~
+                        </div>
+                    </div>
+                </div>
+
+                <!--Card 06 -->
+                <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-background">
+                        <h4>Contents</h4>
+                        <h5>Webサイトメンテナンス</h5>
+                        <p>
+                            Webサイトのメンテナンスを行います。
+                            セキュリティ更新やバグ修正、バックアップの定期実行。
+                            簡単なコンテンツ更新も含まれます。（例：文章や画像の修正）
+                        </p>
+                        <div class="right-text">06</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span>Option - 06</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Maintenance</h3>
+                            <p>
+                                Perform website maintenance.
+                                Security updates, bug fixes, and periodic backups.
+                                This includes simple content updates. (e.g., text and image fixes)
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            8.000 ~
+                        </div>
+                    </div>
+                </div>
+
+                <!--Card 07 -->
+                <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-background">
+                        <h4>Contents</h4>
+                        <h5>Webサイト パフォーマンス最適化</h5>
+                        <p>
+                            Webサイトのパフォーマンス最適化（高速化）を行います。
+                            <br>
+                            サイトの読み込み速度を1秒でも早くするため、「必要のない情報やデータの削除」
+                            などを行い読み込み速度を改善。
+                            画像の圧縮やキャッシュ設定、コードの最適化などを含む。
+                        </p>
+                        <div class="right-text">07</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span>Option - 07</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Performance</h3>
+                            <p>
+                                In order to speed up the loading speed of the site by even a second, we have improved
+                                the
+                                loading speed by “deleting unnecessary information and data and other measures to
+                                improve
+                                loading speed.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            15.000 ~
+                        </div>
+                    </div>
+                </div>
+
+                <!--Card 08 -->
+                <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-background">
+                        <h4>Contents</h4>
+                        <h5>分析と改善提案</h5>
+                        <p>
+                            Google Analyticsやその他の解析ツールを使用して、サイトのパフォーマンスを定期的に分析し、
+                            改善提案や状況に応じた対策、修正を行います。
+                        </p>
+                        <div class="right-text">08</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span>Option - 08</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Analysis & Improvement</h3>
+                            <p>
+                                Regularly analyze site performance using Google Analytics and other analytical tools,
+                                We make suggestions for improvement and take action and corrective measures according to
+                                the
+                                situation.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            15.000 ~
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section next-section" id="section4">
+            <h2>Plan</h2>
+            <img src="/img/text-s.png" alt="Precision Design,about,M.Oyama" class="text-a">
+            <p>
+                お申込み前にPlan内容をご確認ください。
+                <br>
+                また、サービスの内容はContentsページからご確認いただけます。
+            </p>
+            <a href="#" class="button" data-modal="modal3">Paln View</a>
+            <div class="sec-a">
+                <a href="#" onclick="showSection('section5')">Flow.</a>
+                <a href="#" onclick="showSection('section1')">Service Top.</a>
+                <a href="#" onclick="showSection('section2')">Contents.</a>
+                <a href="#" onclick="showSection('section3')">Option.</a>
+            </div>
+
+            <div class="bt-text"></div>
+
+            <div class="bottom-btn">
+                <button class="back"><a href="#" onclick="showSection('section3')"><span
+                            class="arrow"><span></span></span></a></button>
+                <button class="next"><a href="#" onclick="showSection('section5')"><span
+                            class="arrow"><span></span></span></a></button>
+            </div>
+            <div class="left-text">PD_Service - Plan</div>
+            <div class="right-text">04</div>
+        </div>
+
+        <div class="modal pl" id="modal3">
+            <button class="close">&times;</button>
+            <h3>Service Plan</h3>
+            <p>
+                Plan内容を紹介しています。
+                表示価格は目安の価格ですので、お申込み前の段階でお見積りを制作いたします。
+                <br>
+                ※こちらに表記されていないプランでのお申込みも可能です。相談、見積りは無料で承っておりますので、ご遠慮なくお問合せください。
+                <br>
+                ※Custom Planはベースとなる「LP、HP」のプランをお選びいただきオプション、定期サービスを追加します。
+            </p>
+            <!-- Service Last -->
+            <div id="wrap">
+                <div class="se-tab-w">
+                    <div id="tab1" class="list-tab selected">
+                        LP制作
+                    </div>
+                    <div id="tab2" class="list-tab selected">
+                        HP制作
+                    </div>
+                    <div id="tab3" class="list-tab">
+                        Custom
+                    </div>
+                </div>
+                <!------ 内容 ------>
+                <div id="container">
+                    <!---- 01 LP ------------------------------>
+                    <div id="first" class="se-box">
+                        <div id="content1" class="container show">
+                            <!---- LP Economy ------------------------------>
+                            <h3>LP Economy Plan / <span></span>55,000円～</h3>
+                            <ol>
+                                <h4>ページ構成</h4>
+                                <li>
+                                    1ページ構成（縦長LP）、5～6セクション
+                                </li>
+
+                                <h4>デザイン</h4>
+                                <li>
+                                    シンプルなテンプレートベース、色調・フォントの基本カスタマイズ
+                                </li>
+
+                                <h4>機能</h4>
+                                <li>
+                                    レスポンシブ対応（スマホ、PC）、Contactフォームの設置、SNS連携
+                                </li>
+
+                                <h4>素材提供</h4>
+                                <li>
+                                    クライアント様から提供いただいた素材（画像・ロゴ・テキスト）またはフリー素材を使用
+                                </li>
+
+                                <h4>SEO対策</h4>
+                                <li>
+                                    基本的なSEO対応（メタタグ設定、タイトルと説明文の最適化）
+                                </li>
+
+                                <h4>使用ツール</h4>
+                                <li>
+                                    WordPress / Standard
+                                </li>
+
+                                <h4>納期</h4>
+                                <li>
+                                    約2～3週間
+                                </li>
+
+                                <h4>修正回数</h4>
+                                <li>
+                                    2回まで
+                                    <br>
+                                    ※場合によっては別途修正費をご請求いたします。
+                                </li>
+                            </ol>
+
+                            <!---- LP Standard ------------------------------>
+                            <h3>LP Standard Plan / <span></span>110,000円～</h3>
+                            <ol>
+                                <h4>ページ構成</h4>
+                                <li>
+                                    1ページ構成（縦長LP）、7～8セクション
+                                </li>
+
+                                <h4>デザイン</h4>
+                                <li>
+                                    オリジナルデザイン、カスタムUI、色調・フォントのカスタマイズ
+                                </li>
+
+                                <h4>機能</h4>
+                                <li>
+                                    レスポンシブ対応（スマホ、タブレット、PC）、Contactフォームの設置、SNS連携、
+                                    簡単なアニメーション（フェードイン、スクロールアニメーション）
+                                </li>
+
+                                <h4>素材提供</h4>
+                                <li>
+                                    クライアント様から提供いただいた素材、または無料素材の提案・選定
+                                </li>
+
+                                <h4>SEO対策</h4>
+                                <li>
+                                    基本的なキーワード設定、内部リンク構造の最適化
+                                </li>
+
+                                <h4>使用ツール</h4>
+                                <li>
+                                    WordPress / Standard
+                                </li>
+
+                                <h4>納期</h4>
+                                <li>
+                                    3～4週間
+                                </li>
+
+                                <h4>修正回数</h4>
+                                <li>
+                                    2回まで
+                                    <br>
+                                    ※場合によっては別途修正費をご請求いたします。
+                                </li>
+                            </ol>
+
+                            <!---- LP Premium ------------------------------>
+                            <h3>LP Premium Plan / <span></span>132,000円～</h3>
+                            <ol>
+                                <h4>ページ構成</h4>
+                                <li>
+                                    1ページ構成（縦長LP）、8～10セクション
+                                </li>
+
+                                <h4>デザイン</h4>
+                                <li>
+                                    オリジナルデザイン、ブランドに沿った高品質なビジュアル設計
+                                </li>
+
+                                <h4>機能</h4>
+                                <li>
+                                    レスポンシブ対応（スマホ、タブレット、PC）、シンプルなお問い合わせフォーム（メール送信機能付き）、SNS連携、
+                                    複雑なアニメーション（スクロールトリガー、インタラクションアニメーションなど）
+                                </li>
+
+                                <h4>素材提供</h4>
+                                <li>
+                                    クライアント様から提供いただいた素材＋無料 or 有料素材の提案・選定
+                                </li>
+
+                                <h4>SEO対策</h4>
+                                <li>
+                                    キーワード調査＋競合分析を含む高度なSEO対策
+                                </li>
+
+                                <h4>使用ツール</h4>
+                                <li>
+                                    WordPress / Standard（カスタム投稿タイプやプラグイン設定含む）
+
+                                </li>
+
+                                <h4>納期</h4>
+                                <li>
+                                    4～6週間
+                                </li>
+
+                                <h4>修正回数</h4>
+                                <li>
+                                    3回まで
+                                    <br>
+                                    ※場合によっては別途修正費をご請求いたします。
+                                </li>
+                            </ol>
+
+                        </div>
+                    </div>
+
+                    <!---- 02 HP ------------------------------>
+                    <div id="second" class="se-box">
+                        <div id="content2" class="container">
+
+                            <!---- HP Economy ------------------------------>
+                            <h3>HP Economy Plan / <span></span>55,000円～</h3>
+                            <ol>
+                                <h4>ページ構成</h4>
+                                <li>
+                                    1～3ページのシンプルな静的サイト（トップページ＋基本情報ページ＋お問い合わせページ）
+                                </li>
+
+                                <h4>デザイン</h4>
+                                <li>
+                                    テンプレートベースのシンプルなデザイン、基本的な色調調整
+                                </li>
+
+                                <h4>機能</h4>
+                                <li>
+                                    レスポンシブ対応（スマホ、PC）、Contactフォームの設置、SNS連携
+                                </li>
+
+                                <h4>素材提供</h4>
+                                <li>
+                                    クライアント様から提供いただいた素材（画像・ロゴ・テキスト）またはフリー素材を使用
+                                </li>
+
+                                <h4>SEO対策</h4>
+                                <li>
+                                    基本的なSEO対応（メタタグ設定、タイトルと説明文の最適化）
+                                </li>
+
+                                <h4>使用ツール</h4>
+                                <li>
+                                    WordPress / Standard
+                                </li>
+
+                                <h4>納期</h4>
+                                <li>
+                                    約2～3週間
+                                </li>
+
+                                <h4>修正回数</h4>
+                                <li>
+                                    2回まで
+                                    <br>
+                                    ※場合によっては別途修正費をご請求いたします。
+                                </li>
+                            </ol>
+
+                            <!---- HP Standard ------------------------------>
+                            <h3>HP Standard Plan / <span></span>110,000円～</h3>
+                            <ol>
+                                <h4>ページ構成</h4>
+                                <li>
+                                    最大5ページのサイト（トップページ、サービス概要、会社情報、ブログ機能、お問い合わせページ）
+                                </li>
+
+                                <h4>デザイン</h4>
+                                <li>
+                                    提供素材を基にしたカスタムデザイン、シンプルかつプロフェッショナルな外観
+                                </li>
+
+                                <h4>機能</h4>
+                                <li>
+                                    レスポンシブ対応（スマホ、タブレット、PC）、Contactフォームの設置、SNS連携、
+                                    簡単なアニメーション（フェードイン、スクロールアニメーション）
+                                </li>
+
+                                <h4>素材提供</h4>
+                                <li>
+                                    クライアント様から提供いただいた素材、または無料素材の提案・選定
+                                </li>
+
+                                <h4>SEO対策</h4>
+                                <li>
+                                    基本的なキーワード設定、内部リンク構造の最適化
+                                </li>
+
+                                <h4>使用ツール</h4>
+                                <li>
+                                    WordPress / Standard
+                                </li>
+
+                                <h4>納期</h4>
+                                <li>
+                                    3～5週間
+                                </li>
+
+                                <h4>修正回数</h4>
+                                <li>
+                                    2回まで
+                                    <br>
+                                    ※場合によっては別途修正費をご請求いたします。
+                                </li>
+                            </ol>
+
+                            <!---- HP Premium ------------------------------>
+                            <h3>HP Premium Plan / <span></span>165,000円～</h3>
+                            <ol>
+                                <h4>ページ構成</h4>
+                                <li>
+                                    最大7～10ページのサイト（トップページ、サービス、会社情報、ブログ、リクルート情報、お問い合わせページなど）
+                                </li>
+
+                                <h4>デザイン</h4>
+                                <li>
+                                    ブランドに合わせたカスタムデザイン、ロゴや色調の統一性を強化
+                                </li>
+
+                                <h4>機能</h4>
+                                <li>
+                                    レスポンシブ対応（スマホ、タブレット、PC）/ シンプルなお問い合わせフォーム（メール送信機能付き）、SNS連携、
+                                    複雑なアニメーション（スクロールトリガー、インタラクションアニメーションなど）
+                                </li>
+
+                                <h4>素材提供</h4>
+                                <li>
+                                    クライアント様から提供いただいた素材＋無料 or 有料素材の提案・選定
+                                </li>
+
+                                <h4>SEO対策</h4>
+                                <li>
+                                    キーワード調査を含む内部SEO、基本的なパフォーマンス最適化
+                                </li>
+
+                                <h4>使用ツール</h4>
+                                <li>
+                                    WordPress / Standard（カスタム投稿タイプやプラグイン設定含む）
+                                </li>
+
+                                <h4>納期</h4>
+                                <li>
+                                    4～6週間
+                                </li>
+
+                                <h4>修正回数</h4>
+                                <li>
+                                    3回まで
+                                    <br>
+                                    ※場合によっては別途修正費をご請求いたします。
+                                </li>
+                            </ol>
+
+                        </div>
+                    </div>
+
+                    <!---- 03 Custom ------------------------------>
+                    <div id="third" class="se-box">
+                        <div id="content3" class="container">
+                            <h3>Custom Economy / <span></span>72,000円～</h3>
+                            <ol>
+                                <h4>
+                                    LP Economy ＋ バナー制作＋名刺
+                                </h4>
+
+                                <h4>
+                                    ページ構成
+                                </h4>
+                                <li>
+                                    1ページ構成（縦長LP）、5～6セクション
+                                </li>
+
+                                <h4>
+                                    デザイン
+                                </h4>
+                                <li>
+                                    シンプルなテンプレートベース、色調・フォントの基本カスタマイズ
+                                </li>
+
+                                <h4>
+                                    機能
+                                </h4>
+                                <li>
+                                    レスポンシブ対応（スマホ、PC）、Contactフォームの設置、SNS連携
+                                </li>
+
+                                <h4>
+                                    素材提供
+                                </h4>
+                                <li>
+                                    クライアント様から提供いただいた素材（画像・ロゴ・テキスト）またはフリー素材を使用
+                                </li>
+
+                                <h4>
+                                    SEO対策
+                                </h4>
+                                <li>
+                                    基本的なSEO対応（メタタグ設定、タイトルと説明文の最適化）
+                                </li>
+
+                                <h4>
+                                    納期
+                                </h4>
+                                <li>
+                                    2～3週間
+                                </li>
+
+                                <h4>
+                                    修正回数
+                                </h4>
+                                <li>
+                                    2回まで
+                                    <br>
+                                    ※場合によっては別途修正費をご請求いたします。
+                                </li>
+
+                                <h4>
+                                    使用ツール
+                                </h4>
+                                <li>
+                                    WordPress / Standard
+                                </li>
+
+                                <h4>
+                                    バナー制作 / 名刺（両面）
+                                </h4>
+                                <li>
+                                    Canva、Photoshopを使用したデザイン
+                                </li>
+                                <h4>
+                                    納期
+                                </h4>
+                                <li>
+                                    2～3週間
+                                </li>
+                            </ol>
+
+                            <h3>Custom Standard / <span></span>132,000円～</h3>
+                            <ol>
+                                <h4>
+                                    LP型コーポレートサイト
+                                </h4>
+
+                                <h4>
+                                    ページ構成
+                                </h4>
+                                <li>
+                                    1ページ構成（縦長LP）、7～10セクション
+                                </li>
+
+                                <h4>
+                                    デザイン
+                                </h4>
+                                <li>
+                                    オリジナルデザイン、カスタムUI、色調・フォントのカスタマイズ
+                                </li>
+
+                                <h4>
+                                    機能
+                                </h4>
+                                <li>
+                                    レスポンシブ対応（スマホ、タブレット、PC）、Contactフォームの設置、SNS連携、簡単なアニメーション（フェードイン、スクロールアニメーション）
+                                </li>
+
+                                <h4>
+                                    素材提供
+                                </h4>
+                                <li>
+                                    クライアント様から提供いただいた素材、または無料素材の提案・選定
+                                </li>
+
+                                <h4>
+                                    SEO対策
+                                </h4>
+                                <li>
+                                    基本的なキーワード設定、内部リンク構造の最適化
+                                </li>
+
+                                <h4>
+                                    納期
+                                </h4>
+                                <li>
+                                    3～5週間
+                                </li>
+
+                                <h4>
+                                    修正回数
+                                </h4>
+                                <li>
+                                    3回まで
+                                    <br>
+                                    ※場合によっては別途修正費をご請求いたします。
+                                </li>
+
+                                <h4>
+                                    使用ツール
+                                </h4>
+                                <li>
+                                    WordPress / Standard
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!------ 内容 ------>
+            </div>
+        </div>
+
+        <div class="section next-section" id="section5">
+            <h2>Flow</h2>
+            <img src="/img/text-s.png" alt="Precision Design,about,M.Oyama" class="text-a">
+            <p>
+                ご契約から納品までの、おおまかな作業Flowを簡単にご説明しています。
+                ※具体的な作業の流れや手順を知りたい方は、Contact Formからお問い合わせください。
+            </p>
+            <ol>
+                1, 契約まで
+                <li>
+                    1-1 問合せ<span>⇀</span>1-2 ヒアリング<span>⇀</span>1-3 見積<span>⇀</span>1-4ご契約
+                </li>
+                2, 制作
+                <li>
+                    2-1 打合せ<span>⇀</span>2-2 デザイン制作 開始<span>⇀</span>2-3 デザイン案 確認＆修正<span>⇀</span>2-4 デザイン 実装
+                </li>
+                3, 納品
+                <li>
+                    3-1 表示確認<span>⇀</span>3-2 納品<span>⇀</span>3-3 アフターフォロー
+                </li>
+            </ol>
+            <div class="sec-a">
+                <a href="#" onclick="showSection('section1')">Service Top.</a>
+                <a href="#" onclick="showSection('section2')">Contents.</a>
+                <a href="#" onclick="showSection('section3')">Option.</a>
+                <a href="#" onclick="showSection('section4')">Plan.</a>
+            </div>
+
+            <div class="bt-text"></div>
+
+            <div class="bottom-btn">
+                <button class="back"><a href="#" onclick="showSection('section4')"><span
+                            class="arrow"><span></span></span></a></button>
+                <button class="next"><a href="#" onclick="showSection('section1')"><span
+                            class="arrow"><span></span></span></a></button>
+            </div>
+            <div class="left-text">PD_Service - Flow</div>
+            <div class="right-text">05</div>
+        </div>
+    </main>
+    <p style="color: var(--bg); position: absolute; right: 23vmin; bottom: 1rem;">©Precision Design</p>
+
+</body>
+
+</html>

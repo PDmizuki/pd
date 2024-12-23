@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiple Modals (jQuery)</title>
+<style>
+/* モーダルの背景 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* モーダルのスタイル */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s;
+}
+
+/* モーダルが表示されるとき */
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 閉じるボタン */
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+/* ボタンスタイル */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<a href="#" class="button" data-modal="modal1">Open Modal 1</a>
+<a href="#" class="button" data-modal="modal2">Open Modal 2</a>
+
+<!-- モーダルと背景 -->
+<div class="modal-overlay"></div>
+
+<div class="modal" id="modal1">
+    <button class="close">&times;</button>
+    <h2>Modal 1</h2>
+    <p>This is the content inside Modal 1.</p>
+</div>
+
+<div class="modal" id="modal2">
+    <button class="close">&times;</button>
+    <h2>Modal 2</h2>
+    <p>This is the content inside Modal 2.</p>
+</div>
+
+<script>
+// jQuery の競合を避ける方法 (noConflict を利用)
+jQuery.noConflict();
+(function ($) {
+    $(function () {
+        // モーダルを開く関数
+        function openModal(modalId) {
+            $("#" + modalId).addClass("show");
+            $(".modal-overlay").addClass("show");
+        }
+
+        // モーダルを閉じる関数
+        function closeModal() {
+            $(".modal").removeClass("show");
+            $(".modal-overlay").removeClass("show");
+        }
+
+        // ボタンをクリックしてモーダルを開く
+        $(".button").on("click", function (e) {
+            e.preventDefault(); // デフォルト動作を無効化
+            const modalId = $(this).data("modal");
+            openModal(modalId);
+        });
+
+        // モーダルの背景や閉じるボタンをクリックして閉じる
+        $(".modal-overlay, .close").on("click", function () {
+            closeModal();
+        });
+    });
+})(jQuery);
+</script>
+
+</body>
+</html>
