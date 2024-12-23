@@ -170,7 +170,7 @@ button:nth-last-of-type(1) {
    justify-content: center;
    align-items: center;
    box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.5);
-   border-image: url(/img/text-bggold.jpg) 100;
+   border-image: url("https://mizukioyama.github.io/pd//img/text-bggold.jpg") 100;
 }
 
 .bottom-btn a:hover {
@@ -184,7 +184,7 @@ button:nth-last-of-type(1) {
    height: 1px;
    position: absolute;
    top: 48.5%;
-   background: url(/img/text-bggold.jpg);
+   background: url("https://mizukioyama.github.io/pd//img/text-bggold.jpg");
    mix-blend-mode: screen;
 }
 
@@ -211,7 +211,7 @@ button:nth-last-of-type(1) {
    right: 0;
    width: 20px;
    height: 2px;
-   background: url(/img/text-bggold.jpg);
+   background: url("https://mizukioyama.github.io/pd//img/text-bggold.jpg");
    transform-origin: calc(100% - 1px) 50%;
 }
 
@@ -281,7 +281,7 @@ button:nth-last-of-type(1) {
    top: 50%;
    left: 100%;
    border-top: 1px solid var(--bg);
-   border-image: url(/img/text-bggold.jpg) 100;
+   border-image: url("https://mizukioyama.github.io/pd//img/text-bggold.jpg") 100;
 }
 
 .right-text {
@@ -312,7 +312,7 @@ button:nth-last-of-type(1) {
    top: 50%;
    right: 40px;
    border-top: 1px solid var(--bg);
-   border-image: url(/img/text-bggold.jpg) 100;
+   border-image: url("https://mizukioyama.github.io/pd//img/text-bggold.jpg") 100;
 }
 
 
