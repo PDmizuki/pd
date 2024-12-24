@@ -332,7 +332,7 @@ nav {
         justify-content: center;
         transform: rotate(90deg);
         transition: color 0.3s ease;
-        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-width: 0.75px;
         -webkit-text-stroke-color: var(--bg);
     }
 

@@ -108,6 +108,7 @@ address {
    --bt: #757575;
    /*border */
    --border: rgba(199, 199, 199, 0.5);
+   color-scheme: light dark;
 }
 
 ::selection {
@@ -134,6 +135,7 @@ address {
 
 /*===================== Scrollbar =====================*/
 
+
 /*===================== body =====================*/
 .pc {
    display: block;
@@ -153,8 +155,8 @@ body {
    text-align: justify;
    width: 100vw;
    height: 100vh;
-   color: var(--bg);
-   background: var(--text);
+   color: light-dark(var(--bg));
+   background: light-dark(var(--text));
    /*   background: url(/img/pd-bg-img05.png);
    background-position: center;
    background-repeat: no-repeat;
@@ -184,7 +186,7 @@ h4 {
    font-optical-sizing: auto;
    font-weight: 400;
    font-style: normal;
-   color: var(--bg);
+   color:  light-dark(var(--bg));
    mix-blend-mode: color-burn;
 }
 
@@ -217,7 +219,7 @@ h3 {
 
 h4 {
    font-size: clamp(1.8rem, calc(1.8rem + 0.5vw), 2rem);
-   color: var(--text);
+   color: light-dark(var(--text));
 }
 
 p {
@@ -294,7 +296,7 @@ a {
    font-family: "futura-pt", sans-serif;
    font-size: clamp(1.8rem, calc(1.8rem + 0.5vw), 2.4rem);
    font-weight: 500;
-   color: var(--text);
+   color: light-dark(var(--text));;
    width: 20vmin;
    height: fit-content;
    text-align: center;
@@ -320,7 +322,7 @@ footer a::after {
    bottom: 5px;
    position: absolute;
    left: 0;
-   background-color: var(--bt);
+   background-color: light-dark(var(--bt));
    transform: scale(0, 1);
    transform-origin: right top;
    transition: transform 0.3s ease;
