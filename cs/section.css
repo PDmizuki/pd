@@ -256,15 +256,15 @@ button:nth-last-of-type(1) {
 
 .left-text {
    text-align: center;
-   width: 25vmin;
+   width: 35vmin;
    top: 50%;
-   left: -10.5vmin;
+   left: -15.65vmin;
    transform: rotate(90deg);
 }
 
 .left-text::before {
    content: "";
-   width: 28vmin;
+   width: 23.1vmin;
    height: 1px;
    position: absolute;
    top: 50%;
@@ -275,7 +275,7 @@ button:nth-last-of-type(1) {
 
 .left-text::after {
    content: "";
-   width: 20vmin;
+   width: 14.85vmin;
    height: 1px;
    position: absolute;
    top: 50%;
