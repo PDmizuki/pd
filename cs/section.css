@@ -429,7 +429,7 @@ button:nth-last-of-type(1) {
 .service .section li span {
    margin: 0 2rem;
 }
-
+/*
 .service .left-text {
    width: 30vmin;
    left: -13vmin;
@@ -441,7 +441,7 @@ button:nth-last-of-type(1) {
 
 .service .left-text::after {
    width: 17.4vmin;
-}
+}*/
 
 .service .modal #wrap #container h3 span::before {
    content: "税込";
