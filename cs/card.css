@@ -88,7 +88,7 @@
    width: 95%;
    padding-left: 2rem;
    display: inline-block;
-   background: url("https://mizukioyama.github.io/pd/img/text-bggold.jpg") no-repeat center center/cover;
+   background: url("https://mizukioyama.github.io/pd/img/text-bggold.jpg") no-repeat center center/contain;
    background-clip: text;
    -webkit-background-clip: text;
    color: transparent;
@@ -101,7 +101,7 @@
    content: "";
    width: 5px;
    height: 1px;
-   background: url("https://mizukioyama.github.io/pd/img/text-bggold.jpg") no-repeat center center/cover;
+   background: url("https://mizukioyama.github.io/pd/img/text-bggold.jpg") no-repeat center center/contain;
    position: absolute;
    top: 50%;
 }
