@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+   <title>PD_Blog / Categories</title>
+   <link rel="icon" href="https://mizukioyama.github.io/pd/hp-img/pd-logo.ico">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+
+   <!-- CSSファイルの読み込み -->
+   <link rel="stylesheet" href="css/blog.css">
+   <link rel="stylesheet" href="css/all.css">
+   <link rel="stylesheet" href="css/menu.css">
+   <link rel="stylesheet" href="css/cursor.css">
+   <link rel="stylesheet" href="css/footer.css">
+   <!-- a -->
+   <link rel="stylesheet" href="https://use.typekit.net/wez8dvq.css">
+   <style>
+
+      .article {
+         margin: 20px 0;
+         padding: 15px;
+         border: 1px solid var(--border);
+         border-radius: 5px;
+      }
+
+      .categories ul {
+         list-style: none;
+         padding: 0;
+      }
+
+      .categories li {
+         margin: 5px 0;
+      }
+
+      .article a {
+         text-align: left;
+         display: inline-block;
+         margin-top: 10px;
+         color: #7b9cbf;
+         text-decoration: none;
+         mix-blend-mode: difference;
+      }
+
+      .article a:hover {
+         text-decoration: underline;
+      }
+
+      #articles-container {
+         width: 80vmin;
+      }
+
+      .categories {
+         width: fit-content;
+         top: 20vmin;
+         left: 20vmin;
+      }
+      .categories h2 {
+         font-size: 2rem;
+         position: relative;
+         left: -1%;
+      }
+      .categories a {
+         text-align: left;
+         font-size: 1.8rem;
+      }
+
+      section {
+         border: none;
+      }
+
+      h2 {
+         line-height: 8rem;
+         -webkit-text-stroke-width: 0;
+      }
+   </style>
+
+   <!-- jQueryの読み込み -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="js/cursor.js"></script>
+   <script src="js/menu.js"></script>
+   <script src="js/cursor.js"></script>
+
+   <!--Search-->
+   <meta name="description" content="想いを形に、こだわりをデザインする。">
+   <meta name="keywords" content="Precision Design, こだわり, デザイン, 想い, 伝える">
+   <!--cash-->
+   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+   <meta http-equiv="Pragma" content="no-cache">
+   <meta http-equiv="Expires" content="0">
+   <!--Referrer-Policy-->
+   <meta name="referrer" content="strict-origin">
+   <!--HSTS-->
+   <meta http-equiv="Strict-Transport-Security" content="max-age=31536000">
+   <!--CSP-->
+</head>
+
+<body oncontextmenu="return false;" class="blog-top">
+   <div id="header-container"></div>
+
+   <!-- カテゴリー一覧 -->
+   <section class="categories">
+      <h2>カテゴリー</h2>
+      <ul>
+         <li><a href="categories.html?category=works">Works</a></li>
+         <li><a href="categories.html?category=results">実績</a></li>
+         <li><a href="categories.html?category=design">デザイン</a></li>
+         <li><a href="categories.html?category=web">Web制作</a></li>
+         <li><a href="categories.html?category=seo">SEO</a></li>
+         <li><a href="categories.html?category=marketing">マーケティング</a></li>
+         <li><a href="categories.html?category=business-support">個人事業サポート</a></li>
+      </ul>
+   </section>
+
+   <!-- カテゴリーに応じたブログ記事 -->
+   <h1>Category:<span id="category-name"></span></h1>
+   <div id="articles-container"></div>
+
+   <div id="footer-container"></div>
+
+   <script>
+      document.addEventListener('DOMContentLoaded', function () {
+         // JSONデータ（例: サーバーやAPIから取得可能）
+         const blogPosts = [
+            //{
+            //   title: "Works Blog 1",
+            //   content: "Works content 1",
+            //   category: "works",
+            //   url: "blog-details.html?id=1"
+            //},
+            //{
+            //   title: "実績 Blog 1",
+            //   content: "実績 content 1",
+            //   category: "results",
+            //   url: "blog-details.html?id=2"
+            //},
+            {
+               title: "デザイン Blog",
+               content: "category : デザイン基礎 UI/UX",
+               category: "design",
+               url: "blog_design.html"
+            },
+            //{
+            //   title: "Web制作",
+            //   content: "Web制作 デザイン",
+            //   category: "web",
+            //   url: "blog-details.html?id=4"
+            //},
+            {
+               title: "SEO対策の基本",
+               content: "category : SEO",
+               category: "seo",
+               url: "https://mizukioyama.github.io/pd/blog_seo.html"
+            },
+            {
+               title: "キーワードリサーチ",
+               content: "category : SEO / Keyword",
+               category: "seo",
+               url: "https://mizukioyama.github.io/pd/blog_seo_keyword.html"
+            },
+            {
+               title: "高品質なコンテンツ作成",
+               content: "category : SEO / Contents",
+               category: "seo",
+               url: "blog_seo-contents.html"
+            },
+            //{
+            //   title: "マーケティング Blog 1",
+            //   content: "マーケティング content 1",
+            //   category: "marketing",
+            //   url: "blog-details.html?id=6"
+            //}
+            //{
+            //   title: "個人事業サポート Blog 1",
+            //   content: "個人事業サポート content 1",
+            //   category: "business-support",
+            //   url: "blog-details.html?id=7"
+            //}
+         ];
+
+         // URLパラメータからカテゴリを取得
+         const urlParams = new URLSearchParams(window.location.search);
+         const category = urlParams.get('category');
+         const categoryNameElement = document.getElementById('category-name');
+         const articlesContainer = document.getElementById('articles-container');
+
+         // カテゴリ名を表示
+         if (category) {
+            categoryNameElement.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+         } else {
+            categoryNameElement.textContent = 'All';
+         }
+
+         // 指定されたカテゴリに応じた記事を表示
+         const filteredPosts = blogPosts.filter(post => !category || post.category === category);
+
+         if (filteredPosts.length > 0) {
+            filteredPosts.forEach(post => {
+               const articleDiv = document.createElement('div');
+               articleDiv.className = 'article';
+               articleDiv.innerHTML = `
+                  <h2>${post.title}</h2>
+                  <p>${post.content}</p>
+                  <a href="${post.url}" target="_blank">続きを読む</a>
+               `;
+               articlesContainer.appendChild(articleDiv);
+            });
+         } else {
+            articlesContainer.innerHTML = '<p>該当する記事がありません。</p>';
+         }
+      });
+   </script>
+</body>
+
+</html>

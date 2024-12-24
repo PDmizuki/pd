@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>PD_Blog / SEO / Keyword</title>
+  <link rel="icon" href="https://mizukioyama.github.io/pd/hp-img/pd-logo.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- CSSファイルの読み込み -->
+  <link rel="stylesheet" href="css/blog.css">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/cursor.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/tab.css">
+  <link rel="stylesheet" href="css/loading.css">
+  <!-- a -->
+  <link rel="stylesheet" href="https://use.typekit.net/wez8dvq.css">
+
+  <!-- jQueryの読み込み -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- JavaScriptファイルの読み込み -->
+  <script src="js/menu.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/tab.js"></script>
+  <script src="js/loading.js"></script>
+  <script src="js/blog.js"></script>
+
+  <!--Search-->
+  <meta name="description" content="想いを形に、こだわりをデザインする。">
+  <meta name="keywords" content="Precision Design, こだわり, デザイン, 想い, 伝える">
+  <!--cash-->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <!--Referrer-Policy-->
+  <meta name="referrer" content="strict-origin">
+  <!--HSTS-->
+  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000">
+  <!--CSP-->
+</head>
+
+<!--作品保護-->
+
+<body oncontextmenu="return false;" class="blog">
+  <div id="header-container"></div>
+  <!-- Main -->
+  <main class="main" id="content" style="opacity: 0; visibility: hidden;">
+    <aside class="sidebar">
+      <section class="categories">
+        <h2>カテゴリー</h2>
+        <ul>
+           <li><a href="categories.html?category=works">Works</a></li>
+           <li><a href="categories.html?category=results">実績</a></li>
+           <li><a href="categories.html?category=design">デザイン</a></li>
+           <li><a href="categories.html?category=web-development">Web制作</a></li>
+           <li><a href="categories.html?category=seo">SEO</a></li>
+           <li><a href="categories.html?category=marketing">マーケティング</a></li>
+           <li><a href="categories.html?category=business-support">個人事業サポート</a></li>
+        </ul>
+      </section>
+      <section class="toc">
+         <h2>目次</h2>
+         <ul id="toc-list"></ul>
+      </section>
+    </aside>
+
+    <!-- Hero -->
+    <article>
+      <img src="thumbnail.jpg" alt="記事のサムネイル">
+    <section class="tabs">
+      <div class="top-s">
+        <div class="top-h1 noise">
+          <h1>Keyword選定</h1>
+        </div>
+        <div class="article-meta">
+          <span class="category"><a href="https://mizukioyama.github.io/pd/blog_top.html">SEO</a></span>
+          <span class="genre">ジャンル：デジタルマーケティング</span>
+       </div>
+       <p>
+        この記事では、SEOのキーワードについて説明します。
+        キーワードリサーチはSEO対策の基盤であり、ターゲットとするユーザーが検索エンジンでどのような言葉やフレーズを使っているのかを特定する作業です。
+        ここでは、再現性の高い手順を具体的に解説します。
+      </p>
+      </div>
+      <!-- tab list -->
+      <div class="tabs-container noise">
+        <a class="tab" href="#tab-1">ゴール</a>
+        <a class="tab" href="#tab-2">作成</a>
+        <a class="tab" href="#tab-3">分析</a>
+        <a class="tab" href="#tab-4">選定</a>
+        <a class="tab" href="#tab-5">再現例</a>
+        <a class="tab" href="#tab-6">まとめ</a>
+        <span class="tab-slider"></span>
+      </div>
+    </section>
+
+    <section class="slide section1" id="tab-1">
+      <div class="top-s">
+        <div class="h2-bg">
+          <h2>ゴールの明確化</h2>
+        </div>
+        <div class="fade_bottom">
+          <ol>
+            <li>目的：あなたのブログ記事で何を伝えたいのか（例：SEOの基本を解説する）。</li>
+            <li>ターゲット：誰に向けて書くのか（例：SEO初心者、中小企業経営者など）。</li>
+            <li>ゴール：ユーザーが記事を読んだ後に何を得るのか（例：具体的なSEO実践方法を学ぶ）。</li>
+          </ol>
+          <p>
+              これらを明確にすることで、リサーチの方向性を定めます。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide section2" id="tab-2">
+      <div class="top-s">
+        <div class="h2-bg">
+          <h2>キーワード案を作成する</h2>
+        </div>
+        <div class="fade_bottom">
+            <p>
+               以下の手法でキーワードの候補をリストアップを行います。
+            </p>
+            <ol>
+              (1) 自分で考える
+              <li>
+                  まずは、記事のテーマに関連するキーワードを自由に書き出します。
+                  例：「SEOの基本」「キーワードリサーチの方法」「初心者向けSEO」「検索順位の上げ方」
+              </li>
+              (2) サジェスト機能を利用
+              <li>
+                  Google検索窓にキーワードを入力すると、検索候補（サジェスト）が表示されます。
+                  これを利用して、実際に検索されているフレーズを確認します。
+              </li>
+              「SEO 基本」と入力すると表示される例
+              <li>SEO 基本とは</li>
+              <li>SEO 基本 初心者</li>
+              <li>SEO 基本チェックリスト</li>
+              (3) 関連キーワードを確認
+              <li>
+                  Googleの検索結果ページの最下部には「他の人はこちらも検索」という関連キーワードが表示されます。
+                  これもリストアップしましょう。
+              </li>
+              SEOの基本で表示される関連キーワードの例
+              <li>SEO チェックツール</li>
+              <li>SEO 記事の書き方</li>
+              <li>SEO 初心者向けガイド</li>
+            </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide section3" id="tab-3">
+      <div class="top-s">
+        <div class="h2-bg">
+          <h2>キーワード分析</h2>
+        </div>
+        <p>
+            次に、リストアップしたキーワードをツールを使って分析します。
+        </p>
+        <ol>
+            (1)<a href="https://ads.google.com/intl/ja_jp/home/tools/keyword-planner/" target="_blank">Googleキーワードプランナー</a>
+            <br>
+              Googleが無料で提供しているツールです。
+              このツールを使うと以下の情報を取得できます。
+            <li>月間検索ボリューム（そのキーワードがどのくらい検索されているか）</li>
+            <li>競合性（そのキーワードの広告競争率）</li>
+            <li>推奨される関連キーワード</li>
+            <li>
+              使い方<br>
+              Googleキーワードプランナーにログイン。<br>
+              「新しいキーワードを見つける」から、リストアップしたキーワードを入力。
+              提示された関連キーワードと検索ボリュームを確認。
+            </li>
+
+            (2)<a href="https://app.neilpatel.com/ja/dashboard" target="_blank">Ubersuggest</a>
+            <br>
+              Neil Patelが提供するツールで、無料プランでも基本的なキーワードデータが取得できます。
+            <li>
+              特徴：キーワードの検索ボリューム、SEO難易度、クリック率（CTR）などを表示。
+            </li>
+
+            その他<a href="https://rakkokeyword.com/" target="_blank">ラッコキーワード</a>
+        </ol>
+      </div>
+    </section>
+
+    <section class="slide section4" id="tab-4">
+      <div class="top-s">
+        <div class="h2-bg">
+          <h2>キーワード選定</h2>
+        </div>
+        <p>
+            収集したデータをもとに、以下の基準でキーワードを選びます。
+        </p>
+        <ol>
+            検索ボリュームが中程度のものを選ぶ
+            <li>
+              ボリュームが多すぎると競合が多く、初心者には不向き。
+            </li>
+            <li>逆に少なすぎるとアクセスが期待できない。</li>
+            <li>例：「SEO 基本 チェックリスト」（月間検索数：1,000〜5,000程度）。</li>
+
+            具体性の高いロングテールキーワードを選ぶ
+            <li>2〜4語で構成される具体的なフレーズは競合が少なく、ターゲットを絞りやすい。</li>
+            <li>例：「SEO 初心者 基本的なやり方」</li>
+
+            競合を分析する
+            <li>実際に選んだキーワードで検索し、上位表示されているサイトを調査。</li>
+            <li>自分の記事でその競合よりも優れた内容を提供できるかを検討。</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="slide section5" id="tab-5">
+      <div class="top-s">
+        <div class="h2-bg">
+          <h2>プロセスの再現例</h2>
+        </div>
+        <p>
+            テーマ：初心者向けSEOの基本
+        </p>
+        <ol>選定キーワード
+
+            <li>SEO 基本 チェックリスト</li>
+            <li>SEO 初心者</li>
+            <li>SEO やり方 初心者</li>
+
+            記事構成 例
+            <br>
+              1,タイトル
+            <li>
+              SEO初心者向け！基本から学ぶチェックリストと実践方法
+            </li>
+
+            2, 見出し
+            <li>H1：SEO初心者が知っておくべき基本とは？</li>
+            <li>H2：キーワードリサーチの具体的な手順</li>
+            <li>H3：チェックリスト：これだけ押さえれば大丈夫！</li>
+            3, 本文
+            <li>キーワードを自然に使いながら、具体的な説明とステップを提供。</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="slide section6" id="tab-6">
+      <div class="top-s">
+        <div class="h2-bg">
+          <h2>まとめ</h2>
+        </div>
+          <p>
+            サイトの読み込み速度は、ユーザーエクスペリエンス（UX）だけでなく、SEOにも大きな影響を与えます。
+            読み込みが遅いサイトは検索エンジンからの評価が下がり、離脱率も増加します。以下の改善策を実施しましょう。
+          </p>
+          <ol>
+            <li>
+               画像の圧縮やWebP形式への変換。
+            </li>
+            <li>
+               JavaScriptやCSSの最適化。
+            </li>
+            <li>
+               キャッシュ機能の利用。
+            </li>
+         </ol>
+      </div>
+    </section>
+
+    <section class="articles">
+      <h2>最新記事</h2>
+      <div class="article-card">
+         <img src="thumbnail1.jpg" alt="ブログ記事 画像">
+         <h3><a href="blog_design.html">デザイン</a></h3>
+         <p>記事の概要説明がここに入ります。</p>
+      </div>
+      <div class="article-card">
+         <img src="thumbnail2.jpg" alt="記事2">
+         <h3><a href="blog_seo.html">SEO</a></h3>
+         <p>記事の概要説明がここに入ります。</p>
+      </div>
+   </section>
+   
+  </article>
+  </main>
+
+  <div id="footer-container"></div>
+
+</body>
+
+</html>
