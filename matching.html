@@ -365,6 +365,26 @@
             }
         }
 
+        function sendAnswersToSheet() {
+    const url = "https://script.google.com/macros/s/AKfycbxIIpJKTzXdLKKsH_MNTZDVe8at7evfo3mlo0-LrGUo4xFSN88TawncZVtHddxXFW2f/exec";
+    const data = { selectedAnswers };
+
+    fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+    })
+    .then(response => response.text())
+    .then(result => {
+        console.log("回答が保存されました:", result);
+    })
+    .catch(error => {
+        console.error("エラーが発生しました:", error);
+    });
+}
+
         // 結果を表示する関数
         function displayResult() {
             const resultContainer = document.getElementById("result-container");
@@ -400,6 +420,9 @@
             // リロードボタンの設定
             const reloadButton = document.getElementById("reload-button");
             reloadButton.onclick = () => location.reload();
+
+            // スプレッドシートに回答を送信
+            sendAnswersToSheet();
         }
 
         // アドバイス生成関数（例）
