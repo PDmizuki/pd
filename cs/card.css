@@ -33,7 +33,7 @@
    padding: 0.5rem;
    background:
    linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(20, 20, 20, 0.4) 100%),
-   url(/img/original-bg01.png);
+   url("https://mizukioyama.github.io/pd/img/original-bg01.png");
    border-radius: 8px;
    background-size: cover;
    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
@@ -58,7 +58,7 @@
    width: 360px;
    height: 235px;
    background:
-      url(/img/pd-bg-img02.png);
+      url("https://mizukioyama.github.io/pd/img/pd-bg-img02.png");
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
@@ -88,20 +88,20 @@
    width: 95%;
    padding-left: 2rem;
    display: inline-block;
-   background: url(/img/text-bggold.jpg) no-repeat center center/cover;
+   background: url("https://mizukioyama.github.io/pd/img/text-bggold.jpg") no-repeat center center/cover;
    background-clip: text;
    -webkit-background-clip: text;
    color: transparent;
    mix-blend-mode: plus-lighter;
    border-bottom: 1px solid;
-   border-image: url(/img/text-bggold.jpg) 100;
+   border-image: url("https://mizukioyama.github.io/pd/img/text-bggold.jpg") 100;
 }
 
 .card-content h3::before {
    content: "";
    width: 5px;
    height: 1px;
-   background: url(/img/text-bggold.jpg) no-repeat center center/cover;
+   background: url("https://mizukioyama.github.io/pd/img/text-bggold.jpg") no-repeat center center/cover;
    position: absolute;
    top: 50%;
 }
