@@ -132,7 +132,7 @@ input:-webkit-autofill:focus {
    font-family: sans-serif;
    line-height: 1.2;
    color: var(--bg);
-   width: 41vmin;
+   width: 39vmin;
    z-index: 1;
 }
 
