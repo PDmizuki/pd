@@ -287,7 +287,6 @@ main {
 /*===================== a =====================*/
 
 main a {
-   border: 1px solid;
    padding-bottom: 0.5rem;
    letter-spacing: 0.15rem;
 }
@@ -358,8 +357,8 @@ main .button::after {
 }
 
 main .button::before {
-   top: -6px;
-   left: -6px;
+   top: -3px;
+   left: -3px;
 }
 
 main .button::after {
