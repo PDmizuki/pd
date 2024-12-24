@@ -296,7 +296,7 @@ a {
    font-family: "futura-pt", sans-serif;
    font-size: clamp(1.8rem, calc(1.8rem + 0.5vw), 2.4rem);
    font-weight: 500;
-   color: light-dark(var(--text));
+   color: var(--text);
    width: 20vmin;
    height: fit-content;
    text-align: center;
