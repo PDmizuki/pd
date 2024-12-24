@@ -354,12 +354,12 @@ main .button::after {
    border: 1px solid var(--bg);
    width: 100%;
    height: 100%;
-   transition: .3s;
+   transition: 0.3s;
 }
 
 main .button::before {
-   top: -5px;
-   left: -5px;
+   top: -6px;
+   left: -6px;
 }
 
 main .button::after {
@@ -371,10 +371,6 @@ main .button:hover::before,
 main .button:hover::after {
    top: 0;
    left: 0;
-}
-
-main .button::after {
-   display: none;
 }
 
 form a {
