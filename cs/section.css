@@ -181,7 +181,7 @@ button:nth-last-of-type(1) {
    height: 1px;
    position: absolute;
    top: 48.5%;
-   background: url("https://mizukioyama.github.io/pd/img/text-bggold.jpg") no-repeat center center/contain;
+   background: url("https://mizukioyama.github.io/pd/img/text-bggold.jpg") no-repeat center center/cover;
    mix-blend-mode: screen;
 }
 
@@ -208,7 +208,7 @@ button:nth-last-of-type(1) {
    right: 0;
    width: 20px;
    height: 2px;
-   background: url("https://mizukioyama.github.io/pd//img/text-bggold.jpg") no-repeat center center/contain;
+   background: url("https://mizukioyama.github.io/pd//img/text-bggold.jpg") no-repeat center center/cover;
    transform-origin: calc(100% - 1px) 50%;
 }
 

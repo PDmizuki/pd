@@ -33,9 +33,8 @@
    padding: 0.5rem;
    background:
    linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(20, 20, 20, 0.4) 100%),
-   url("https://mizukioyama.github.io/pd/img/original-bg01.png");
+   url("https://mizukioyama.github.io/pd/img/original-bg01.png") no-repeat center center/cover;
    border-radius: 8px;
-   background-size: cover;
    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
    transition: all 0.5s ease;
 }
@@ -58,10 +57,7 @@
    width: 360px;
    height: 235px;
    background:
-      url("https://mizukioyama.github.io/pd/img/pd-bg-img02.png");
-   background-size: cover;
-   background-position: center;
-   background-repeat: no-repeat;
+      url("https://mizukioyama.github.io/pd/img/pd-bg-img02.png") no-repeat center center/cover;
    border-radius: 8px;
    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.75);
    overflow: hidden;
@@ -88,7 +84,7 @@
    width: 95%;
    padding-left: 2rem;
    display: inline-block;
-   background: url("https://mizukioyama.github.io/pd/img/text-bggold.jpg") no-repeat center center/contain;
+   background: url("https://mizukioyama.github.io/pd/img/text-bggold.jpg") no-repeat center center/cover;
    background-clip: text;
    -webkit-background-clip: text;
    color: transparent;
@@ -101,7 +97,7 @@
    content: "";
    width: 5px;
    height: 1px;
-   background: url("https://mizukioyama.github.io/pd/img/text-bggold.jpg") no-repeat center center/contain;
+   background: url("https://mizukioyama.github.io/pd/img/text-bggold.jpg") no-repeat center center/cover;
    position: absolute;
    top: 50%;
 }
