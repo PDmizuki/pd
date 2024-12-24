@@ -291,7 +291,7 @@ nav {
         width: clamp(3%, 10%, 4%);
         height: 100%;
         top: 0;
-        left: 1.5%;
+        left: 0;
         border: 1px solid var(--border);
         border-left: 10px solid var(--border);
         /*background-image:
