@@ -155,7 +155,7 @@ body {
    height: 100vh;
    color: var(--bg);
    background: var(--text);
-/*   background: url(/img/pd-bg-img05.png);
+   /*   background: url(/img/pd-bg-img05.png);
    background-position: center;
    background-repeat: no-repeat;
    background-size: contain;*/
@@ -418,4 +418,34 @@ form a {
    border-bottom: 1px solid;
    border-image: url("https://mizukioyama.github.io/pd/img/text-bggold.jpg") 100;
    mix-blend-mode: screen;
+}
+
+/*===================== noize =====================*/
+
+.noise {
+   background: linear-gradient(to bottom right, var(--bg), var(--text)) fixed;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: darkgray;
+   --lines: 0.0003px;
+   mask: repeating-radial-gradient(circle at center,
+         #000,
+         var(--lines),
+         #000,
+         0,
+         #0000,
+         calc(var(--lines) * 2),
+         #0000 0);
+   /* フォールバック：マスクがサポートされない場合の背景色 */
+   background-color: lightgray;
+   color: var(--text);
+   /* フォールバック用のテキスト色 */
+}
+
+@media (prefers-color-scheme: light) {
+   .noise {
+      background: linear-gradient(to bottom, black, gray) fixed;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: darkgray;
+      color: var(--bg);
+   }
 }
