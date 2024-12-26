@@ -397,7 +397,8 @@ function sendToServer() {
       headers: {
           "Content-Type": "application/json"
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
+      mode: "cors" // CORSモードを有効にする
    })
    .then(response => response.json())
    .then(data => {
@@ -411,9 +412,8 @@ function sendToServer() {
    .catch(error => {
        console.error("送信エラー:", error); // デバッグ用ログ
        alert("データ送信中にエラーが発生しました。");
-   });
+   });   
 }
-
 
 //送信完了後＝送信完了しました
 //99前にこちらからの連絡は希望しますか？
