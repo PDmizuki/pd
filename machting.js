@@ -204,7 +204,7 @@ function displayResult() {
    // アドバイスを生成して表示
    const advice = generateAdvice();
 
-   document.getElementById("submit-button").onclick = sendToServer();
+   document.getElementById("submit-button").onclick = sendToServer;
    document.getElementById("reload-button").onclick = () => location.reload();
 }
 
@@ -374,61 +374,53 @@ document.addEventListener("DOMContentLoaded", () => {
    displayQuestion();
 });
 
-// データをスプレッドシートに送信する関数
+// ボタンのクリックイベントを設定
+document.getElementById("submit-button").addEventListener("click", sendToServer);
 
-// Google Apps ScriptのURL
-// データをGoogle Apps Scriptに送信
+// サーバーにデータを送信する関数
 function sendToServer() {
-   const name = document.getElementById("name")?.value.trim() || "未入力";
-   const address = document.getElementById("address")?.value.trim() || "未入力";
-   const advice = document.getElementById("advice-content").textContent;
+  const name = document.getElementById("name").value.trim() || "未入力";
+  const address = document.getElementById("address").value.trim() || "未入力";
+  const advice = document.getElementById("advice-content").textContent || "なし";
 
-   const data = {
-      name,
-      address,
-      answers: selectedAnswers,
-      advice,
-   };
+  // 送信するデータ
+  const data = {
+    name,
+    address,
+    answers: selectedAnswers || {}, // 事前に定義された選択回答を送信
+    advice,
+  };
 
-   function sendToServer() {
-      const data = {
-        name: document.getElementById("name")?.value.trim() || "未入力",
-        address: document.getElementById("address")?.value.trim() || "未入力",
-        answers: selectedAnswers,
-        advice: document.getElementById("advice-content").textContent || "なし",
-      };
-    
-      console.log("送信ボタンがクリックされました");
-    
-      fetch("https://script.google.com/macros/s/AKfycbzoDra1su9Mk2wZy22vh-Z75iHN8YYGsv_FZzzStESAGR8u9f0dMJBV-trbq0QdB8iq/exec", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
-        .then((response) => {
-          if (!response.ok) {
-            console.error("HTTPレスポンスエラー:", response); // レスポンスエラーをログに記録
-            throw new Error(`HTTPエラー: ${response.status}`);
-          }
-          return response.json();
-        })
-        .then((responseData) => {
-          console.log("サーバーのレスポンス:", responseData); // デバッグ用ログ
-          if (responseData.success) {
-            alert("送信が完了しました！");
-          } else {
-            alert("エラーが発生しました: " + responseData.message);
-          }
-        })
-        .catch((error) => {
-          console.error("送信エラー:", error); // デバッグ用ログ
-          alert("データ送信中にエラーが発生しました。");
-        });
-    }
-   }
-    
+  console.log("送信データ:", data); // デバッグ用ログ
+
+  fetch("https://script.google.com/macros/s/AKfycbzoDra1su9Mk2wZy22vh-Z75iHN8YYGsv_FZzzStESAGR8u9f0dMJBV-trbq0QdB8iq/exec", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        console.error("HTTPレスポンスエラー:", response);
+        throw new Error(`HTTPエラー: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((responseData) => {
+      console.log("サーバーのレスポンス:", responseData);
+      if (responseData.success) {
+        alert("送信が完了しました！");
+      } else {
+        alert("エラーが発生しました: " + responseData.message);
+      }
+    })
+    .catch((error) => {
+      console.error("送信エラー:", error);
+      alert("データ送信中にエラーが発生しました。");
+    });
+}
+
 
 //送信完了後＝送信完了しました
 //99前にこちらからの連絡は希望しますか？
