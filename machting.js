@@ -392,28 +392,41 @@ function sendToServer() {
 
    console.log("送信データ:", data); // デバッグ用ログ
 
-   fetch("https://script.google.com/macros/s/AKfycbw0enGaAcBj1WAACs3-7jUIJR6L6OTuZ39N_J1ku7qIo1L6isNthsWGurD65oWmmFYQ/exec", {
-      method: "POST",
-      headers: {
-          "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data),
-      mode: "cors" // CORSモードを有効にする
-   })
-   .then(response => response.json())
-   .then(data => {
-       console.log("サーバーのレスポンス:", data); // デバッグ用ログ
-       if (data.success) {
-           alert("送信が完了しました！");
-       } else {
-           alert("エラーが発生しました: " + data.message);
-       }
-   })
-   .catch(error => {
-       console.error("送信エラー:", error); // デバッグ用ログ
-       alert("データ送信中にエラーが発生しました。");
-   });   
-}
+   function sendToServer() {
+      const data = {
+        name: document.getElementById("name")?.value.trim() || "未入力",
+        address: document.getElementById("address")?.value.trim() || "未入力",
+        answers: selectedAnswers,
+        advice: document.getElementById("advice-content").textContent || "なし",
+      };
+    
+      fetch("https://script.google.com/macros/s/AKfycbzoDra1su9Mk2wZy22vh-Z75iHN8YYGsv_FZzzStESAGR8u9f0dMJBV-trbq0QdB8iq/exec", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTPエラー: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log("サーバーのレスポンス:", data); // デバッグ用ログ
+          if (data.success) {
+            alert("送信が完了しました！");
+          } else {
+            alert("エラーが発生しました: " + data.message);
+          }
+        })
+        .catch((error) => {
+          console.error("送信エラー:", error); // デバッグ用ログ
+          alert("データ送信中にエラーが発生しました。");
+        });
+    }
+    
 
 //送信完了後＝送信完了しました
 //99前にこちらからの連絡は希望しますか？
