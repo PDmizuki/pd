@@ -131,35 +131,25 @@ function displayQuestion() {
    const questionContainer = document.getElementById("question-container");
    const resultContainer = document.getElementById("result-container");
 
-   if (!questionContainer || !resultContainer) {
-      console.error("必要なHTML要素が見つかりません (質問または結果コンテナ)");
-      return;
-   }
-
    questionContainer.style.display = "block";
    resultContainer.style.display = "none";
 
    const question = questions[currentQuestion];
    if (!question) {
-      console.error("質問データが存在しません");
+      console.error("質問が存在しません");
       return;
    }
 
    const questionText = questionContainer.querySelector(".question");
    const optionsContainer = questionContainer.querySelector(".options");
 
-   if (!questionText || !optionsContainer) {
-      console.error("質問または選択肢コンテナが見つかりません");
-      return;
-   }
-
-   questionText.innerHTML = question.text;
+   questionText.textContent = question.text;
    optionsContainer.innerHTML = "";
 
    Object.entries(question.options).forEach(([key, value]) => {
       const li = document.createElement("li");
       const button = document.createElement("button");
-      button.innerHTML = value;
+      button.textContent = value;
       button.onclick = () => handleAnswer(parseInt(key, 10));
       li.appendChild(button);
       optionsContainer.appendChild(li);
@@ -169,25 +159,23 @@ function displayQuestion() {
 // 回答を処理する関数
 function handleAnswer(answer) {
    selectedAnswers[currentQuestion] = answer;
-   const next = questions[currentQuestion]?.next(answer);
 
-   if (next === 99) {
-      confirmAdditionalInfo();
-   } else if (questions[next]) {
-      currentQuestion = next;
+   const nextQuestion = questions[currentQuestion]?.next(answer);
+
+   if (nextQuestion === 99) {
+      showContactForm();
+   } else if (questions[nextQuestion]) {
+      currentQuestion = nextQuestion;
       displayQuestion();
    } else {
-      console.error("次の質問が存在しません");
+      displayResult();
    }
 }
 
-// 追加情報の確認
-function confirmAdditionalInfo() {
-   const additionalInfo = confirm("こちらからの連絡を希望しますか？");
-   if (additionalInfo) {
-      const address = prompt("連絡先（メールアドレス）を入力してください:");
-      if (address) selectedAnswers.address = address;
-   }
+// 追加情報入力フォームの表示
+function showContactForm() {
+   const contactInfo = document.getElementById("contact-info");
+   contactInfo.style.display = "block";
    displayResult();
 }
 
@@ -198,35 +186,27 @@ function displayResult() {
    const resultText = document.getElementById("result-text");
    const adviceContent = document.getElementById("advice-content");
 
-   if (!questionContainer || !resultContainer || !resultText || !adviceContent) {
-      console.error("必要なHTML要素が見つかりません (結果または質問コンテナ)");
-      return;
-   }
-
    questionContainer.style.display = "none";
    resultContainer.style.display = "block";
 
    const formattedAnswers = Object.entries(selectedAnswers)
-      .filter(([key]) => key !== "address")
-      .map(([index, answerIndex]) => {
+      .map(([index, answer]) => {
          const question = questions[index];
-         const answer = question.options[answerIndex];
-         return `質問：${question.text}<br>選んだ答え：${answer}`;
+         const answerText = question.options[answer];
+         return `質問: ${question.text}<br>選んだ答え: ${answerText}`;
       })
       .join("<br><br>");
 
    resultText.innerHTML = `あなたの回答<br>${formattedAnswers}`;
-   adviceContent.innerHTML = generateAdvice();
-   sendToSpreadsheet(selectedAnswers, adviceContent.innerHTML);
+   adviceContent.innerHTML = "アドバイス<br>";
 
-   // リロードボタンの設定
-   const reloadButton = document.getElementById("reload-button");
-   reloadButton.onclick = () => location.reload();
+   document.getElementById("submit-button").onclick = sendToServer;
+   document.getElementById("reload-button").onclick = () => location.reload();
 }
 
 // アドバイスを生成する関数
 function generateAdvice() {
-   let advice = "最終診断結果<br><br>";
+   let advice = "<h2>最終診断結果</h2>";
    for (const questionNumber in selectedAnswers) {
       if (questionNumber !== "address") {
          const answer = selectedAnswers[questionNumber];
@@ -338,7 +318,7 @@ function generateAdvice() {
    // アドバイス内容を HTML に適用
    const adviceContent = document.getElementById("advice-content");
    adviceContent.innerHTML = ""; // 既存内容をクリア
-   adviceContent.innerHTML = advice; // 改行を含めたアドバイスを設定
+   adviceContent.innerHTML = (selectedAnswers, advice); // 改行を含めたアドバイスを設定
 
    // スプレッドシートにデータを送信
    sendToSpreadsheet(selectedAnswers, advice);
@@ -388,76 +368,44 @@ document.addEventListener("DOMContentLoaded", () => {
       displayResult();
    }
 
-   // 結果を表示する関数
-   function displayResult() {
-      const questionContainer = document.getElementById("question-container");
-      const resultContainer = document.getElementById("result-container");
-
-      // 必須要素のチェック
-      if (!questionContainer || !resultContainer) {
-         console.error("必要なHTML要素が見つかりません (結果または質問コンテナ)");
-         return;
-      }
-
-      // 結果画面の表示
-      questionContainer.style.display = "none";
-      resultContainer.style.display = "block";
-
-      // 結果の表示
-      const resultText = document.getElementById("result-text");
-      resultText.innerHTML = "これはサンプル結果です。";
-
-      const adviceContent = document.getElementById("advice-content");
-      adviceContent.innerHTML = "これはサンプルアドバイスです。";
-   }
-
    // 最初の質問を表示
    displayQuestion();
 });
 
 // データをスプレッドシートに送信する関数
-function sendToSpreadsheet(data, advice) {
-   // Google Apps ScriptのURL
-   const scriptURL = "https://script.google.com/macros/s/AKfycbyYu-AWibPhHPXpMjgFDg2xdInxxu0c4BWYdUYTIEFgKqnHmwA8dsyn20gK0nzJ-vI/exec";
 
-   // データ送信関数
-   function sendData() {
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
+// Google Apps ScriptのURL
+// データをGoogle Apps Scriptに送信
+function sendToServer() {
+   const name = document.getElementById("name")?.value.trim() || "未入力";
+   const address = document.getElementById("address")?.value.trim() || "未入力";
+   const advice = document.getElementById("advice-content").textContent;
 
-      if (!name || !email) {
-         alert("名前とメールアドレスを入力してください。");
-         return;
-      }
+   const data = {
+      name,
+      address,
+      answers: selectedAnswers,
+      advice,
+   };
 
-      // 回答結果をまとめる
-      const data = {
-         name,
-         email,
-         answers: JSON.stringify(selectedAnswers),
-         advice: "サンプルアドバイス", // 必要に応じて適切な値を設定
-      };
-
-      fetch(scriptURL, {
-         method: "POST",
-         headers: { "Content-Type": "application/json" },
-         body: JSON.stringify(data),
+   fetch("https://script.google.com/macros/s/AKfycbyYu-AWibPhHPXpMjgFDg2xdInxxu0c4BWYdUYTIEFgKqnHmwA8dsyn20gK0nzJ-vI/exec", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+   })
+      .then((response) => response.json())
+      .then((result) => {
+         if (result.success) {
+            alert("送信が完了しました。");
+            location.reload();
+         } else {
+            alert(`送信エラー: ${result.message}`);
+         }
       })
-         .then((response) => {
-            if (!response.ok) {
-               throw new Error(`サーバーエラー: ${response.status} ${response.statusText}`);
-            }
-            return response.json();
-         })
-         .then((result) => {
-            alert("データが正常に送信されました。ありがとうございます！");
-            console.log("送信結果:", result);
-         })
-         .catch((error) => {
-            alert("データ送信中にエラーが発生しました。");
-            console.error("送信エラー: ", error.message || error);
-         });
-   }
+      .catch((error) => {
+         console.error("送信エラー:", error);
+         alert("データ送信中にエラーが発生しました。");
+      });
 }
 
 //送信完了後＝送信完了しました
