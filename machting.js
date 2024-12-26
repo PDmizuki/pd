@@ -383,6 +383,7 @@ function sendToServer() {
    const name = document.getElementById("name")?.value.trim() || "未入力";
    const address = document.getElementById("address")?.value.trim() || "未入力";
    const advice = document.getElementById("advice-content").textContent;
+   console.log(JSON.stringify(data)); // データをコンソールに出力
 
    const data = {
       name,
