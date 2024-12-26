@@ -184,7 +184,7 @@ function displayResult() {
    const questionContainer = document.getElementById("question-container");
    const resultContainer = document.getElementById("result-container");
    const resultText = document.getElementById("result-text");
-   const adviceContent = document.getElementById("advice-content");
+//   const adviceContent = document.getElementById("advice-content");
 
    questionContainer.style.display = "none";
    resultContainer.style.display = "block";
