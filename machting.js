@@ -393,22 +393,27 @@ function sendToServer() {
 
    fetch("https://script.google.com/macros/s/AKfycbyAYlkTMXDqXHLlzV25TkQ4dz9g-VeuaVMLwvo0BVxjk27U_BTKoCJtaUfrjnGbb32R/exec", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-   })
-      .then((response) => response.json())
-      .then((result) => {
-         if (result.success) {
-            alert("送信が完了しました。");
-            location.reload();
-         } else {
-            alert(`送信エラー: ${result.message}`);
-         }
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+          answers: selectedAnswers, // 回答データ
+          advice: document.getElementById("advice-content").innerText, // アドバイス
+          address: document.getElementById("address")?.value || "" // アドレス
       })
-      .catch((error) => {
-         console.error("送信エラー:", error);
-         alert("データ送信中にエラーが発生しました。");
-      });
+  })
+  .then(response => response.json())
+  .then(data => {
+      if (data.success) {
+          alert("送信が完了しました！");
+      } else {
+          alert("エラーが発生しました: " + data.message);
+      }
+  })
+  .catch(error => {
+      console.error("送信エラー:", error);
+      alert("データ送信中にエラーが発生しました。");
+  });  
 }
 
 //送信完了後＝送信完了しました
