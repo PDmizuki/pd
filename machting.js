@@ -390,8 +390,6 @@ function sendToServer() {
       advice,
    };
 
-   console.log("送信データ:", data); // デバッグ用ログ
-
    function sendToServer() {
       const data = {
         name: document.getElementById("name")?.value.trim() || "未入力",
@@ -399,6 +397,8 @@ function sendToServer() {
         answers: selectedAnswers,
         advice: document.getElementById("advice-content").textContent || "なし",
       };
+    
+      console.log("送信データ:", data); // デバッグ用ログ
     
       fetch("https://script.google.com/macros/s/AKfycbzoDra1su9Mk2wZy22vh-Z75iHN8YYGsv_FZzzStESAGR8u9f0dMJBV-trbq0QdB8iq/exec", {
         method: "POST",
@@ -409,16 +409,17 @@ function sendToServer() {
       })
         .then((response) => {
           if (!response.ok) {
+            console.error("HTTPレスポンスエラー:", response); // レスポンスエラーをログに記録
             throw new Error(`HTTPエラー: ${response.status}`);
           }
           return response.json();
         })
-        .then((data) => {
-          console.log("サーバーのレスポンス:", data); // デバッグ用ログ
-          if (data.success) {
+        .then((responseData) => {
+          console.log("サーバーのレスポンス:", responseData); // デバッグ用ログ
+          if (responseData.success) {
             alert("送信が完了しました！");
           } else {
-            alert("エラーが発生しました: " + data.message);
+            alert("エラーが発生しました: " + responseData.message);
           }
         })
         .catch((error) => {
