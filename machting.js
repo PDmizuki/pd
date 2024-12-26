@@ -204,7 +204,7 @@ function displayResult() {
    // アドバイスを生成して表示
    const advice = generateAdvice();
 
-   document.getElementById("submit-button").onclick = sendToServer;
+   document.getElementById("submit-button").onclick = sendToServer();
    document.getElementById("reload-button").onclick = () => location.reload();
 }
 
