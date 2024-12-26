@@ -201,6 +201,8 @@ function displayResult() {
    // 回答結果を表示
    resultText.innerHTML = `あなたの回答<br>${formattedAnswers}`;
    
+   // アドバイスを生成して表示
+   const advice = generateAdvice();
 
    document.getElementById("submit-button").onclick = sendToServer;
    document.getElementById("reload-button").onclick = () => location.reload();
