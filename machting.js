@@ -383,7 +383,6 @@ function sendToServer() {
    const name = document.getElementById("name")?.value.trim() || "未入力";
    const address = document.getElementById("address")?.value.trim() || "未入力";
    const advice = document.getElementById("advice-content").textContent;
-   console.log(JSON.stringify(data)); // データをコンソールに出力
 
    const data = {
       name,
@@ -392,30 +391,30 @@ function sendToServer() {
       advice,
    };
 
+   console.log("送信データ:", data); // デバッグ用ログ
+
    fetch("https://script.google.com/macros/s/AKfycbxdqNmk6qgDjn68jaQcz_LDBlEPL13ggqeUsKfye44MQeo3KNbLt8r6o2y_YhlVPcuc/exec", {
       method: "POST",
       headers: {
           "Content-Type": "application/json"
       },
-      body: JSON.stringify({
-          answers: selectedAnswers, // 回答データ
-          advice: document.getElementById("advice-content").innerText, // アドバイス
-          address: document.getElementById("address")?.value || "" // アドレス
-      })
-  })
-  .then(response => response.json())
-  .then(data => {
-      if (data.success) {
-          alert("送信が完了しました！");
-      } else {
-          alert("エラーが発生しました: " + data.message);
-      }
-  })
-  .catch(error => {
-      console.error("送信エラー:", error);
-      alert("データ送信中にエラーが発生しました。");
-  });  
+      body: JSON.stringify(data)
+   })
+   .then(response => response.json())
+   .then(data => {
+       console.log("サーバーのレスポンス:", data); // デバッグ用ログ
+       if (data.success) {
+           alert("送信が完了しました！");
+       } else {
+           alert("エラーが発生しました: " + data.message);
+       }
+   })
+   .catch(error => {
+       console.error("送信エラー:", error); // デバッグ用ログ
+       alert("データ送信中にエラーが発生しました。");
+   });
 }
+
 
 //送信完了後＝送信完了しました
 //99前にこちらからの連絡は希望しますか？
