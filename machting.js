@@ -326,9 +326,6 @@ function generateAdvice() {
    adviceContent.innerHTML = ""; // 既存内容をクリア
    adviceContent.innerHTML = (selectedAnswers, advice); // 改行を含めたアドバイスを設定
 
-   // スプレッドシートにデータを送信
-   sendToSpreadsheet(selectedAnswers, advice);
-
    return advice; // 必要に応じて戻り値として返却
 }
 
