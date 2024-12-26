@@ -346,51 +346,6 @@ function generateAdvice() {
    return advice; // 必要に応じて戻り値として返却
 }
 
-// スプレッドシートにデータを送信する関数
-// データ送信関数
-function sendData() {
-   const name = document.getElementById("name").value.trim();
-   const email = document.getElementById("email").value.trim();
-
-   if (!name || !email) {
-      alert("名前とメールアドレスを入力してください。");
-      return;
-   }
-
-   // 回答結果をまとめる
-   const data = {
-      name,
-      email,
-      answers: JSON.stringify(selectedAnswers), // オブジェクトを文字列化
-   };
-
-   // Google Apps ScriptのURL
-   const scriptURL = "https://script.google.com/macros/s/AKfycbyYu-AWibPhHPXpMjgFDg2xdInxxu0c4BWYdUYTIEFgKqnHmwA8dsyn20gK0nzJ-vI/exec";
-
-   // データ送信
-   fetch(scriptURL, {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-         "Content-Type": "application/json",
-      },
-   })
-      .then((response) => {
-         if (!response.ok) {
-            throw new Error("サーバーエラーが発生しました");
-         }
-         return response.json();
-      })
-      .then((result) => {
-         alert("データが正常に送信されました。ありがとうございます！");
-         console.log("送信結果:", result);
-      })
-      .catch((error) => {
-         alert("データ送信中にエラーが発生しました。");
-         console.error("送信エラー:", error);
-      });
-}
-
 
 document.addEventListener("DOMContentLoaded", () => {
    // 質問を表示する関数
