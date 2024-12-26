@@ -215,7 +215,7 @@ function generateAdvice() {
    for (const questionNumber in selectedAnswers) {
       if (questionNumber !== "address") {
          const answer = selectedAnswers[questionNumber];
-         advice += `Q${questionNumber}: ${questions[questionNumber].options[answer]}<br>`;
+         
       }
    }
 
