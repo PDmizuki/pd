@@ -189,20 +189,26 @@ function displayResult() {
    questionContainer.style.display = "none";
    resultContainer.style.display = "block";
 
+   // 選択された回答をフォーマット
    const formattedAnswers = Object.entries(selectedAnswers)
-      .map(([index, answer]) => {
-         const question = questions[index];
-         const answerText = question.options[answer];
-         return `質問: ${question.text}<br>選んだ答え: ${answerText}`;
-      })
-      .join("<br><br>");
+       .map(([index, answer]) => {
+           const question = questions[index];
+           const answerText = question.options[answer];
+           return `質問: ${question.text}<br>選んだ答え: ${answerText}`;
+       })
+       .join("<br><br>");
 
+   // 回答結果を表示
    resultText.innerHTML = `あなたの回答<br>${formattedAnswers}`;
-   adviceContent.innerHTML = "アドバイス<br>";
+   
+   // アドバイスを生成して表示
+   const advice = generateAdvice();
+   adviceContent.innerHTML = `<h3>アドバイス</h3>${advice}`;
 
    document.getElementById("submit-button").onclick = sendToServer;
    document.getElementById("reload-button").onclick = () => location.reload();
 }
+
 
 // アドバイスを生成する関数
 function generateAdvice() {
