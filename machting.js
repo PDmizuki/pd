@@ -391,7 +391,7 @@ function sendToServer() {
       advice,
    };
 
-   fetch("https://script.google.com/macros/s/AKfycbyYu-AWibPhHPXpMjgFDg2xdInxxu0c4BWYdUYTIEFgKqnHmwA8dsyn20gK0nzJ-vI/exec", {
+   fetch("https://script.google.com/macros/s/AKfycbyAYlkTMXDqXHLlzV25TkQ4dz9g-VeuaVMLwvo0BVxjk27U_BTKoCJtaUfrjnGbb32R/exec", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
