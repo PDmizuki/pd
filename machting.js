@@ -390,6 +390,8 @@ function sendToServer() {
       advice,
    };
 
+   document.getElementById("send-button").addEventListener("click", sendToServer);
+
    function sendToServer() {
       const data = {
         name: document.getElementById("name")?.value.trim() || "未入力",
@@ -398,7 +400,7 @@ function sendToServer() {
         advice: document.getElementById("advice-content").textContent || "なし",
       };
     
-      console.log("送信データ:", data); // デバッグ用ログ
+      console.log("送信ボタンがクリックされました");
     
       fetch("https://script.google.com/macros/s/AKfycbzoDra1su9Mk2wZy22vh-Z75iHN8YYGsv_FZzzStESAGR8u9f0dMJBV-trbq0QdB8iq/exec", {
         method: "POST",
