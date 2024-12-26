@@ -390,8 +390,6 @@ function sendToServer() {
       advice,
    };
 
-   document.getElementById("send-button").addEventListener("click", sendToServer);
-
    function sendToServer() {
       const data = {
         name: document.getElementById("name")?.value.trim() || "未入力",
