@@ -184,23 +184,23 @@ function displayResult() {
    const questionContainer = document.getElementById("question-container");
    const resultContainer = document.getElementById("result-container");
    const resultText = document.getElementById("result-text");
-//   const adviceContent = document.getElementById("advice-content");
+   //   const adviceContent = document.getElementById("advice-content");
 
    questionContainer.style.display = "none";
    resultContainer.style.display = "block";
 
    // 選択された回答をフォーマット
    const formattedAnswers = Object.entries(selectedAnswers)
-       .map(([index, answer]) => {
-           const question = questions[index];
-           const answerText = question.options[answer];
-           return `質問: ${question.text}<br>選んだ答え: ${answerText}`;
-       })
-       .join("<br><br>");
+      .map(([index, answer]) => {
+         const question = questions[index];
+         const answerText = question.options[answer];
+         return `質問: ${question.text}<br>選んだ答え: ${answerText}`;
+      })
+      .join("<br><br>");
 
    // 回答結果を表示
    resultText.innerHTML = `あなたの回答<br>${formattedAnswers}`;
-   
+
    // アドバイスを生成して表示
    const advice = generateAdvice();
 
@@ -215,7 +215,7 @@ function generateAdvice() {
    for (const questionNumber in selectedAnswers) {
       if (questionNumber !== "address") {
          const answer = selectedAnswers[questionNumber];
-         
+
       }
    }
 
@@ -327,81 +327,106 @@ function generateAdvice() {
 
    return advice; // 必要に応じて戻り値として返却
 }
+
+submitButton.addEventListener("click", (event) => {
+   event.preventDefault(); // フォーム送信のデフォルト動作を防止
+   sendToServer();
+});
+
+
 document.addEventListener("DOMContentLoaded", () => {
    const submitButton = document.getElementById("submit-button");
    const reloadButton = document.getElementById("reload-button");
 
+   // 送信中かどうかを判定するフラグ
+   let isSubmitting = false;
+
    // 送信ボタンのクリックイベント
    if (submitButton) {
-       submitButton.addEventListener("click", sendToServer);
+      // ボタンの type を "button" に変更 (HTMLで対応していない場合の保険)
+      submitButton.setAttribute("type", "button");
+
+      // リスナーの重複を防止
+      if (!submitButton.hasAttribute("data-listener")) {
+         submitButton.setAttribute("data-listener", "true");
+
+         submitButton.addEventListener("click", async () => {
+            if (isSubmitting) {
+               console.log("送信処理中のため、新たな送信はキャンセルされました。");
+               return;
+            }
+            isSubmitting = true; // フラグを立てる
+            submitButton.disabled = true; // ボタンを一時的に無効化
+
+            try {
+               await sendToServer();
+            } catch (error) {
+               console.error("送信中にエラーが発生しました:", error);
+            }
+
+            isSubmitting = false; // フラグを解除
+            submitButton.disabled = false; // ボタンを再び有効化
+         });
+      }
    } else {
-       console.error("エラー: 'submit-button' が見つかりませんでした。");
+      console.error("エラー: 'submit-button' が見つかりませんでした。");
    }
 
    // リロードボタンのクリックイベント
    if (reloadButton) {
-       reloadButton.addEventListener("click", () => {
-           location.reload();
-       });
+      reloadButton.addEventListener("click", () => {
+         location.reload();
+      });
    }
 });
-
-// ヘッダー生成関数
-function getDefaultJsonHeaders() {
-   return {
-       "Accept": "application/json",
-       "Content-Type": "application/x-www-form-urlencoded",
-   };
-}
 
 // サーバーにデータを送信する関数
 async function sendToServer() {
    const name = document.getElementById("name").value.trim();
    const address = document.getElementById("address").value.trim();
    const advice = document.getElementById("advice-content").textContent || "なし";
- 
+
    // 入力チェック
    if (!name || !address) {
-     alert("氏名とメールアドレスを入力してください。");
-     return;
+      alert("氏名とメールアドレスを入力してください。");
+      return;
    }
- 
+
    // 送信データをURLエンコード形式に変換
    const data = new URLSearchParams({
-     name,
-     address,
-     advice,
+      name,
+      address,
+      advice,
    }).toString();
- 
+
    console.log("送信データ:", data); // デバッグ用ログ
- 
+
    try {
-     const response = await fetch("https://script.google.com/macros/s/AKfycbxjDir0hWBEQJYwBCRIgMEfQQOcqxZz2iLtjHbkX6--LOS1RpOf67UhsVXSHnxiM_ft/exec", {
-       method: "POST",
-       headers: {
-         "Content-Type": "application/x-www-form-urlencoded",
-       },
-       body: data,
-     });
- 
-     if (!response.ok) {
-       throw new Error(`HTTPエラー: ${response.status}`);
-     }
- 
-     const responseData = await response.json();
-     console.log("サーバーからのレスポンス:", responseData);
- 
-     if (responseData.success) {
-       alert("送信が完了しました！");
-     } else {
-       alert("エラーが発生しました: " + responseData.message);
-     }
+      const response = await fetch("https://script.google.com/macros/s/AKfycbxjDir0hWBEQJYwBCRIgMEfQQOcqxZz2iLtjHbkX6--LOS1RpOf67UhsVXSHnxiM_ft/exec", {
+         method: "POST",
+         headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+         },
+         body: data,
+      });
+
+      if (!response.ok) {
+         throw new Error(`HTTPエラー: ${response.status}`);
+      }
+
+      const responseData = await response.json();
+      console.log("サーバーからのレスポンス:", responseData);
+
+      if (responseData.success) {
+         alert("送信が完了しました！");
+      } else {
+         alert("エラーが発生しました: " + responseData.message);
+      }
    } catch (error) {
-     console.error("送信エラー:", error);
-     alert("送信エラーが発生しました。");
+      console.error("送信エラー:", error);
+      alert("送信エラーが発生しました。");
    }
- }
- 
+}
 
 
 
