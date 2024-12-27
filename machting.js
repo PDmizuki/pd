@@ -327,7 +327,6 @@ function generateAdvice() {
 
    return advice; // 必要に応じて戻り値として返却
 }
-
 document.addEventListener("DOMContentLoaded", () => {
    const submitButton = document.getElementById("submit-button");
    const reloadButton = document.getElementById("reload-button");
@@ -347,8 +346,16 @@ document.addEventListener("DOMContentLoaded", () => {
    }
 });
 
+// ヘッダー生成関数
+function getDefaultJsonHeaders() {
+   return {
+       "Accept": "application/json",
+       "Content-Type": "application/x-www-form-urlencoded",
+   };
+}
+
 // サーバーにデータを送信する関数
-function sendToServer() {
+async function sendToServer() {
    const name = document.getElementById("name").value.trim();
    const address = document.getElementById("address").value.trim();
    const advice = document.getElementById("advice-content").textContent || "なし";
@@ -359,42 +366,41 @@ function sendToServer() {
        return;
    }
 
-   // 送信するデータ
-   const data = {
+   // 送信データをURLエンコード形式に変換
+   const data = new URLSearchParams({
        name,
        address,
-       answers: typeof selectedAnswers !== "undefined" ? selectedAnswers : {}, // 未定義チェック
        advice,
-   };
+   }).toString();
 
    console.log("送信データ:", data); // デバッグ用ログ
 
-   fetch("https://script.google.com/macros/s/AKfycbz2-apXU9TB3ifg2-Q4kpyqIz7hYMIqHn6pX2uh-xdwWB1iLetuV_9cX35a3bBbVvGH/exec", {
-       method: "POST",
-       headers: {
-           "Content-Type": "application/json",
-       },
-       body: JSON.stringify({
-         name: "テストユーザー",
-         address: "test@example.com",
-         advice: "テストアドバイス",
-     }),
-   })
-       .then((response) => {
-           if (!response.ok) {
-               throw new Error(`HTTPエラー: ${response.status}`);
-           }
-           return response.json();
-       })
-       .then((data) => {
-         console.log("サーバーからのレスポンス:", data);
-         alert("送信が完了しました！");
-     })
-     .catch((error) => {
-         console.error("送信エラー:", error);
-         alert("送信エラーが発生しました。");
-     });
+   try {
+       // fetchを使用してデータ送信
+       const response = await fetch("https://script.google.com/macros/s/AKfycbz2-apXU9TB3ifg2-Q4kpyqIz7hYMIqHn6pX2uh-xdwWB1iLetuV_9cX35a3bBbVvGH/exec", {
+           method: "POST",
+           headers: getDefaultJsonHeaders(),
+           body: data,
+       });
+
+       if (!response.ok) {
+           throw new Error(`HTTPエラー: ${response.status}`);
+       }
+
+       const responseData = await response.json();
+       console.log("サーバーからのレスポンス:", responseData);
+
+       if (responseData.success) {
+           alert("送信が完了しました！");
+       } else {
+           alert("エラーが発生しました: " + responseData.message);
+       }
+   } catch (error) {
+       console.error("送信エラー:", error);
+       alert("送信エラーが発生しました。");
+   }
 }
+
 
 
 
