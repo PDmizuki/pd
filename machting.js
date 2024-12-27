@@ -377,7 +377,7 @@ async function sendToServer() {
 
    try {
        // fetchを使用してデータ送信
-       const response = await fetch("https://script.google.com/macros/s/AKfycbz2-apXU9TB3ifg2-Q4kpyqIz7hYMIqHn6pX2uh-xdwWB1iLetuV_9cX35a3bBbVvGH/exec", {
+       const response = await fetch("https://script.google.com/macros/s/AKfycbwxAd7chwepfEBfb4CtTHYHNTL-40GPr4d6e9ELVwwEZae9GqXnZd-j5Un6ZwXv3Jae/exec", {
            method: "POST",
            headers: getDefaultJsonHeaders(),
            body: data,
