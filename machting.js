@@ -329,97 +329,63 @@ function generateAdvice() {
 }
 
 
+// ページのDOMが読み込まれた後に実行
 document.addEventListener("DOMContentLoaded", () => {
-   // 質問を表示する関数
-   function displayQuestion() {
-      const questionContainer = document.getElementById("question-container");
-      const resultContainer = document.getElementById("result-container");
-      const answersContainer = document.getElementById("advice-content");
-
-      // 必須要素のチェック
-      if (!questionContainer || !resultContainer) {
-         console.error("必要なHTML要素が見つかりません (質問または結果コンテナ)");
-         return;
-      }
-
-      // 初期表示の設定
-      questionContainer.style.display = "block";
-      resultContainer.style.display = "none";
-
-      // ダミーの質問を表示 (ここに質問データを挿入)
-      questionContainer.querySelector(".question").innerHTML = "これはサンプル質問です。";
-
-      const optionsContainer = questionContainer.querySelector(".options");
-      optionsContainer.innerHTML = "";
-
-      // ダミーの選択肢 (実際のデータに置き換える)
-      const options = { 1: "はい", 2: "いいえ" };
-      Object.entries(options).forEach(([key, value]) => {
-         const li = document.createElement("li");
-         const button = document.createElement("button");
-         button.innerHTML = value;
-         button.onclick = () => handleAnswer(parseInt(key, 10));
-         li.appendChild(button);
-         optionsContainer.appendChild(li);
-      });
+   const submitButton = document.getElementById("submit-button");
+ 
+   // ボタンが存在するかチェック
+   if (submitButton) {
+     // ボタンのクリックイベントを設定
+     submitButton.addEventListener("click", sendToServer);
+   } else {
+     console.error("エラー: 'submit-button' が見つかりませんでした。");
    }
-
-   // 回答処理のダミー関数
-   function handleAnswer(answer) {
-      alert(`回答: ${answer}`);
-      displayResult();
-   }
-
-   // 最初の質問を表示
-   displayQuestion();
-});
-
-// ボタンのクリックイベントを設定
-document.getElementById("submit-button").addEventListener("click", sendToServer);
-
-// サーバーにデータを送信する関数
-function sendToServer() {
-  const name = document.getElementById("name").value.trim() || "未入力";
-  const address = document.getElementById("address").value.trim() || "未入力";
-  const advice = document.getElementById("advice-content").textContent || "なし";
-
-  // 送信するデータ
-  const data = {
-    name,
-    address,
-    answers: selectedAnswers || {}, // 事前に定義された選択回答を送信
-    advice,
-  };
-
-  console.log("送信データ:", data); // デバッグ用ログ
-
-  fetch("https://script.google.com/macros/s/AKfycbzoDra1su9Mk2wZy22vh-Z75iHN8YYGsv_FZzzStESAGR8u9f0dMJBV-trbq0QdB8iq/exec", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  })
-    .then((response) => {
-      if (!response.ok) {
-        console.error("HTTPレスポンスエラー:", response);
-        throw new Error(`HTTPエラー: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then((responseData) => {
-      console.log("サーバーのレスポンス:", responseData);
-      if (responseData.success) {
-        alert("送信が完了しました！");
-      } else {
-        alert("エラーが発生しました: " + responseData.message);
-      }
-    })
-    .catch((error) => {
-      console.error("送信エラー:", error);
-      alert("データ送信中にエラーが発生しました。");
-    });
-}
+ });
+ 
+ // サーバーにデータを送信する関数
+ function sendToServer() {
+   const name = document.getElementById("name").value.trim() || "未入力";
+   const address = document.getElementById("address").value.trim() || "未入力";
+   const advice = document.getElementById("advice-content").textContent || "なし";
+ 
+   // 送信するデータ
+   const data = {
+     name,
+     address,
+     answers: typeof selectedAnswers !== "undefined" ? selectedAnswers : {}, // 事前に定義された選択回答を送信
+     advice,
+   };
+ 
+   console.log("送信データ:", data); // デバッグ用ログ
+ 
+   fetch("https://script.google.com/macros/s/AKfycbzoDra1su9Mk2wZy22vh-Z75iHN8YYGsv_FZzzStESAGR8u9f0dMJBV-trbq0QdB8iq/exec", {
+     method: "POST",
+     headers: {
+       "Content-Type": "application/json",
+     },
+     body: JSON.stringify(data),
+   })
+     .then((response) => {
+       if (!response.ok) {
+         console.error("HTTPレスポンスエラー:", response);
+         throw new Error(`HTTPエラー: ${response.status}`);
+       }
+       return response.json();
+     })
+     .then((responseData) => {
+       console.log("サーバーのレスポンス:", responseData);
+       if (responseData.success) {
+         alert("送信が完了しました！");
+       } else {
+         alert("エラーが発生しました: " + responseData.message);
+       }
+     })
+     .catch((error) => {
+       console.error("送信エラー:", error);
+       alert("データ送信中にエラーが発生しました。");
+     });
+ }
+ 
 
 
 //送信完了後＝送信完了しました
