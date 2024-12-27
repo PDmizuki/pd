@@ -358,7 +358,7 @@ document.addEventListener("DOMContentLoaded", () => {
  
    console.log("送信データ:", data); // デバッグ用ログ
  
-   fetch("https://script.google.com/macros/s/AKfycbzoDra1su9Mk2wZy22vh-Z75iHN8YYGsv_FZzzStESAGR8u9f0dMJBV-trbq0QdB8iq/exec", {
+   fetch("https://script.google.com/macros/s/AKfycby3MpKtvg9SZCrMc2X_M1TkdkSIxIN78ni4YhuN111geXNpC4J6vMpPVI1u0oHX37KF/exec", {
      method: "POST",
      headers: {
        "Content-Type": "application/json",
