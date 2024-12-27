@@ -369,7 +369,7 @@ function sendToServer() {
 
    console.log("送信データ:", data); // デバッグ用ログ
 
-   fetch("https://script.google.com/macros/s/AKfycbxkWCES7rfMqpteuVED4EgHPFF9WSBOYaXNLCxqlgokHlMAHnXt8z5zZPmlEo8ZjdPj/exec", {
+   fetch("https://script.google.com/macros/s/AKfycbz2-apXU9TB3ifg2-Q4kpyqIz7hYMIqHn6pX2uh-xdwWB1iLetuV_9cX35a3bBbVvGH/exec", {
        method: "POST",
        headers: {
            "Content-Type": "application/json",
