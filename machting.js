@@ -369,32 +369,31 @@ function sendToServer() {
 
    console.log("送信データ:", data); // デバッグ用ログ
 
-   fetch("https://script.google.com/macros/s/AKfycbzH6B_HOfBRINok6PPSQxevq4STN8YR8rpO4GGDCvGhs7WWKewSnBX6zMLzvJlfDIZP/exec", {
+   fetch("https://script.google.com/macros/s/AKfycbxkWCES7rfMqpteuVED4EgHPFF9WSBOYaXNLCxqlgokHlMAHnXt8z5zZPmlEo8ZjdPj/exec", {
        method: "POST",
        headers: {
            "Content-Type": "application/json",
        },
-       body: JSON.stringify(data),
+       body: JSON.stringify({
+         name: "テストユーザー",
+         address: "test@example.com",
+         advice: "テストアドバイス",
+     }),
    })
        .then((response) => {
            if (!response.ok) {
-               console.error("HTTPレスポンスエラー:", response);
                throw new Error(`HTTPエラー: ${response.status}`);
            }
            return response.json();
        })
-       .then((responseData) => {
-           console.log("サーバーのレスポンス:", responseData);
-           if (responseData.success) {
-               alert("送信が完了しました！");
-           } else {
-               alert("エラーが発生しました: " + responseData.message);
-           }
-       })
-       .catch((error) => {
-           console.error("送信エラー:", error);
-           alert("データ送信中にエラーが発生しました。");
-       });
+       .then((data) => {
+         console.log("サーバーからのレスポンス:", data);
+         alert("送信が完了しました！");
+     })
+     .catch((error) => {
+         console.error("送信エラー:", error);
+         alert("送信エラーが発生しました。");
+     });
 }
 
 
