@@ -359,48 +359,49 @@ async function sendToServer() {
    const name = document.getElementById("name").value.trim();
    const address = document.getElementById("address").value.trim();
    const advice = document.getElementById("advice-content").textContent || "なし";
-
+ 
    // 入力チェック
    if (!name || !address) {
-       alert("氏名とメールアドレスを入力してください。");
-       return;
+     alert("氏名とメールアドレスを入力してください。");
+     return;
    }
-
+ 
    // 送信データをURLエンコード形式に変換
    const data = new URLSearchParams({
-       name,
-       address,
-       advice,
+     name,
+     address,
+     advice,
    }).toString();
-
+ 
    console.log("送信データ:", data); // デバッグ用ログ
-
+ 
    try {
-       // fetchを使用してデータ送信
-       const response = await fetch("https://script.google.com/macros/s/AKfycbwxAd7chwepfEBfb4CtTHYHNTL-40GPr4d6e9ELVwwEZae9GqXnZd-j5Un6ZwXv3Jae/exec", {
-           method: "POST",
-           headers: getDefaultJsonHeaders(),
-           body: data,
-       });
-
-       if (!response.ok) {
-           throw new Error(`HTTPエラー: ${response.status}`);
-       }
-
-       const responseData = await response.json();
-       console.log("サーバーからのレスポンス:", responseData);
-
-       if (responseData.success) {
-           alert("送信が完了しました！");
-       } else {
-           alert("エラーが発生しました: " + responseData.message);
-       }
+     const response = await fetch("https://script.google.com/macros/s/AKfycbxjDir0hWBEQJYwBCRIgMEfQQOcqxZz2iLtjHbkX6--LOS1RpOf67UhsVXSHnxiM_ft/exec", {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/x-www-form-urlencoded",
+       },
+       body: data,
+     });
+ 
+     if (!response.ok) {
+       throw new Error(`HTTPエラー: ${response.status}`);
+     }
+ 
+     const responseData = await response.json();
+     console.log("サーバーからのレスポンス:", responseData);
+ 
+     if (responseData.success) {
+       alert("送信が完了しました！");
+     } else {
+       alert("エラーが発生しました: " + responseData.message);
+     }
    } catch (error) {
-       console.error("送信エラー:", error);
-       alert("送信エラーが発生しました。");
+     console.error("送信エラー:", error);
+     alert("送信エラーが発生しました。");
    }
-}
-
+ }
+ 
 
 
 
