@@ -328,64 +328,75 @@ function generateAdvice() {
    return advice; // 必要に応じて戻り値として返却
 }
 
-
-// ページのDOMが読み込まれた後に実行
 document.addEventListener("DOMContentLoaded", () => {
    const submitButton = document.getElementById("submit-button");
- 
-   // ボタンが存在するかチェック
+   const reloadButton = document.getElementById("reload-button");
+
+   // 送信ボタンのクリックイベント
    if (submitButton) {
-     // ボタンのクリックイベントを設定
-     submitButton.addEventListener("click", sendToServer);
+       submitButton.addEventListener("click", sendToServer);
    } else {
-     console.error("エラー: 'submit-button' が見つかりませんでした。");
+       console.error("エラー: 'submit-button' が見つかりませんでした。");
    }
- });
- 
- // サーバーにデータを送信する関数
- function sendToServer() {
-   const name = document.getElementById("name").value.trim() || "未入力";
-   const address = document.getElementById("address").value.trim() || "未入力";
+
+   // リロードボタンのクリックイベント
+   if (reloadButton) {
+       reloadButton.addEventListener("click", () => {
+           location.reload();
+       });
+   }
+});
+
+// サーバーにデータを送信する関数
+function sendToServer() {
+   const name = document.getElementById("name").value.trim();
+   const address = document.getElementById("address").value.trim();
    const advice = document.getElementById("advice-content").textContent || "なし";
- 
+
+   // 入力チェック
+   if (!name || !address) {
+       alert("氏名とメールアドレスを入力してください。");
+       return;
+   }
+
    // 送信するデータ
    const data = {
-     name,
-     address,
-     answers: typeof selectedAnswers !== "undefined" ? selectedAnswers : {}, // 事前に定義された選択回答を送信
-     advice,
+       name,
+       address,
+       answers: typeof selectedAnswers !== "undefined" ? selectedAnswers : {}, // 未定義チェック
+       advice,
    };
- 
+
    console.log("送信データ:", data); // デバッグ用ログ
- 
+
    fetch("https://script.google.com/macros/s/AKfycbzH6B_HOfBRINok6PPSQxevq4STN8YR8rpO4GGDCvGhs7WWKewSnBX6zMLzvJlfDIZP/exec", {
-     method: "POST",
-     headers: {
-       "Content-Type": "application/json",
-     },
-     body: JSON.stringify(data),
+       method: "POST",
+       headers: {
+           "Content-Type": "application/json",
+       },
+       body: JSON.stringify(data),
    })
-     .then((response) => {
-       if (!response.ok) {
-         console.error("HTTPレスポンスエラー:", response);
-         throw new Error(`HTTPエラー: ${response.status}`);
-       }
-       return response.json();
-     })
-     .then((responseData) => {
-       console.log("サーバーのレスポンス:", responseData);
-       if (responseData.success) {
-         alert("送信が完了しました！");
-       } else {
-         alert("エラーが発生しました: " + responseData.message);
-       }
-     })
-     .catch((error) => {
-       console.error("送信エラー:", error);
-       alert("データ送信中にエラーが発生しました。");
-     });
- }
- 
+       .then((response) => {
+           if (!response.ok) {
+               console.error("HTTPレスポンスエラー:", response);
+               throw new Error(`HTTPエラー: ${response.status}`);
+           }
+           return response.json();
+       })
+       .then((responseData) => {
+           console.log("サーバーのレスポンス:", responseData);
+           if (responseData.success) {
+               alert("送信が完了しました！");
+           } else {
+               alert("エラーが発生しました: " + responseData.message);
+           }
+       })
+       .catch((error) => {
+           console.error("送信エラー:", error);
+           alert("データ送信中にエラーが発生しました。");
+       });
+}
+
 
 
 //送信完了後＝送信完了しました

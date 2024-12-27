@@ -192,27 +192,27 @@
     <div class="container">
         <!-- 質問セクション -->
         <div id="question-container">
-            <h2 class="question"></h2>
-            <ul class="options"></ul>
+            <h2 class="question">質問がここに表示されます</h2>
+            <ul class="options">
+                <!-- 質問の選択肢が動的に挿入されます -->
+            </ul>
         </div>
         <!-- 結果セクション -->
         <div id="result-container" style="display: none;">
             <h2>回答内容</h2>
-            <p id="result-text"></p>
+            <p id="result-text">回答内容がここに表示されます</p>
             <div id="advice-container">
-                <p id="advice-content"></p>
+                <p id="advice-content">アドバイス内容がここに表示されます</p>
             </div>
-            <div id="contact-info" style="display: none;">
-                <label>氏名: <input type="text" id="name"></label><br>
-                <label>アドレス: <input type="email" id="address"></label>
+            <div id="contact-info">
+                <label>氏名: <input type="text" id="name" placeholder="氏名を入力してください"></label><br>
+                <label>アドレス: <input type="email" id="address" placeholder="メールアドレスを入力してください"></label>
             </div>
             <button type="button" id="submit-button">送信</button>
-
             <button id="reload-button">もう一度診断する</button>
         </div>
     </div>
-
-
+    
 </body>
 
 </html>
