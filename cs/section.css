@@ -148,6 +148,10 @@ p a {
    border: 0;
 }
 
+section button {
+   border-image: url("https://mizukioyama.github.io/pd/img/text-bggold.jpg") 100;
+}
+
 .bottom-btn {
    position: absolute;
    left: 1.9vmin;
@@ -225,16 +229,6 @@ button:nth-last-of-type(1) {
 .arrow::after {
    transform: rotate(-45deg);
 }
-
-
-/*#section2 .sec-a,
-#section3 .sec-a,
-#section4 .sec-a,
-#section5 .sec-a,
-#section6 .sec-a {
-   bottom: 0;
-   padding: 0;
-}*/
 
 #section1 img {
    position: absolute;

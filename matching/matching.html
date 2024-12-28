@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スタートアップマッチングシステム</title>
+    <link rel="stylesheet" href="matching.css">
+    <script src="machting.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- 質問セクション -->
+        <div id="question-container">
+            <h2 class="question">質問がここに表示されます</h2>
+            <ul class="options">
+                <!-- 質問の選択肢が動的に挿入されます -->
+            </ul>
+            ※個人情報を含めた情報は、お客様の同意が無い場合では収集いたしません。
+            ※こちらからの案内を希望される方のみ、氏名、連絡先アドレスを入力してお送りください。後日こちらから案内の連絡をいたします。
+        </div>
+        <!-- 結果セクション -->
+        <div id="result-container" style="display: none;">
+            <h2>回答内容</h2>
+            <p id="result-text">回答内容がここに表示されます</p>
+            <div id="advice-container">
+                <p id="advice-content">アドバイス内容がここに表示されます</p>
+            </div>
+            <div id="contact-info">
+                <label><input type="text" id="name" placeholder="氏名を入力してください"></label><br>
+                <label><input type="email" id="address" placeholder="メールアドレスを入力してください"></label><br>
+                <label><input type="checkbox" name="agree" value="agreement"> プライバシーポリシーに同意する</label>
+                <a href="policy.html" target="_blank">SitePolicy</a>
+            </div>
+            <p>
+                ※これらの情報は送信されない限り収集されないのでご安心ください。
+                <br>
+                ※こちらからのご案内を希望される方は、氏名、連絡先アドレスを入力して「送信」をお願いいたします。
+            </p>
+            <button type="button" id="submit-button">送信</button>
+            <button id="reload-button">もう一度診断する</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
