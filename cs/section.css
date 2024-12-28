@@ -148,11 +148,6 @@ p a {
    border: 0;
 }
 
-section button {
-   border: 1px solid;
-   border-image: url("https://mizukioyama.github.io/pd/img/text-bggold.jpg") 100;
-}
-
 .bottom-btn {
    position: absolute;
    left: 1.9vmin;
@@ -172,6 +167,7 @@ button:nth-last-of-type(1) {
    justify-content: center;
    align-items: center;
    box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.5);
+   border: 1px solid;
    border-image: url("https://mizukioyama.github.io/pd/img/text-bggold.jpg") 100;
 }
 
