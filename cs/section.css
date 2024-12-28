@@ -149,6 +149,7 @@ p a {
 }
 
 section button {
+   border: 1px solid;
    border-image: url("https://mizukioyama.github.io/pd/img/text-bggold.jpg") 100;
 }
 
