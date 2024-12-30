@@ -1,17 +1,13 @@
 // JavaScriptでテンプレートを読み込む
 function loadChatBotTemplate() {
   fetch('bot.html')
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      return response.text();
-    })
-    .then((data) => {
+    .then(response => response.text())
+    .then(data => {
       document.body.insertAdjacentHTML('beforeend', data);
+      // ここにChatBotのスクリプトを記述
       initializeChatBot();
     })
-    .catch((error) => console.error('Error loading chatbot template:', error));
+    .catch(error => console.error('Error loading chatbot template:', error));
 }
 
 // グローバルスコープの toggleChatWindow
@@ -29,8 +25,34 @@ function initializeChatBot() {
   console.log("ChatBot initialized");
 }
 
-// jQueryスクリプト
-$(document).ready(function () {
+const PROJECT_ID = 'YOUR_PROJECT_ID';
+function askQuestion() {
+  const userQuestion = document.getElementById('user-input').value;
+
+  const request = {
+    queryInput: {
+      text: {
+        text: userQuestion,
+        languageCode: 'ja',
+      },
+    },
+  };
+
+  document.getElementById('user-input').value = '';
+}
+
+function handleResponse(response) {
+  const botReply = response.queryResult.fulfillmentText;
+  addMessage('ChatBot', botReply);
+}
+
+function addMessage(sender, message) {
+  const chatLog = document.getElementById('chat-log');
+  chatLog.innerHTML += `<div><strong>${sender}:</strong> ${message}</div>`;
+}
+
+jQuery.noConflict();
+jQuery(document).ready(function ($) {
   const chatWindow = $('#chat');
   const categoryRadio = $('input[name="category"]');
   const keywordRadioContainer = $('.keyword-options');
@@ -61,7 +83,6 @@ $(document).ready(function () {
     chatWindow.append(messageDiv);
     chatWindow.scrollTop(chatWindow[0].scrollHeight);
   }
-
 
   function generateResponse(selectedCategory, selectedKeyword) {
     let response = '';
