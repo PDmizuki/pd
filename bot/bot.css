@@ -359,9 +359,9 @@
 
     @media screen and (min-width: 1300px) {
 
-        /* ChatBot アイコンのスタイル */
+        /* ChatBot アイコンのスタイル 
         #chat-icon {
-            /*font-size: clamp(2.8rem, calc(2.8rem + 0.1vw), 3.4rem);
+            font-size: clamp(2.8rem, calc(2.8rem + 0.1vw), 3.4rem);
             bottom: 0px;
             width: 15vmin;
             height: 8vmin;
