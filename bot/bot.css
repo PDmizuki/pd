@@ -427,7 +427,7 @@
         /* ベーススタイル */
         .chatbot-container {
             display: grid;
-            justify-content: left;
+            justify-content: center;
             align-items: center;
             position: absolute;
             bottom: 10vmin;
@@ -436,7 +436,7 @@
 
         /* ChatBot ウィンドウのスタイル */
         #chat-window {
-            width: 80vmin;
+            width: 90vmin;
             height: 100%;
             left: 0;
             bottom: 0;
