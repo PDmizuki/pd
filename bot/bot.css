@@ -381,7 +381,7 @@
         }*/
 
         #chat-icon:hover {
-            background-color: var(--text);
+            color: var(--text);
         }
 
         /* 閉じるボタンのスタイル */
