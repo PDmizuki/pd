@@ -320,7 +320,8 @@ nav {
         height: 100px;
     }
 
-    .pc_menu a {
+    .pc_menu a,
+    .pc_menu button {
         font-size: clamp(2.8rem, calc(2.8rem + 0.5vw), 3rem);
         font-weight: 400;
         color: var(--text);
@@ -340,7 +341,8 @@ nav {
         font-size: clamp(2rem, calc(2rem + 0.5vw), 2.4rem);
     }
 
-    .pc_menu a:hover {
+    .pc_menu a:hover,
+    .pc_menu button:hover {
         color: var(--hover);
         -webkit-text-stroke-color: var(--accent);
     }
