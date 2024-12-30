@@ -317,12 +317,12 @@ nav {
     }
 
     .pc_menu li {
-        height: 100px;
+        height: 80px;
     }
 
     .pc_menu a,
     .pc_menu #chat-icon {
-        font-size: clamp(2.8rem, calc(2.8rem + 0.5vw), 3rem);
+        font-size: clamp(1.8rem, calc(1.8rem + 0.5vw), 2.4rem);
         font-weight: 400;
         color: var(--text);
         width: 114px;
@@ -338,7 +338,7 @@ nav {
     }
 
     .manu_p a {
-        font-size: clamp(2rem, calc(2rem + 0.5vw), 2.4rem);
+        font-size: clamp(2rem, calc(2rem + 0.5vw), 2rem);
     }
 
     .pc_menu a:hover,
