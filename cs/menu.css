@@ -321,7 +321,7 @@ nav {
     }
 
     .pc_menu a,
-    .pc_menu button {
+    .pc_menu #chat-icon {
         font-size: clamp(2.8rem, calc(2.8rem + 0.5vw), 3rem);
         font-weight: 400;
         color: var(--text);
@@ -342,7 +342,7 @@ nav {
     }
 
     .pc_menu a:hover,
-    .pc_menu button:hover {
+    .pc_menu #chat-icon:hover {
         color: var(--hover);
         -webkit-text-stroke-color: var(--accent);
     }
