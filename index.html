@@ -48,16 +48,15 @@
     <!--Search-->
     <meta name="description" content="想いを形に、こだわりをデザインする。">
     <meta name="keywords" content="Precision Design, こだわり, デザイン, 想い, 伝える">
-<!--キャッシュ無効化-->
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-
 <!--Referrer-Policy-->
-<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="referrer" content="no-referrer-when-downgrade">
 
 <!--CSP-->
 <meta http-equiv="Content-Security-Policy" content="
     default-src 'self'; 
-    style-src 'self' 'unsafe-inline'; 
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
+    font-src 'self' https://fonts.gstatic.com; 
+    script-src 'self' 'unsafe-inline' 'unsafe-eval'; 
     img-src 'self' data: https:; 
     connect-src 'self' https:;">
 
