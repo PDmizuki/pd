@@ -347,7 +347,7 @@ nav {
 
 
     .logo {
-        position: relative;
+        position: absolute;
         top: 0;
         transform: rotate(-90deg);
         border-left: 1px solid var(--border);
