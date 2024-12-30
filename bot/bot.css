@@ -359,18 +359,18 @@
 
     @media screen and (min-width: 1300px) {
 
-        /* ChatBot アイコンのスタイル 
+        /* ChatBot アイコンのスタイル */
         #chat-icon {
-            font-size: clamp(2.8rem, calc(2.8rem + 0.1vw), 3.4rem);
-            bottom: 0px;
+            font-size: 1.8rem;
+            /*bottom: 0px;
             width: 15vmin;
             height: 8vmin;
             padding: 0 1rem;
             transition: all 0.5s ease;
-            animation: fadeIn_bg 4s ease forwards;
+            animation: fadeIn_bg 4s ease forwards;*/
         }
 
-        #chat-icon::before {
+        /*#chat-icon::before {
             content: "こちらで質問ができます";
             font-size: clamp(0.8rem, calc(0.8rem + 0.5vw), 0.9rem);
             position: absolute;
