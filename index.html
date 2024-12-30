@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Precision Design</title>
-    <link rel="icon" href="https://mizukioyama.github.io/img/pd-logo-gold.ico">
+    <link rel="icon" href="img/pd-logo-gold.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- CSSファイルの読み込み -->
@@ -48,15 +48,19 @@
     <!--Search-->
     <meta name="description" content="想いを形に、こだわりをデザインする。">
     <meta name="keywords" content="Precision Design, こだわり, デザイン, 想い, 伝える">
-    <!--cash-->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <!--Referrer-Policy-->
-    <meta name="referrer" content="strict-origin">
-    <!--HSTS-->
-    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000">
-    <!--CSP-->
+<!--キャッシュ無効化-->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+
+<!--Referrer-Policy-->
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<!--CSP-->
+<meta http-equiv="Content-Security-Policy" content="
+    default-src 'self'; 
+    style-src 'self' 'unsafe-inline'; 
+    img-src 'self' data: https:; 
+    connect-src 'self' https:;">
+
 </head>
 
 <!--作品保護-->
