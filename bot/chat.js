@@ -4,7 +4,6 @@ function loadChatBotTemplate() {
     .then(response => response.text())
     .then(data => {
       document.body.insertAdjacentHTML('beforeend', data);
-      // ここにChatBotのスクリプトを記述
       initializeChatBot();
     })
     .catch(error => console.error('Error loading chatbot template:', error));
@@ -21,13 +20,17 @@ function toggleChatWindow() {
 }
 
 function initializeChatBot() {
-  // ChatBot に関連する処理を記述
   console.log("ChatBot initialized");
 }
 
-const PROJECT_ID = 'YOUR_PROJECT_ID';
+// 質問を送信する関数
 function askQuestion() {
   const userQuestion = document.getElementById('user-input').value;
+
+  if (!userQuestion) {
+    console.error("質問を入力してください。");
+    return;
+  }
 
   const request = {
     queryInput: {
@@ -39,6 +42,7 @@ function askQuestion() {
   };
 
   document.getElementById('user-input').value = '';
+  // ここにAPI呼び出しを追加する予定
 }
 
 function handleResponse(response) {
@@ -51,113 +55,82 @@ function addMessage(sender, message) {
   chatLog.innerHTML += `<div><strong>${sender}:</strong> ${message}</div>`;
 }
 
+// DOMが読み込まれた後の処理
 document.addEventListener('DOMContentLoaded', function () {
-  // ChatBot初期化処理
-jQuery.noConflict();
-jQuery(document).ready(function ($) {
-  const chatWindow = $('#chat');
-  const categoryRadio = $('input[name="category"]');
-  const keywordRadioContainer = $('.keyword-options');
-  const sendButton = $('#send-button');
-  const clearButton = $('#clear-button');
+  jQuery.noConflict();
+  jQuery(document).ready(function ($) {
+    const chatWindow = $('#chat');
+    const categoryRadio = $('input[name="category"]');
+    const keywordRadioContainer = $('.keyword-options');
+    const sendButton = $('#send-button');
+    const clearButton = $('#clear-button');
 
-  sendButton.on('click', sendMessage);
-  clearButton.click(clearChat);
+    sendButton.on('click', sendMessage);
+    clearButton.on('click', clearChat);
 
-  function sendMessage() {
-    const selectedCategory = categoryRadio.filter(':checked').val();
-    if (!selectedCategory) return;
-    const selectedKeyword = keywordRadioContainer.find('input[name="keyword"]:checked').val();
-    if (!selectedKeyword) {
-      appendMessage('bot', "キーワードを選択してください。");
-      return;
+    function sendMessage() {
+      const selectedCategory = categoryRadio.filter(':checked').val();
+      if (!selectedCategory) {
+        appendMessage('bot', "カテゴリーを選択してください。");
+        return;
+      }
+      const selectedKeyword = keywordRadioContainer.find('input[name="keyword"]:checked').val();
+      if (!selectedKeyword) {
+        appendMessage('bot', "キーワードを選択してください。");
+        return;
+      }
+      const botResponse = generateResponse(selectedCategory, selectedKeyword);
+      appendMessage('bot', botResponse);
     }
-    const botResponse = generateResponse(selectedCategory, selectedKeyword);
-    appendMessage('bot', botResponse);
-  }
 
-  function clearChat() {
-    chatWindow.html('');
-  }
-
-  function appendMessage(sender, message) {
-    const messageDiv = $('<p>').addClass(sender).text(message);
-    chatWindow.append(messageDiv);
-    chatWindow.scrollTop(chatWindow[0].scrollHeight);
-  }
-
-  function generateResponse(selectedCategory, selectedKeyword) {
-    let response = '';
-    if (selectedCategory === 'about') {
-        response = "カテゴリー：about、キーワード：" + selectedKeyword;
-    } else {
-        response = "カテゴリー：" + selectedCategory + "、キーワード：" + selectedKeyword;
+    function clearChat() {
+      chatWindow.html('');
     }
-    return response;
-}
 
-  function getKeywordsForCategory(selectedCategory) {
-    if (selectedCategory === 'about') {
-      return ['想い', '目的', '活動']; //about
-    } else if (selectedCategory === 'works') {
-      return ['PDでできること', '事業内容', '事業詳細']; //works
-    } else if (selectedCategory === 'その他') {
-      return ['相談', '申込み', '料金']; //その他
-    } else {
-      return [];
+    function appendMessage(sender, message) {
+      const messageDiv = $('<p>').addClass(sender).text(message);
+      chatWindow.append(messageDiv);
+      chatWindow.scrollTop(chatWindow[0].scrollHeight);
     }
-  }
 
-  function generateAuthorResponse(selectedKeyword) { //about
-    if (selectedKeyword === '想い') {
-      return "私たちの想いは、人はいつからでも変わることができる、自分らしく、人としての感情や思考を大切にすることです。";
-    } else if (selectedKeyword === '目的') {
-      return "私たちの目的は、人としての想いや考え、自分自身とこころを大切にすること、一番は人なんだということ、を伝えていくことです。";
-    } else if (selectedKeyword === '活動') {
-      return "私たちの活動はコーチングやお悩み相談（カウンセリング）の他に、個人事業の事業サポート・制作を行っています。その他の活動はBlogページに投稿しているのでご覧ください。";
+    function generateResponse(selectedCategory, selectedKeyword) {
+      const responses = {
+        about: {
+          想い: "私たちの想いは、人はいつからでも変わることができる、自分らしく、人としての感情や思考を大切にすることです。",
+          目的: "私たちの目的は、人としての想いや考え、自分自身とこころを大切にすること、一番は人なんだということ、を伝えていくことです。",
+          活動: "私たちの活動はコーチングやお悩み相談（カウンセリング）の他に、個人事業の事業サポート・制作を行っています。その他の活動はBlogページに投稿しているのでご覧ください。",
+        },
+        works: {
+          PDでできること: "私たちは、こころが良い方向への変化するお手伝いをしています。",
+          事業内容: "事業内容は「コーチング、お悩み相談（カウンセリング）」「個人事業を対象にした事業サポート、制作」を行っております。",
+          事業詳細: "事業の詳細は画像データをダウンロードしていただくか、公式LINEもしくはコンタクトフォームからお問い合わせください。",
+        },
+        その他: {
+          相談: "相談は「コーチング、お悩み相談（カウンセリング）、事業サポート」お1人様1回30分～45分までとなっています。",
+          申込み: "お申し込み方法は、HPもしくは公式LINEからお申し込みができます。",
+          料金: "料金は当HPのWorksページにある「Piece一覧.jpg」もしくは公式LINEのリッチメニューからご確認いただけます。",
+        },
+      };
+
+      return responses[selectedCategory]?.[selectedKeyword] || "該当する応答が見つかりません。";
     }
-  }
 
-  function generateArtworkResponse(selectedKeyword) { //works
-    if (selectedKeyword === 'PDでできること') {
-      return "私たちは、こころが良い方向への変化するお手伝いをしています。潜在意識に眠る悩みやトラウマを軽減する方法を伝えることの他に、事業を寄り良くする提案（アドバイス）やサポート等を行っています。";
-    } else if (selectedKeyword === '事業内容') {
-      return "事業内容は「コーチング、お悩み相談（カウンセリング）」「個人事業を対象にした事業サポート、制作」を行っております。";
-    } else if (selectedKeyword === '事業詳細') {
-      return "事業の詳細は画像データをダウンロードしていただくか、公式LINEもしくはコンタクトフォームからお問い合わせください。";
+    function updateKeywordOptions() {
+      const selectedCategory = categoryRadio.filter(':checked').val();
+      const keywordOptions = Object.keys(responses[selectedCategory] || {});
+      keywordRadioContainer.empty();
+
+      if (keywordOptions.length === 0) {
+        keywordRadioContainer.append('<div>選択したカテゴリーに関連するキーワードを表示します。</div>');
+      } else {
+        keywordOptions.forEach(keyword => {
+          const label = $('<label>').html(`<input type="radio" name="keyword" value="${keyword}"><span> ${keyword}</span>`);
+          keywordRadioContainer.append(label);
+        });
+      }
     }
-  }
 
-  function generateExhibitionResponse(selectedKeyword) { //その他
-    if (selectedKeyword === '相談') {
-      return "相談は「コーチング、お悩み相談（カウンセリング）、事業サポート」お1人様1回30分～45分までとなっています。";
-    } else if (selectedKeyword === '申込み') {
-      return "お申し込み方法は、HPもしくは公式LINEからお申し込みができます。公式LINEを登録していただくとスムーズにお申し込みを行えますので、是非ご登録をお願いします。";
-    } else if (selectedKeyword === '料金') {
-      return "料金は当HPのWorksページにある「Piece一覧.jpg」もしくは公式LINEのリッチメニューからご確認いただけます。";
-    }
-  }
-
-  categoryRadio.on('change', function () {
+    categoryRadio.on('change', updateKeywordOptions);
     updateKeywordOptions();
   });
-
-  function updateKeywordOptions() {
-    const selectedCategory = categoryRadio.filter(':checked').val();
-    const keywordOptions = getKeywordsForCategory(selectedCategory);
-    keywordRadioContainer.empty();
-    for (const keyword of keywordOptions) {
-      const label = $('<label>').html(`<input type="radio" name="keyword" value="${keyword}"><span> ${keyword}</span>`);
-      keywordRadioContainer.append(label);
-    }
-  }
-
-  updateKeywordOptions();
-
-  function updateKeywordOptions() {
-      const selectedCategory = categoryRadio.filter(':checked').val();
-      keywordRadioContainer.empty();
-      keywordRadioContainer.append('<div>選択したカテゴリーに関連するキーワードを表示します。</div>');
-  }
-});
 });
