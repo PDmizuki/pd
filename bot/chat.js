@@ -30,13 +30,7 @@ function initializeChatBot() {
 }
 
 // jQueryスクリプト
-document.addEventListener('DOMContentLoaded', () => {
-  if (typeof jQuery === 'undefined') {
-    console.error('jQuery is not loaded. Please include jQuery.');
-    return;
-  }
-
-  const $ = jQuery.noConflict();
+$(document).ready(function () {
   const chatWindow = $('#chat');
   const categoryRadio = $('input[name="category"]');
   const keywordRadioContainer = $('.keyword-options');
@@ -67,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     chatWindow.append(messageDiv);
     chatWindow.scrollTop(chatWindow[0].scrollHeight);
   }
+
 
   function generateResponse(selectedCategory, selectedKeyword) {
     let response = '';
