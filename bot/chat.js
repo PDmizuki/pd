@@ -51,6 +51,8 @@ function addMessage(sender, message) {
   chatLog.innerHTML += `<div><strong>${sender}:</strong> ${message}</div>`;
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+  // ChatBot初期化処理
 jQuery.noConflict();
 jQuery(document).ready(function ($) {
   const chatWindow = $('#chat');
@@ -87,16 +89,12 @@ jQuery(document).ready(function ($) {
   function generateResponse(selectedCategory, selectedKeyword) {
     let response = '';
     if (selectedCategory === 'about') {
-      response = generateAuthorResponse(selectedKeyword);
-    } else if (selectedCategory === 'works') {
-      response = generateArtworkResponse(selectedKeyword);
-    } else if (selectedCategory === 'その他') {
-      response = generateExhibitionResponse(selectedKeyword);
+        response = "カテゴリー：about、キーワード：" + selectedKeyword;
     } else {
-      response = "選択したカテゴリーに関する解答内容です。";
+        response = "カテゴリー：" + selectedCategory + "、キーワード：" + selectedKeyword;
     }
     return response;
-  }
+}
 
   function getKeywordsForCategory(selectedCategory) {
     if (selectedCategory === 'about') {
@@ -155,9 +153,11 @@ jQuery(document).ready(function ($) {
   }
 
   updateKeywordOptions();
+
+  function updateKeywordOptions() {
+      const selectedCategory = categoryRadio.filter(':checked').val();
+      keywordRadioContainer.empty();
+      keywordRadioContainer.append('<div>選択したカテゴリーに関連するキーワードを表示します。</div>');
+  }
 });
-
-
-// ページがロードされたときにテンプレートを読み込む
-document.addEventListener('DOMContentLoaded', loadChatBotTemplate);
-
+});
