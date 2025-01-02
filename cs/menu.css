@@ -322,7 +322,7 @@ nav {
 
     .pc_menu a,
     .pc_menu #chat-icon {
-        font-size: clamp(1.8rem, calc(1.8rem + 0.5vw), 2.4rem);
+        font-size: clamp(1.6rem, calc(1.6rem + 0.5vw), 2.2rem);
         font-weight: 400;
         color: var(--text);
         width: 114px;
