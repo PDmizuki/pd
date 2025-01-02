@@ -216,6 +216,7 @@ h2,
 h3 {
    /*font-size: 62.5%;=16px 4rem=42px*/
    font-size: clamp(2rem, calc(2rem + 0.5vw), 4rem);
+   mix-blend-mode: soft-light;
 }
 
 h4 {
