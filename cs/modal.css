@@ -30,7 +30,7 @@
    background-color: rgba(200, 200,200, 0.15);
    background:
    linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(46, 46, 46, 0.5) 100%),
-   url("https://mizukioyama.github.io/pd/img/new-noize.png") no-repeat center center/cover;
+   url("https://mizukioyama.github.io/pd/img/new-noize.jpg") no-repeat center center/cover;
    transform: translate(-50%, -50%) scale(0.8);
    box-shadow: 0 3px 13px 0px rgba(0, 0, 0, 0.95);
    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s;

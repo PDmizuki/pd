@@ -31,9 +31,12 @@
    width: 300px;
    height: 200px;
    padding: 0.5rem;
-   background:
+   /*background:
    linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(20, 20, 20, 0.4) 100%),
-   url("https://mizukioyama.github.io/pd/img/original-bg01.png") no-repeat center center/cover;
+   url("https://mizukioyama.github.io/pd/img/original-bg01.png") no-repeat center center/cover;*/
+   background: rgba(217, 217, 217, 0.2);
+   border: 1px solid var(--border);
+   backdrop-filter: blur(8px);
    border-radius: 8px;
    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
    transition: all 0.5s ease;
@@ -57,7 +60,7 @@
    width: 360px;
    height: 235px;
    background:
-      url("https://mizukioyama.github.io/pd/img/pd-bg-img02.png") no-repeat center center/cover;
+      url("https://mizukioyama.github.io/pd/img/pd-bg-img02.jpg") no-repeat center center/cover;
    border-radius: 8px;
    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.75);
    overflow: hidden;

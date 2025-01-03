@@ -7,7 +7,7 @@
    width: 140vmin;
    height: 78.75%;
    max-height: 800px;
-   background: url("https://mizukioyama.github.io/pd/img/pd-bg-img02-2.png") no-repeat bottom center/contain;
+   background: url("https://mizukioyama.github.io/pd/img/pd-bg-img.jpg") no-repeat bottom center/contain;
    opacity: 0;
    transition: transform 0.4s ease, opacity 1s ease;
    box-shadow: 0 0px 15px 5px rgba(0, 0, 0, 0.5);
