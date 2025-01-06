@@ -57,7 +57,7 @@
 
     /*==bot*/
     /*ラジオボタン装飾*/
-    input {
+    #chat-window input {
         /*-webkit-appearance: none;*/
         /* remove default */
         display: block;
@@ -273,7 +273,7 @@
 
         /*==bot*/
         /*ラジオボタン装飾*/
-        input {
+        #chat-window input {
             font-size: 1rem;
             margin-top: 0px;
             width: 15px;
@@ -398,7 +398,7 @@
 
         /*==bot*/
         /*ラジオボタン装飾 */
-        input {
+        #chat-window input {
             margin-top: 0px;
             width: 0;
             height: 0;
