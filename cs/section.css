@@ -461,6 +461,7 @@ button:nth-last-of-type(1) {
 /*==Contact*/
 .contact .modal h3,
 .policy .modal h3 {
+   font-size: clamp(1.4rem, calc(1.4rem + 0.5vw), 2.8rem);
    margin-top: 3vmin;
    mix-blend-mode: normal;
 }
