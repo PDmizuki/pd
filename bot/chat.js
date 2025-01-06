@@ -1,5 +1,7 @@
 // JavaScriptでテンプレートを読み込む
-function loadChatBotTemplate() {
+document.addEventListener('DOMContentLoaded', function () {
+  loadChatBotTemplate();
+
   fetch('bot.html')
     .then(response => response.text())
     .then(data => {
@@ -8,6 +10,8 @@ function loadChatBotTemplate() {
     })
     .catch(error => console.error('Error loading chatbot template:', error));
 }
+});
+
 
 // グローバルスコープの toggleChatWindow
 function toggleChatWindow() {
@@ -134,8 +138,12 @@ function addMessage(sender, message) {
       });
     });
 
-    // Chat ウィンドウのトグル
     function toggleChatWindow() {
       const chatWindow = document.getElementById('chat-window');
-      chatWindow.style.display = chatWindow.style.display === 'block' ? 'none' : 'block';
+      if (chatWindow) {
+        chatWindow.style.display = chatWindow.style.display === 'block' ? 'none' : 'block';
+      } else {
+        console.error("Chat window not found!");
+      }
     }
+    
