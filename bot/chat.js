@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
       initializeChatBot();
     })
     .catch(error => console.error('Error loading chatbot template:', error));
-}
 });
 
 
