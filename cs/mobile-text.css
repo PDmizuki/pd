@@ -36,7 +36,7 @@
       font-weight: 500;
       font-style: normal;
       color: var(--bg);
-      background: url("https://mizukioyama.github.io/pd/img/pd-bg-img.jpg") no-repeat bottom center/contain;
+      background: url("https://mizukioyama.github.io/pd/img/pd-bg-img.jpg") no-repeat bottom center/cover;
       background-attachment: fixed;
       position: relative;
       width: 100%;
@@ -50,7 +50,7 @@
    .mobile::after,
    .guide-left,
    .guide-left::after {
-    background: url("https://mizukioyama.github.io/pd/img/pd-bg-img02.png") no-repeat bottom center/contain;
+    background: url("https://mizukioyama.github.io/pd/img/pd-bg-img02.png") no-repeat bottom center/cover;
       background-attachment: fixed;
       position: fixed;
       content: "";
