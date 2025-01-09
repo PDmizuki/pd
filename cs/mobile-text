@@ -1,0 +1,295 @@
+/*===================== mobile =====================*/
+@media screen and (max-width: 599px) {
+   /*===================== all =====================*/
+   :root {
+      font-size: 62.5%;
+   }
+
+   .pc {
+      display: none;
+   }
+
+   .mobile {
+      display: block;
+   }
+
+   /*===================== fade =====================*/
+   .fade_bottom {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1.2s ease, transform 1.2s ease, filter 1.2s ease;
+      filter: blur(4px);
+      transform: translateY(15px);
+   }
+
+   .fade_bottom.visible {
+      opacity: 1;
+      visibility: visible;
+      filter: blur(0);
+      transform: translateY(0);
+   }
+
+   /*===================== body text =====================*/
+   .mobile {
+      /*font-family: zen-maru-gothic, sans-serif;*/
+      font-family: sans-serif;
+      font-weight: 500;
+      font-style: normal;
+      color: var(--bg);
+      background: url("https://mizukioyama.github.io/pd/img/pd-bg-img.jpg") no-repeat bottom center/contain;
+      background-attachment: fixed;
+      position: relative;
+      width: 100%;
+      height: auto;
+      padding: 5vmin 5vmin 0;
+      overflow: hidden;
+      overflow: visible;
+   }
+
+   .mobile::before,
+   .mobile::after,
+   .guide-left,
+   .guide-left::after {
+    background: url("https://mizukioyama.github.io/pd/img/pd-bg-img02.png") no-repeat bottom center/contain;
+      background-attachment: fixed;
+      position: fixed;
+      content: "";
+      z-index: 10;
+   }
+
+   .mobile::before,
+   .mobile::after {
+      left: 0;
+      width: 100%;
+      height: 5vmin;
+      z-index: 9;
+   }
+
+   .mobile::before {
+      top: 0;
+      border-bottom: 1px solid var(--border);
+   }
+
+   .mobile::after {
+      bottom: 0;
+      border-top: 1px solid var(--border);
+   }
+
+   .guide-left,
+   .guide-left::after {
+      width: 5vmin;
+      height: 100%;
+      top: 0;
+   }
+
+   .guide-left {
+      left: 0;
+      border-right: 1px solid var(--border);
+   }
+
+   .guide-left::after {
+      right: 0;
+      border-left: 1px solid var(--border);
+   }
+
+   .noise {
+      background: linear-gradient(to bottom right, var(--bg), var(--text)) fixed;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: darkgray;
+      --lines: 0.0003px;
+      mask: repeating-radial-gradient(circle at center,
+            #000,
+            var(--lines),
+            #000,
+            0,
+            #0000,
+            calc(var(--lines) * 2),
+            #0000 0);
+      /* フォールバック：マスクがサポートされない場合の背景色 */
+      background-color: lightgray;
+      color: var(--text);
+      /* フォールバック用のテキスト色 */
+   }
+
+   @media (prefers-color-scheme: light) {
+      .noise {
+         background: linear-gradient(to bottom, black, gray) fixed;
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: darkgray;
+         color: var(--bg);
+      }
+   }
+
+
+   /*===================== img =====================*/
+   img {
+      max-width: 100%;
+      width: 65%;
+   }
+   /*===================== img =====================*/
+
+   /*===================== text =====================*/
+   h1 {
+      /*font-size: 62.5%;=16px 12rem=120px*/
+      font-size: clamp(2rem, -2.571rem + 22.86vw, 6rem);
+      font-family: "Jost", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      color: var(--bg);
+      width: fit-content;
+      line-height: 7.5rem;
+      letter-spacing: 0.5rem;
+   }
+
+   h2,
+   h3,
+   h4 {
+      font-family: "Inter", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      color: var(--bg);
+   }
+
+   h2 {
+      /*font-size: 62.5%;=16px 6rem=62px*/
+      font-family: sans-serif;
+      font-weight: 500;
+      font-size: clamp(4.2rem, 2.143rem + 10.29vw, 6rem);
+      width: fit-content;
+      line-height: 7rem;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: var(--bg);
+   }
+
+   .policy h2 {
+      line-height: 5rem;
+   }
+
+   h3 {
+      /*font-size: 62.5%;=16px 4rem=42px*/
+      font-size: clamp(2rem, -0.286rem + 11.43vw, 4rem);
+   }
+
+   h4 {
+      /*font-size: 62.5%;=16px 4rem=42px*/
+      font-size: clamp(1.8rem, 1.582rem + 1.09vw, 2.4rem);
+   }
+
+   p {
+      /*font-size: 62.5%;=16px 1.2rem=12px*/
+      font-size: clamp(1.4rem, 1.171rem + 1.14vw, 1.6rem);
+      width: fit-content;
+      letter-spacing: 0.01rem;
+      line-height: 3rem;
+   }
+   .text {
+      margin-top: 38%;
+   }
+
+   ol,
+   ul {
+      font-size: clamp(1.4rem, 0.943rem + 2.29vw, 1.8rem);
+      font-family: sans-serif;
+   }
+
+   li {
+      font-size: clamp(1.4rem, 1.171rem + 1.14vw, 1.6rem);
+      list-style: none;
+   }
+
+
+   /*===================== リンク =====================*/
+   section a {
+      border: 0;
+   }
+
+   a {
+      font-family: futura-pt, sans-serif;
+      font-size: clamp(1.8rem, 1.114rem + 3.43vw, 2.4rem);
+      font-weight: 400;
+      color: var(--accent);
+      width: fit-content;
+      height: fit-content;
+      padding: 0.25rem 0.5rem;
+      left: 0;
+      bottom: 65%;
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      z-index: 100;
+   }
+   a:hover {
+      color: rgba(217, 217, 217, 0.5);
+   }
+
+   header a::after,
+   footer a::after {
+      content: "";
+      width: 100%;
+      height: 1px;
+      bottom: 5px;
+      position: absolute;
+      left: 0;
+      background-color: var(--bg);
+      transform: scale(0, 1);
+      transform-origin: right top;
+      transition: transform 0.3s ease;
+   }
+
+   header a:hover::after,
+   footer a:hover::after {
+      transform-origin: left top;
+      transform: scale(1, 1);
+   }
+
+   section .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      text-decoration: none;
+      width: 150px;
+      height: 40px;
+      margin-left: 0.5vmin;
+      position: relative;
+      transition: 0.3s;
+   }
+
+   section .button::before,
+   section .button::after {
+      content: "";
+      display: block;
+      position: absolute;
+      border: 1px solid var(--border);
+      width: 100%;
+      height: 100%;
+      transition: 0.3s;
+   }
+
+   section .button::before {
+      top: -5px;
+      left: -5px;
+   }
+
+   section .button::after {
+      top: 3px;
+      left: 3px;
+   }
+
+   section .button:hover::before,
+   section .button:hover::after {
+      top: 0;
+      left: 0;
+   }
+
+   /*===================== リンク =====================*/
+
+   .hr {
+      width: 100%;
+      height: 65px;
+      position: relative;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+   }
+}
