@@ -141,8 +141,10 @@ address {
    display: block;
 }
 
-.mobile {
-   display: none;
+@media screen and (min-width: 1300px) {
+   body {
+   overflow: hidden;
+   }
 }
 
 body {
@@ -155,14 +157,13 @@ body {
    text-align: justify;
    width: 100vw;
    height: 100vh;
-   color: light-dark(var(--bg));
-   background: light-dark(var(--text));
-   /*   background: url(/img/pd-bg-img05.png);
+   color: var(--bg);
+   background: var(--text);
+/*   background: url(/img/pd-bg-img05.png);
    background-position: center;
    background-repeat: no-repeat;
    background-size: contain;*/
    z-index: 1;
-   overflow: hidden;
 }
 
 /*===================== h1~p =====================*/
