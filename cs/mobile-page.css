@@ -12,6 +12,7 @@
    .tabs .top-h1 {
       display: grid;
       gap: 10px;
+      width: 100%;
       position: absolute;
       top: 2.5%;
       left: 0;
@@ -45,6 +46,7 @@
 
    .tabs .top-h1 .caption {
       position: relative;
+      width: 100%;
       padding: 1rem 0.5rem;
       margin: 0;
       border: 0;
