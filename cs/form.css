@@ -253,8 +253,8 @@ form .close:focus {
       font-size: clamp(2rem, 1.543rem + 2.29vw, 2.4rem);
       width: 100%;
       height: 30pt;
-      bottom: 1.5rem;
       padding: 0;
+      margin-bottom: 0.5rem;
       margin-top: 1rem;
    }
 
