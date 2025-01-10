@@ -265,14 +265,14 @@
    }
 
    /*===================== section in-box =====================*/
-
+/*===================== img
    section #top-img {
       width: 80%;
       top: -10%;
       right: 0;
    }
-
-   /*===================== img*/
+*/
+   /*===================== img
    section img {
       position: absolute;
    }
@@ -296,7 +296,7 @@
       height: 400px;
       top: 25%;
       right: -5%;
-      /*clip-path: circle(40% at left);*/
+      clip-path: circle(40% at left);
    }
 
    .top .section1 img:last-child {
@@ -317,7 +317,7 @@
       bottom: -5%;
       right: 0;
       transform: rotate(180deg);
-   }
+   }*/
 
    /*===================== bg-aitem =====================*/
    .bg-aitem {
