@@ -240,7 +240,13 @@ form .close:focus {
       font-size: clamp(1.4rem, 0.943rem + 2.29vw, 1.8rem);
       color: rgba(217, 217, 217, 0.75);
       left: 2%;
+      top: 13.5%;
       line-height: 2rem;
+   }
+
+   .contact-form .label-test {
+      top: 6.5%;
+      left: 2%;
    }
 
    .contact-form .submit-btn {
@@ -266,8 +272,9 @@ form .close:focus {
 
    .align-center p {
       font-size: clamp(1rem, 0.771rem + 1.14vw, 1.2rem);
-      width: 100%;
-      margin-right: 3rem;
+      width: 85%;
+      margin: 0;
+      margin-top: 1rem;
       line-height: 1.2;
    }
 
