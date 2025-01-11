@@ -55,17 +55,55 @@
     <!-- JavaScriptファイルの読み込み -->
     <script src="js/cursor.js"></script>
     <script src="js/section.js"></script>
+    <script src="js/head-foot.js"></script>
+    <script src="js/fade.js"></script>
     <script src="https://mizukioyama.github.io/pd/bot/chat.js"></script>
     <!-- mobile -->
     <script src="js/tab.js"></script>
     <script src="js/loading.js"></script>
-    <script src="js/head-foot.js"></script>
 
 </head>
 
 <!--作品保護-->
 
 <body oncontextmenu="return false;" class="about">
+    <div id="header-container"></div>
+
+    <!-- ChatBot ウィンドウ -->
+    <div id="chat-window">
+        <div id="close-button" onclick="toggleChatWindow()">CLOSE</div>
+        <div class="chatbot-container">
+        <div id="chat" class="chat-window"></div>
+
+        <p>項目を選択してください</p>
+        <div class="input-container">
+            <div class="radio-options">
+            <label>
+                <input type="radio" name="category" value="about">
+                <span>PDについて</span>
+            </label>
+            <label>
+                <input type="radio" name="category" value="works">
+                <span>PDでできること</span>
+            </label>
+            <label>
+                <input type="radio" name="category" value="その他">
+                <span>その他</span>
+            </label>
+            </div>
+            <div class="radio-options keyword-options">
+            <!-- キーワード選択肢はカテゴリー選択後にJSで動的に生成 -->
+            </div>
+
+            <div class="button-container">
+            <button id="send-button" class="send-button panel">Send</button>
+            <button id="clear-button" class="clear-button panel">Clear</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    
     <main class="about">
         <div class="pc">
 
@@ -414,7 +452,7 @@
           </section>
 
     </main>
-    <p style="color: var(--bg); position: absolute; right: 23vmin; bottom: 1rem;">©Precision Design</p>
+    <p class="pc" style="color: var(--bg); position: absolute; right: 23vmin; bottom: 1rem;">©Precision Design</p>
     <!--<script>
         let isAnimating = false;
 
