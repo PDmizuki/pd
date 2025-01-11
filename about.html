@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>PD_About Us</title>
+    <title>PD_About</title>
     <link rel="icon" href="img/pd-logo-gold.ico">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -12,6 +12,9 @@
     <meta name="keywords" content="Precision Design, こだわり, デザイン, 想い, 伝える">
 
     <!-- jQueryの読み込み -->
+    <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7x1oG4aQQWujdK1zOVwhUeqEAcTKIYlQbGx"
+        crossorigin="anonymous"></script>-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Meta Tags -->
@@ -30,26 +33,17 @@
     base-uri 'self';
     ">
 
-        <!--Search
-        <meta name="description" content="想いを形に、こだわりをデザインする。">
-        <meta name="keywords" content="Precision Design, こだわり, デザイン, 想い, 伝える">
-
-        cash
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-        <meta http-equiv="Pragma" content="no-cache">
-        <meta http-equiv="Expires" content="0">
-        
-        Referrer-Policy
-        <meta name="referrer" content="strict-origin">
-        HSTS
-        <meta http-equiv="Strict-Transport-Security" content="max-age=31536000">
-        CSP-->
-
     <!-- CSSファイルの読み込み -->
     <link rel="stylesheet" href="cs/all.css">
     <link rel="stylesheet" href="cs/section.css">
     <link rel="stylesheet" href="cs/menu.css">
     <link rel="stylesheet" href="cs/cursor.css">
+    <!-- mobile -->
+    <link rel="stylesheet" href="cs/mobile-page.css">
+    <link rel="stylesheet" href="cs/mobile-all.css">
+    <link rel="stylesheet" href="cs/slide.css">
+    <link rel="stylesheet" href="cs/tab.css">
+    <link rel="stylesheet" href="cs/footer.css">
     <link rel="stylesheet" href="https://mizukioyama.github.io/pd/bot/bot.css">
 
     <!-- Font -->
@@ -60,59 +54,25 @@
 
     <!-- JavaScriptファイルの読み込み -->
     <script src="js/cursor.js"></script>
-    <script src="js/loading.js"></script>
-    <script src="js/head-foot.js"></script>
     <script src="js/section.js"></script>
     <script src="https://mizukioyama.github.io/pd/bot/chat.js"></script>
+    <!-- mobile -->
+    <script src="js/tab.js"></script>
+    <script src="js/loading.js"></script>
+    <script src="js/head-foot.js"></script>
 
 </head>
 
 <!--作品保護-->
 
 <body oncontextmenu="return false;" class="about">
-    <div id="header-container"></div>
-
-    <!-- ChatBot ウィンドウ -->
-    <div id="chat-window">
-        <div id="close-button" onclick="toggleChatWindow()">CLOSE</div>
-        <div class="chatbot-container">
-        <div id="chat" class="chat-window"></div>
-
-        <p>項目を選択してください</p>
-        <div class="input-container">
-            <div class="radio-options">
-            <label>
-                <input type="radio" name="category" value="about">
-                <span>PDについて</span>
-            </label>
-            <label>
-                <input type="radio" name="category" value="works">
-                <span>PDでできること</span>
-            </label>
-            <label>
-                <input type="radio" name="category" value="その他">
-                <span>その他</span>
-            </label>
-            </div>
-            <div class="radio-options keyword-options">
-            <!-- キーワード選択肢はカテゴリー選択後にJSで動的に生成 -->
-            </div>
-
-            <div class="button-container">
-            <button id="send-button" class="send-button panel">Send</button>
-            <button id="clear-button" class="clear-button panel">Clear</button>
-            </div>
-        </div>
-        </div>
-    </div>
-
-
     <main class="about">
+        <div class="pc">
 
         <div class="section displayed-section" id="section1">
             <h1>PD_About Us</h1>
             <h2>Profile / Consept</h2>
-            <img src="https://mizukioyama.github.io/pd/img/text-a.png" alt="Precision Design,about,M.Oyama" class="text-a">
+            <img src="/img/text-a.png" alt="Precision Design,about,M.Oyama" class="text-a">
             <p>
                 このページでは、「Profile、サイトコンセプト、考え、スキル」を紹介しています。
             </p>
@@ -141,7 +101,7 @@
 
         <div class="section next-section" id="section2">
             <h2>Profile</h2>
-            <img src="https://mizukioyama.github.io/pd/img/text-a.png" alt="Precision Design,about,M.Oyama">
+            <img src="/img/text-a.png" alt="Precision Design,about,M.Oyama">
             <p>
                 自己紹介 / 好きなもの
             </p>
@@ -181,7 +141,7 @@
 
         <div class="section next-section" id="section3">
             <h2>Concept</h2>
-            <img src="https://mizukioyama.github.io/pd/img/text-a.png" alt="Precision Design,about,M.Oyama">
+            <img src="/img/text-a.png" alt="Precision Design,about,M.Oyama">
             <p>
                 当サイトは作者Oyamaの好きなデザイン、こだわりを表現。
                 素材はテクスチャ以外は一から制作。
@@ -208,7 +168,7 @@
 
         <div class="section next-section" id="section4">
             <h2>Thoughts</h2>
-            <img src="https://mizukioyama.github.io/pd/img/text-a.png" alt="Precision Design,about,M.Oyama">
+            <img src="/img/text-a.png" alt="Precision Design,about,M.Oyama">
             <p>
                 僕は、「想い」と「こだわり」が未来を形づくると考えています。
                 それは、デザインに関わる中で、細部へのこだわりが驚きと感動を生み出し、人々の心を動かす瞬間を目にしてきたからです。
@@ -243,7 +203,7 @@
 
         <div class="section next-section" id="section5">
             <h2>Skill</h2>
-            <img src="https://mizukioyama.github.io/pd/img/text-a.png" alt="Precision Design,about,M.Oyama">
+            <img src="/img/text-a.png" alt="Precision Design,about,M.Oyama">
             <p>
                 Webサイト制作、デザイン、Art、コンサルティング
             </p>
@@ -287,6 +247,171 @@
             <div class="left-text">PD_About - Skill</div>
             <div class="right-text">05</div>
         </div>
+
+    </div>
+
+
+        <!---- mobile ----->
+        <!---- section 01 ----->
+        <div class="mobile">
+            <div id="header-container"></div>
+            <div class="guide-left"></div>
+            <!-- Main -->
+
+          <section class="tabs">
+            <div class="top-h1 noise">
+              <h1 class="fade_bottom">About Us</h1>
+              <p class="caption">僕たちについて。</p>
+            </div>
+            <div class="top-s fade_bottom">
+              <video src=""></video>
+              <p class="caption noise">
+                自己表現こそが己を確立する。
+                <br>
+                自己表現は人生最大限のパフォーマンス。
+              </p>
+            </div>
+            <!-- tab list -->
+            <div class="tabs-container noise">
+              <a class="tab" href="#tab-1">Thoughts</a>
+              <a class="tab" href="#tab-2">Profile</a>
+              <a class="tab" href="#tab-3">Works</a>
+              <a class="tab" href="#tab-4">Concept</a>
+              <span class="tab-slider"></span>
+            </div>
+          </section>
+      
+          <div class="hr"></div>
+      
+          <section class="slide section1" id="tab-1">
+            <div class="top-s">
+              <div class="h2-bg noise fade_bottom">
+                <h2>Thoughts</h2>
+                <p>想い/考え</p>
+              </div>
+                <p class="text fade_bottom">
+                  僕は、「想い」と「こだわり」が未来を形づくると考えています。
+                  それは、デザインに関わる中で、細部へのこだわりが驚きと感動を生み出し、人々の心を動かす瞬間を何度も目にしてきたからです。
+                  些細な要素であっても、そこに込められた意図や工夫が、人々に深い印象を与え、新たな価値を生み出します。
+                  この体験を通じて、想いとこだわりが、単なるデザイン以上の未来を創造する力になると確信しました。            
+                  <br>
+                  あなたの「想い」を受け取った人々が共感し、新しい価値を生み出すために、僕たちは細部にまで徹底的にこだわります。
+                    その「こだわり」こそが、唯一無二の作品を生み出し、さらなる共感を呼び起こすと信じています。
+                    あなたの想いが、PrecisionDesignの挑戦となり、共に未来を創造していくと僕は考えています。
+                    僕は誠心誠意、全力で、想いや商品を求める人へ届けるお手伝いをいたします。
+                    共に良いものを作り提供できることを願っています。
+                </p>
+                <!--<div class="thoughts fade_bottom">
+                  <p>
+                    だから、「少し細かすぎるくらいがちょうどいい」その信念を大切にし、僕たちは一切の妥協をせず、できる限り全力でこだわりたいと思います。
+                    個々の「想い」や「こだわり」を魅力的なデザインとして具現化する――そんな想いで、
+                    僕たちはPrecisionDesignとして活動しています。
+                    僕たちは、単に美しいデザインを提供するだけではありません。
+                    デザインは、使う人に驚きと感動をもたらす体験の一部です。
+                  </p>
+                  <p>
+                    あなたの「想い」を受け取った人々が共感し、新しい価値を生み出すために、僕たちは細部にまで徹底的にこだわります。
+                    その「こだわり」こそが、唯一無二の作品を生み出し、さらなる共感を呼び起こすと信じています。
+                    あなたの想いが、PrecisionDesignの挑戦となり、共に未来を創造していくと僕は考えています。
+                    僕は誠心誠意、全力で、想いや商品を求める人へ届けるお手伝いをいたします。
+                    共に良いものを作り提供できることを願っています。
+                  </p>
+                </div>-->
+            </div>
+          </section>
+      
+          <div class="hr"></div>
+      
+          <section class="slide section2" id="tab-2">
+            <div class="top-s">
+              <div class="h2-bg noise fade_bottom">
+                <h2>Profile</h2>
+                <p>経歴</p>
+              </div>
+                <div class="profile fade_bottom">
+                  <div class="oyama">
+                    <ol>
+                      <p>
+                        小山 瑞樹 1998年8月生まれ / 宮城県出身
+                      </p>
+                      <div>
+                        <p>経歴</p>
+                        <li>デザイン専門学校 卒業</li>
+                        <li>フリーター歴 約4年
+                          <br><span>（物流 / 介護補助 / レザークラフト / イベント設営・図面制作）etc..</span>
+                        </li>
+                        <li>Webデザイナー 約2年<span>「 Precision Design 」</span></li>
+                        <li>Abstract Artist 約4年<span>「 Theme：Natureinspire 」</span></li>
+                      </div>
+                    </ol>
+                  </div>
+                  <div class="like">
+                    <div class="bg-aitem noise"></div>
+                    <p>好きな食べ物：
+                      パフェ、クレープ、ケーキ、おはぎ、わらび餅、
+                      オムライス、カルボナーラ、ハンバーグ、鰻、さつま芋 etc..</p>
+                    <p>好きな事：
+                      モノ作り、散歩、サイクリング、読書、運動、筋トレ、
+                      カフェ巡り、好きなアニメやゲームの考察、人と話すこと etc..</p>
+                  </div>
+                </div>
+            </div>
+          </section>
+      
+          <div class="hr"></div>
+      
+          <section class="slide section3" id="tab-3">
+            <div class="top-s">
+              <div class="h2-bg noise fade_bottom">
+                <h2>Works</h2>
+                <p>作品</p>
+              </div>
+              <div class="work fade_bottom">
+                <div class="design noise">
+                  <h3>Design</h3>
+                  <video src=""></video>
+                </div>
+                <div class="art noise">
+                  <h3>Art</h3>
+                  <video src=""></video>
+                </div>
+              </div>
+            </div>
+          </section>
+      
+          <div class="hr"></div>
+      
+          <section class="slide section4" id="tab-4">
+            <div class="top-s">
+              <div class="h2-bg noise fade_bottom">
+                <h2>Concept</h2>
+                <p>サイトコンセプト</p>
+              </div>
+                <p class="text fade_bottom">
+                  当サイトは、シンプルで先錬されたデザインで、優しそうな人物をコンセプトに制作しました。
+                  白と黒を基調とし、落ち着いた大人の雰囲気を演出しつつ、フォント選びにこだわり、柔らかさと温かみを表現しています。
+                  無駄を削ぎ落としたシンプルなデザインに、クラシックな要素を取り入れることで、
+                  時代を超えた上品さを感じさせる仕上がりとなっています。
+                </p>
+                <div class="color fade_bottom">
+                <div class="bg-aitem">
+                  #2e2e2e;
+                </div>
+                <div class="bg-aitem">
+                  #4b4b4b;
+                </div>
+                <div class="bg-aitem">
+                  #c7c7c7;
+                </div>
+                <div class="bg-aitem">
+                  #A07171;
+                </div>
+                <div class="bg-aitem">
+                  rgba(217, 217, 217, 0.5);
+                </div>
+                </div>
+              </div>
+          </section>
 
     </main>
     <p style="color: var(--bg); position: absolute; right: 23vmin; bottom: 1rem;">©Precision Design</p>
