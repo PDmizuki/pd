@@ -39,6 +39,10 @@
     <link rel="stylesheet" href="cs/form.css">
     <link rel="stylesheet" href="cs/accordion.css">
     <link rel="stylesheet" href="https://mizukioyama.github.io/pd/bot/bot.css">
+    <!-- mobile -->
+    <link rel="stylesheet" href="cs/mobile-all.css">
+    <link rel="stylesheet" href="cs/mobile-page.css">
+    <link rel="stylesheet" href="cs/footer.css">
 
     <!-- Font -->
     <!-- a -->
@@ -55,6 +59,8 @@
     <script src="js/accordion.js"></script>
     <script src="js/section.js"></script>
     <script src="https://mizukioyama.github.io/pd/bot/chat.js"></script>
+    <!-- mobile -->
+    <script src="js/fade.js"></script>
 
 </head>
 
@@ -99,6 +105,7 @@
 
 
     <main class="contact">
+        <div class="pc">
 
         <div class="section displayed-section" id="section1">
             <h1>PD_Contact Us</h1>
@@ -753,6 +760,306 @@
                 </li>
             </ol>
         </div>
+
+        </div>
+
+
+        <!---- mobile ----->
+        <!---- section 01 ----->
+        <div class="mobile">
+            <div id="header-container"></div>
+            <div class="guide-left"></div>
+            <!-- Main -->
+
+        <section class="tabs">
+            <div class="top-h1 noise">
+              <h1 class="fade_bottom">Contact</h1>
+              <p class="caption">問合せ / 申込ページ。</p>
+            </div>
+            <div class="top-s fade_bottom">
+              <video src=""></video>
+              <p class="caption noise">
+                当ページで制作や見積の申込ができます。
+              </p>
+            </div>
+            <!-- tab list -->
+            <div class="tabs-container noise">
+              <a class="tab" href="#tab-1">About forms</a>
+              <a class="tab" href="#tab-2">Form</a>
+              <a class="tab" href="#tab-3">FAQ</a>
+              <span class="tab-slider"></span>
+            </div>
+          </section>
+      
+          <div class="hr"></div>
+      
+          <section class="slide section1" id="tab-1">
+            <div class="top-s">
+              <div class="h2-bg noise fade_bottom">
+                <h2>About forms</h2>
+                <p>フォームについて</p>
+              </div>
+              <p class="text fade_bottom">
+                以下のフォームから制作の申込や見積の申請が行えます。
+                フォームに目的や内容を記入して送信してください。
+              </p>
+            </div>
+          </section>
+      
+          <div class="hr"></div>
+      
+          <section class="slide section2" id="tab-2">
+            <div class="top-s">
+              <div class="h2-bg noise fade_bottom">
+                <h2>Contact</h2>
+                <p>問合せ / 申込</p>
+              </div>
+              <div class="content-wrapper fade_bottom">
+                <div class="get-in-touch">
+      
+                  <form id="contactForm" class="contact-form"
+                  action="https://script.google.com/macros/s/AKfycbyN2Gl35qjTCreWck6ZkWL2Nf9wrxUD7ZWyQ0yEtPqqGnfcJmMDyaozg90feIz6z51P/exec"
+                  method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+      
+                    <div class="form-row">
+                      <div class="form-col">
+                        <div class="form-field col x-50">
+                          <input type="text" id="name" name="name" class="input-text" required>
+                          <label for="name" class="label">Name</label>
+                        </div>
+                        <div class="form-field col x-50">
+                          <input type="email" id="email" name="email" class="input-text" required>
+                          <label for="email" class="label">Address</label>
+                        </div>
+                        <div class="form-field col x-50">
+                          <input type="text" id="companyName" name="companyName" class="input-text" required>
+                          <label for="companyName" class="label">Business</label>
+                        </div>
+                      </div>
+                      <div class="form-field col x-100">
+                        <textarea id="message" name="message" class="input-text" required></textarea>
+                        <label for="message" class="label label-test">Text</label>
+                      </div>
+                    </div>
+      
+                    <div class="form-field col align-center">
+                      <p>当サイトをご利用の際は、<a href="https://mizukioyama.github.io/pd/policy.html">SitePolicy</a>をご確認ください。</p>
+                      <button type="submit" class="submit-btn">Send</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+      
+            </div>
+          </section>
+      
+          <div class="hr"></div>
+      
+          <section class="slide section3" id="tab-3">
+            <div class="top-s">
+              <div class="h2-bg noise fade_bottom">
+                <h2>FAQ</h2>
+                <p>よくある質問</p>
+              </div>
+      
+              <h3 class="fade_bottom">制作について</h3>
+              <!-- アコーディオン -->
+              <div class="accordion-wrap fade_bottom">
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <span>Q</span>制作について
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </h3>
+                </div>
+                <div class="accordion-text">
+                  <p>
+                    A, 想いやこだわりあるモノをデザインで表現したいと思いで、Web制作事業を始めて約1年約が立ちました。
+                    想いをデザインするために、写真撮影やイラストの制作、ライティングなども行います。
+                    なので、想いやこだわりなどの情報共有をお願いしております。
+                    「事業への想い。立ち上げのキッカケ。将来のビジョン。」などを知ることで、より良いものを制作できるのでご協力お願いいたします。
+                    制作の流れはServiceページに記載があるので、そちらをご覧ください。
+                  </p>
+                </div>
+              </div>
+      
+              <div class="accordion-wrap fade_bottom">
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <span>Q</span>制作途中のデザイン変更
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </h3>
+                </div>
+                <div class="accordion-text">
+                  <p>
+                    A, 打合せ、ミーティングはオンライン「Zoom / Google meet」などで行います。
+                    連絡は「Slack」でお願いしておりますが、他ツールでも対応可能ですのでご相談ください。
+                    Slackの使い方が分からないようでしたら、他の使用できるツールをお伝えください。
+                    こちらで可能な限り対応します。
+                  </p>
+                </div>
+              </div>
+      
+              <div class="accordion-wrap fade_bottom">
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <span>Q</span>納品後のアフターフォロー
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </h3>
+                </div>
+                <div class="accordion-text">
+                  <p>
+                    A, 納品後のアフターフォローは別途定期契約となりますので、お求めの方はお申込みください。
+                    また、納品した後でも契約できますのでご検討ください。
+                    「他社でのWebサイトを修正後は対応できませんのでご了承ください。」
+                  </p>
+                </div>
+              </div>
+      
+              <div class="accordion-wrap fade_bottom">
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <span>Q</span>お支払い
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </h3>
+                </div>
+                <div class="accordion-text">
+                  <p>
+                    A, クレジット決済、現金振り込みどちらも対応可能です。
+                    お支払い情報はご契約時に「Slack」もしくはメールにてお送りするので、ご対応お願いいたします。
+                  </p>
+                </div>
+              </div>
+      
+              <div class="accordion-wrap fade_bottom">
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <span>Q</span>その他質問
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </h3>
+                </div>
+                <div class="accordion-text">
+                  <p>
+                    A, 上記以外のご質問がございましたらお気軽にお問合せください。
+                    内容確認でき次第こちらからご連絡いたします。
+                    「返信まで1～2日ほどお時間いただきます。」
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+      
+          <div class="hr"></div>
+      
+          <section class="slide section4" id="tab-4">
+            <div class="top-s">
+              <div class="h2-bg noise fade_bottom">
+                <h2>FAQ</h2>
+                <p>よくある質問</p>
+              </div>
+      
+              <h3 class="fade_bottom">制作について</h3>
+              <!-- アコーディオン -->
+              <div class="accordion-wrap fade_bottom">
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <span>Q</span>制作について
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </h3>
+                </div>
+                <div class="accordion-text">
+                  <p>
+                    A, 想いやこだわりあるモノをデザインで表現したいと思いで、Web制作事業を始めて約1年約が立ちました。
+                    想いをデザインするために、写真撮影やイラストの制作、ライティングなども行います。
+                    なので、想いやこだわりなどの情報共有をお願いしております。
+                    「事業への想い。立ち上げのキッカケ。将来のビジョン。」などを知ることで、より良いものを制作できるのでご協力お願いいたします。
+                    制作の流れはServiceページに記載があるので、そちらをご覧ください。
+                  </p>
+                </div>
+              </div>
+      
+              <div class="accordion-wrap fade_bottom">
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <span>Q</span>打合せ、ミーティング
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </h3>
+                </div>
+                <div class="accordion-text">
+                  <p>
+                    A, 打合せ、ミーティングはオンライン「Zoom / Google meet」などで行います。
+                    連絡は「Slack」でお願いしておりますが、他ツールでも対応可能ですのでご相談ください。
+                    Slackの使い方が分からないようでしたら、他の使用できるツールをお伝えください。
+                    こちらで可能な限り対応します。
+                  </p>
+                </div>
+              </div>
+      
+              <div class="accordion-wrap fade_bottom">
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <span>Q</span>納品後のアフターフォロー
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </h3>
+                </div>
+                <div class="accordion-text">
+                  <p>
+                    A, 納品後のアフターフォローは別途定期契約となりますので、お求めの方はお申込みください。
+                    また、納品した後でも契約できますのでご検討ください。
+                    「他社でのWebサイトを修正後は対応できませんのでご了承ください。」
+                  </p>
+                </div>
+              </div>
+      
+              <div class="accordion-wrap fade_bottom">
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <span>Q</span>お支払い
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </h3>
+                </div>
+                <div class="accordion-text">
+                  <p>
+                    A, クレジット決済、現金振り込みどちらも対応可能です。
+                    お支払い情報はご契約時に「Slack」もしくはメールにてお送りするので、ご対応お願いいたします。
+                  </p>
+                </div>
+              </div>
+      
+              <div class="accordion-wrap fade_bottom">
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <span>Q</span>その他質問
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </h3>
+                </div>
+                <div class="accordion-text">
+                  <p>
+                    A, 上記以外のご質問がございましたらお気軽にお問合せください。
+                    内容確認でき次第こちらからご連絡いたします。
+                    「返信まで1～2日ほどお時間いただきます。」
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+      
+        </div>
+      
+        <div id="footer-container"></div>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+      
+        <!-- モーダルウィンドウ -->
+        <div id="thanksModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>
+              問合せありがとうございます。
+              <br>
+              返信まで1日～2日ほどお待ちください。
+            </p>
+          </div>
+        </div>
+        
     </main>
 
     <div id="footer-container" class="mobile"></div>
