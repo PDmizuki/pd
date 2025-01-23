@@ -96,7 +96,7 @@
       background: linear-gradient(to bottom right, var(--bg), var(--text)) fixed;
       -webkit-background-clip: text;
       -webkit-text-fill-color: darkgray;
-      --lines: 0.0003px;
+      --lines: 0.003px;
       mask: repeating-radial-gradient(circle at center,
             #000,
             var(--lines),
