@@ -96,13 +96,13 @@
       background: linear-gradient(to bottom right, var(--bg), var(--text)) fixed;
       -webkit-background-clip: text;
       -webkit-text-fill-color: darkgray;
-      --lines: 0.003px;
+      --lines: 0.03px;
       mask: repeating-radial-gradient(circle at center,
             #000,
             var(--lines),
             #000,
             0,
-            #0000,
+            #000,
             calc(var(--lines) * 2),
             #0000 0);
       /* フォールバック：マスクがサポートされない場合の背景色 */
